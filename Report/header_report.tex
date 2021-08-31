@@ -1,0 +1,112 @@
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{mathtools}
+\usepackage{enumerate}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{upgreek}
+\usepackage{multirow}
+\usepackage{indentfirst}
+\usepackage{color}
+\usepackage{bm}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{amstext}
+\usepackage{array}
+\usepackage{enumerate}
+\usepackage{subfigure}
+\usepackage{xcolor}
+\usepackage{pdfpages}
+\usepackage{bm}
+\usepackage{tikz}
+\usepackage{etoolbox} % Required for if statements
+\usepackage{mathrsfs}
+\usepackage{physics}
+\usepackage{siunitx}
+\usepackage{pgfplots}
+\usepackage{pdfpages}
+\usepackage{mathrsfs}
+\usepackage{physics}
+\usepackage{siunitx}
+\usepackage{listings}
+\usepackage[natbib=true,style=numeric,sorting=none]{biblatex}
+\usepackage[T1]{fontenc}
+\usepackage{inconsolata}
+\usepackage{lastpage}
+
+\geometry{a4paper,left=2.54cm,right=2.54cm,top=2.54cm,bottom=2.54cm}
+
+\thispagestyle{empty}
+
+\definecolor{Turquoise3}{RGB}{0, 134, 139}
+
+\renewcommand{\emph}[1]{{\color{Turquoise3}\textsl{#1}}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\myqed}{\hfill$\blacksquare$}
+\newcommand{\nullspacesmall}{~\\[2pt]}
+\newcommand{\nullspacemid}{~\\[8pt]}
+\newcommand{\nullspacebig}{~\\[12pt]}
+\newcommand{\at}[3]{\left.#1\right\vert_{#2}^{#3}}
+
+\newcommand{\sinc}{\mathop{\mathrm{sinc}}}
+\newcommand{\rect}{\mathop{\mathrm{rect}}}
+\newcommand{\tri}{\mathop{\mathrm{tri}}}
+\newcommand{\Real}{\mathop{\mathrm{Re}}}
+
+
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+\setlength{\parindent}{1em}
+
+
+\usepackage{fancyhdr} % Required for customising headers and footers
+
+\pagestyle{fancy} % Enable custom headers and footers
+
+\lhead{\small\Course\ifdef{\Instructor}{\ (\Instructor):}{}\ \Title} % Left header; output the instructor in brackets if one was set
+\chead{} % Centre header
+\rhead{}
+%\rhead{\small\ifdef{\assignmentAuthorName}{\assignmentAuthorName}{\ifdef{\assignmentDueDate}{Due\ \assignmentDueDate}{}}} % Right header; output the author name if one was set, otherwise the due date if that was set
+
+\lfoot{} % Left footer
+\cfoot{\small Page\ \thepage\ of\ \pageref{LastPage}} % Centre footer
+\rfoot{} % Right footer
+
+\renewcommand\headrulewidth{0.5pt}
+
+\date{} % Don't use the default title page date field
+
+\title{
+	\begin{center}
+		\rule{15cm}{0.01cm}
+		\\\LARGE{
+			\Instuition
+			\\
+			\SeasonYear
+			\\
+			\Course
+		}
+		\\\rule{15cm}{0.01cm}
+		\\\vspace{6cm}
+		\begin{Huge}
+			\sc{\Title}
+		\end{Huge}
+	\end{center}
+	\vfill
+	\flushleft
+	\begin{center}
+		\large
+		\sc{\Group}
+		\begin{align*}
+			\text{\Author}
+		\end{align*}
+		\mbox{}
+	\end{center}
+}
