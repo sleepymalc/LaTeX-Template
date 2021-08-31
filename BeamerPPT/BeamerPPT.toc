@@ -1,7 +1,0 @@
-\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
-\defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {1}{section-name}{2}{0}{1}
-\defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {1}{1}{Overview}{3}{0}{1}
-\defcounter {refsection}{0}\relax 
-\beamer@subsectionintoc {1}{2}{subsection-name}{4}{0}{1}

@@ -1,62 +1,10 @@
 \documentclass[11pt, t]{beamer}
-\usepackage{amsmath}
-\usepackage{setspace}
-\usepackage{float} 
-\usepackage{multido}
-\usepackage{multirow}
-\usepackage{array}
-\usepackage{enumerate}
-\usepackage{booktabs}
-\usepackage{indentfirst} 
-\usepackage[style=mla]{biblatex}
-\usepackage{setspace}
-\usepackage{calligra}
-\usepackage{subcaption}
-\usepackage{hyperref}
-\usepackage{textpos}
+\input{header_beamer.tex}
 
-\makeatletter
-\let\@@magyar@captionfix\relax
-\makeatother
-
-\definecolor{Turquoise3}{RGB}{0, 134, 139}
-\renewcommand{\emph}[1]{{\color{Turquoise3}\textsl{#1}}}
-\newcommand{\C}{\mathbb{C}} \newcommand{\F}{\mathbb{F}} \newcommand{\R}{\mathbb{R}} \newcommand{\Q}{\mathbb{Q}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\myseries}[2]{$#1_1,#1_2,\dots,#1_#2$}
-\newcommand{\nullspace}{~\\[15pt]}
-\newcommand{\rot}{\text{\Large{\calligra{rot}}\,}}
-\newcommand{\Remark}{\textbf{Remark: }}
-\newcommand{\Question}{\textbf{Question: }}
-\newcommand{\Extension}{\textbf{Extension: }}
-\newcommand{\scp}[2]{\langle\,#1\,,\,#2\,\rangle} \newcommand{\scpp}{\langle\,\cdot\,,\,\cdot\,\rangle}
-
-
-\usetheme{Madrid}
-\setbeamertemplate{navigation symbols}{}
-
-\addtobeamertemplate{frametitle}{}{
-\begin{textblock*}{100mm}(0.85\textwidth,-1cm)
-\includegraphics[height=1cm]{Figures/logo/logo.png}
-\end{textblock*}}
-
-\definecolor{themecolor}{RGB}{25,25,112} 
-
-\usecolortheme[named=themecolor]{structure}
-
-\setbeamertemplate{items}[default]
-
-\hypersetup{
-    colorlinks=true,
-    linkcolor=themecolor,
-    filecolor=themecolor,      
-    urlcolor=themecolor,
-    citecolor=themecolor,
-}
-
-\title{Academic Template}
-\subtitle{\textbf{Beamer PPT Template}\\\large }
-\institute[UM-SJTU JI]{University of Michigan-Shanghai Jiao Tong University Joint Institute}
+\newcommand{\Title}{Academic Template}
+\newcommand{\SubTitle}{Beamer PPT Template}
+\newcommand{\InstitutionS}{UM-SJTU JI}
+\newcommand{\InstitutionL}{University of Michigan-Shanghai Jiao Tong University Joint Institute}
 \author{Pingbang Hu}
 
 \begin{document}
@@ -86,7 +34,7 @@
 \subsection{subsection-name}
 \begin{frame}[allowframebreaks]
     \frametitle{frame-title}
-    
+
 \end{frame}
 
 

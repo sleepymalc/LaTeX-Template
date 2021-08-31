@@ -1,5 +1,0 @@
-[0] Config.pm:304> INFO - This is Biber 2.14
-[0] Config.pm:307> INFO - Logfile is 'BeamerPPT.blg'
-[100] biber-darwin:322> INFO - === Thu Jul 22, 2021, 16:34:57
-[118] Biber.pm:415> INFO - Reading 'BeamerPPT.bcf'
-[229] Utils.pm:304> WARN - No data sources defined!
