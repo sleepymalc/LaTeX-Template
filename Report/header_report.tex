@@ -34,38 +34,41 @@
 \usepackage[T1]{fontenc}
 \usepackage{inconsolata}
 \usepackage{lastpage}
+\usepackage[boxed]{algorithm}
+\usepackage[noend]{algpseudocode}
 \usepackage[nodayofweek]{datetime}
-
+\usepackage[useregional]{datetime2}
+\usepackage{xifthen}
+\usepackage{import}
+\usepackage{transparent}
+\usepackage{enumitem}
+\pgfplotsset{compat=1.17}
 \geometry{a4paper,left=2.54cm,right=2.54cm,top=2.54cm,bottom=2.54cm}
-
+\setlength{\headheight}{13.59999pt}
+\setlength{\parindent}{1em}
 \thispagestyle{empty}
-
 \definecolor{Turquoise3}{RGB}{0, 134, 139}
 
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 \renewcommand{\emph}[1]{{\color{Turquoise3}\textsl{#1}}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\F}{\mathbb{F}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
 \newcommand{\myqed}{\hfill$\blacksquare$}
 \newcommand{\nullspacesmall}{~\\[2pt]}
 \newcommand{\nullspacemid}{~\\[8pt]}
 \newcommand{\nullspacebig}{~\\[12pt]}
 \newcommand{\at}[3]{\left.#1\right\vert_{#2}^{#3}}
-
 \newcommand{\sinc}{\mathop{\mathrm{sinc}}}
 \newcommand{\rect}{\mathop{\mathrm{rect}}}
 \newcommand{\tri}{\mathop{\mathrm{tri}}}
 \newcommand{\Real}{\mathop{\mathrm{Re}}}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./Figures/}{#1.pdf_tex}
+}
+\algrenewcommand{\algorithmiccomment}[1]{\hskip 1em \texttt{// #1}}
+\algrenewcommand\algorithmicrequire{\textbf{Input:}}
+\algrenewcommand\algorithmicensure{\textbf{Output:}}
 
-
-\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
-
-\setlength{\parindent}{1em}
-
-
+\pdfsuppresswarningpagegroup=1
 \usepackage{fancyhdr} % Required for customising headers and footers
 
 \pagestyle{fancy} % Enable custom headers and footers
@@ -73,13 +76,38 @@
 \lhead{\small\Course\ifdef{\Instructor}{\ (\Instructor):}{}\ \Title} % Left header; output the instructor in brackets if one was set
 \chead{} % Centre header
 \rhead{}
-%\rhead{\small\ifdef{\assignmentAuthorName}{\assignmentAuthorName}{\ifdef{\assignmentDueDate}{Due\ \assignmentDueDate}{}}} % Right header; output the author name if one was set, otherwise the due date if that was set
+\rhead{\small\ifdef{\DueDate}{Due\ \DueDate}{}} % Right header; output the author name if one was set, otherwise the due date if that was set
 
 \lfoot{} % Left footer
 \cfoot{\small Page\ \thepage\ of\ \pageref{LastPage}} % Centre footer
 \rfoot{} % Right footer
 
 \renewcommand\headrulewidth{0.5pt}
+
+\makeatletter
+\def\@maketitle{%
+	\newpage
+	\null
+	\vskip 2em%
+	\begin{center}%
+		\let \footnote \thanks
+		{\LARGE \@title \par}%
+		\vskip 1.5em%
+			{\large
+				\lineskip .5em%
+				\begin{tabular}[t]{c}%
+					\@author \\
+					\normalsize{
+						Uniquname: \Uniquname \hspace{1em} umid: \UMID
+					}
+				\end{tabular}\par}%
+		\vskip 1em%
+			{\large \@date}%
+	\end{center}%
+	\par
+	\vskip 1.5em
+}
+\makeatother
 
 \title{
 	\begin{center}
@@ -102,9 +130,6 @@
 	\begin{center}
 		\large
 		\sc{\Group}
-		\begin{align*}
-			\text{\Author}
-		\end{align*}
 		\mbox{}
 	\end{center}
 }
