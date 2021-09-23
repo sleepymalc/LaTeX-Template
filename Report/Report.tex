@@ -1,15 +1,24 @@
 \documentclass[12pt]{article}
 \input{~/Template/Academic/Report/header_report.tex}%here should be your directory of header_report.tex, feel free to change to yours.
 
+\usepackage{tikz}
+\usetikzlibrary{spy}
+\usetikzlibrary{arrows,positioning}
+\tikzstyle{fuse} = [shape=circle,inner sep=8pt,draw,thick]
+
+\algrenewcommand{\algorithmiccomment}[1]{\hskip 1em \texttt{// #1}}
+\algrenewcommand\algorithmicrequire{\textbf{Input:}}
+\algrenewcommand\algorithmicensure{\textbf{Output:}}
+
 \author{Pingbang Hu}
 \newcommand{\Instuition}{University of Michigan}
 \newcommand{\SeasonYear}{2021FA}
-\newcommand{\Course}{EECS544/EECS444}
-\newcommand{\Title}{Assignment 1}
+\newcommand{\Course}{Course Name}
+\newcommand{\Title}{Template}
 \newcommand{\Group}{}
 \newcommand{\Uniquname}{pbb}
 \newcommand{\UMID}{5950 8197}
-\newcommand{\Instructor}{Vijay Gautam Subramanian}
+\newcommand{\Instructor}{Instructor's name}
 \newcommand{\DueDate}{\DTMdisplaydate{2021}{9}{27}{-1}}
 
 \begin{document}
@@ -20,11 +29,45 @@
 \newpage
 \setcounter{page}{1}
 %----------------------------------------------------------------------------------------------------------------------------------------------------
+\section*{Tikz graph}
+\begin{center}
+	\begin{tikzpicture}[thick, minimum size=8pt]
+		\node at (0, 0) [fuse, label=below:{$5$}]                       (5){};
+		\node           [fuse, below left=1cm of 5, label=left:{$1$}]   (1){};
+		\node           [fuse, below right=1cm of 5, label=right:{$2$}] (2){};
+		\node           [fuse, right=2cm of 5, label=right:{$3$}]       (3){};
+		\node           [fuse, left=2cm of 5, label=left:{$7$}]         (7){};
+		\node           [fuse, above left=1cm of 5, label=right:{$6$}]  (6){};
+		\node           [fuse, above right=1cm of 5, label=right:{$4$}] (4){};
 
+		\draw (5)--node[below]{1}(7)--(1)--(2)--(3)--(5)--(6)--(1);
+		\draw (5)--(4)--(2);
+	\end{tikzpicture}
+\end{center}
 
-\[
-	.
-\]
+\section*{Pseudo-Code}
+\begin{minipage}{\linewidth}
+	\begin{algorithm}[H]
+		\begin{algorithmic}[1]
+			\Function{Compute $\#C$ }{$l$}
+			\If{$l = 0$}
+			\State{\Return{$1$}}
+			\EndIf
+			\If{$l = 1$}
+			\State{\Return{$2$}}
+			\EndIf
+			\\
+			\State{$C[\ ] = \{0, 1\}$}
+			\For {$(i=3 \text{ to } l)$}
+			\State{$C[i] = C[i - 1] + C[i - 2]$}
+			\EndFor
+			\State{\Return{$C[l]$}}
+			\EndFunction
+		\end{algorithmic}
+	\end{algorithm}
+\end{minipage}
+
+\section*{Table}
 
 
 
