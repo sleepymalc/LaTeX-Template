@@ -49,17 +49,13 @@
 \begin{minipage}{\linewidth}
 	\begin{algorithm}[H]
 		\begin{algorithmic}[1]
-			\Function{Compute $\#C$ }{$l$}
-			\If{$l = 0$}
+			\Function{Function}{$input$}
+			\If{$input$}\Comment{this is an comment}
 			\State{\Return{$1$}}
 			\EndIf
-			\If{$l = 1$}
-			\State{\Return{$2$}}
-			\EndIf
 			\\
-			\State{$C[\ ] = \{0, 1\}$}
-			\For {$(i=3 \text{ to } l)$}
-			\State{$C[i] = C[i - 1] + C[i - 2]$}
+			\For {$i in input$}
+
 			\EndFor
 			\State{\Return{$C[l]$}}
 			\EndFunction
