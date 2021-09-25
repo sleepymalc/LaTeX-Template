@@ -29,41 +29,8 @@
 \newpage
 \setcounter{page}{1}
 %----------------------------------------------------------------------------------------------------------------------------------------------------
-\section*{Tikz graph}
-\begin{center}
-	\begin{tikzpicture}[thick, minimum size=8pt]
-		\node at (0, 0) [fuse, label=below:{$5$}]                       (5){};
-		\node           [fuse, below left=1cm of 5, label=left:{$1$}]   (1){};
-		\node           [fuse, below right=1cm of 5, label=right:{$2$}] (2){};
-		\node           [fuse, right=2cm of 5, label=right:{$3$}]       (3){};
-		\node           [fuse, left=2cm of 5, label=left:{$7$}]         (7){};
-		\node           [fuse, above left=1cm of 5, label=right:{$6$}]  (6){};
-		\node           [fuse, above right=1cm of 5, label=right:{$4$}] (4){};
+\section*{Formula}
 
-		\draw (5)--node[below]{1}(7)--(1)--(2)--(3)--(5)--(6)--(1);
-		\draw (5)--(4)--(2);
-	\end{tikzpicture}
-\end{center}
-
-\section*{Pseudo-Code}
-\begin{minipage}{\linewidth}
-	\begin{algorithm}[H]
-		\begin{algorithmic}[1]
-			\Function{Function}{$input$}
-			\If{$input$}\Comment{this is an comment}
-			\State{\Return{$1$}}
-			\EndIf
-			\\
-			\For {$i in input$}
-
-			\EndFor
-			\State{\Return{$C[l]$}}
-			\EndFunction
-		\end{algorithmic}
-	\end{algorithm}
-\end{minipage}
-
-\section*{Table}
 
 
 
