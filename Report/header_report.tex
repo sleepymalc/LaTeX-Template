@@ -41,8 +41,9 @@
 \definecolor{Turquoise3}{RGB}{0, 134, 139}
 
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\renewcommand{\qed}{\hfill$\blacksquare$}
 \renewcommand{\emph}[1]{{\color{Turquoise3}\textsl{#1}}}
-\newcommand{\myqed}{\hfill$\blacksquare$}
+
 \newcommand{\nullspacesmall}{~\\[2pt]}
 \newcommand{\nullspacemid}{~\\[8pt]}
 \newcommand{\nullspacebig}{~\\[12pt]}
@@ -55,6 +56,11 @@
 	\def\svgwidth{\columnwidth}
 	\import{./Figures/}{#1.pdf_tex}
 }
+
+% Add \contra symbol to denote contradiction
+\usepackage{stmaryrd} % for \lightning
+\newcommand\contra{\scalebox{1.5}{$\lightning$}}
+
 \algrenewcommand{\algorithmiccomment}[1]{\hskip 1em \texttt{// #1}}
 \algrenewcommand\algorithmicrequire{\textbf{Input:}}
 \algrenewcommand\algorithmicensure{\textbf{Output:}}
