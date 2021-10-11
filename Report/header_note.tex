@@ -30,9 +30,9 @@
 % Easily typeset systems of equations (French package)
 \usepackage{systeme}
 
-% Add \contra symbol to denote contradiction
+% Add \contd symbol to denote contradiction
 \usepackage{stmaryrd} % for \lightning
-\newcommand\contra{\scalebox{1.5}{$\lightning$}}
+\newcommand\contd{\scalebox{1.5}{$\lightning$}}
 
 % \let\phi\varphi
 
@@ -149,8 +149,8 @@
 
 \newcommand{\lec}[2]{%
 	\foreach \c in {#1,...,#2}{%
-			\IfFileExists{lec_\c.tex} {%
-				\input{lec_\c.tex}%
+			\IfFileExists{Lectures/lec_\c.tex} {%
+				\input{Lectures/lec_\c.tex}%
 			}{}%
 		}%
 }
