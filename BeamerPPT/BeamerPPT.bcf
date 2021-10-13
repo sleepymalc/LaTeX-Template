@@ -1130,7 +1130,6 @@
       <bcf:entrytype>unpublished</bcf:entrytype>
       <bcf:entrytype>video</bcf:entrytype>
       <bcf:entrytype skip_output="true">xdata</bcf:entrytype>
-      <bcf:entrytype>mlasource</bcf:entrytype>
     </bcf:entrytypes>
     <bcf:fields>
       <bcf:field fieldtype="field" datatype="integer">sortyear</bcf:field>
@@ -1335,24 +1334,6 @@
       <bcf:field fieldtype="field" format="xsv" datatype="option" skip_output="true">relatedoptions</bcf:field>
       <bcf:field fieldtype="field" datatype="range">pages</bcf:field>
       <bcf:field fieldtype="field" datatype="code">execute</bcf:field>
-      <bcf:field fieldtype="field" datatype="literal">supplemental</bcf:field>
-      <bcf:field fieldtype="field" datatype="literal">titletype</bcf:field>
-      <bcf:field fieldtype="field" datatype="literal">titlea</bcf:field>
-      <bcf:field fieldtype="field" datatype="literal">contributora</bcf:field>
-      <bcf:field fieldtype="field" datatype="literal">versiona</bcf:field>
-      <bcf:field fieldtype="field" datatype="literal">numbera</bcf:field>
-      <bcf:field fieldtype="field" datatype="literal">publishera</bcf:field>
-      <bcf:field fieldtype="field" datatype="literal">datea</bcf:field>
-      <bcf:field fieldtype="field" datatype="literal">locationa</bcf:field>
-      <bcf:field fieldtype="field" datatype="literal">supplementala</bcf:field>
-      <bcf:field fieldtype="field" datatype="literal">titleb</bcf:field>
-      <bcf:field fieldtype="field" datatype="literal">contributorb</bcf:field>
-      <bcf:field fieldtype="field" datatype="literal">versionb</bcf:field>
-      <bcf:field fieldtype="field" datatype="literal">numberb</bcf:field>
-      <bcf:field fieldtype="field" datatype="literal">publisherb</bcf:field>
-      <bcf:field fieldtype="field" datatype="literal">dateb</bcf:field>
-      <bcf:field fieldtype="field" datatype="literal">locationb</bcf:field>
-      <bcf:field fieldtype="field" datatype="literal">supplementalb </bcf:field>
     </bcf:fields>
     <bcf:entryfields>
       <bcf:field>abstract</bcf:field>
@@ -2115,30 +2096,6 @@
       <bcf:field>titleaddon</bcf:field>
       <bcf:field>type</bcf:field>
       <bcf:field>venue</bcf:field>
-    </bcf:entryfields>
-    <bcf:entryfields>
-      <bcf:entrytype>mlasource</bcf:entrytype>
-      <bcf:field>jkauthor</bcf:field>
-      <bcf:field>authortype</bcf:field>
-      <bcf:field>title</bcf:field>
-      <bcf:field>titletype</bcf:field>
-      <bcf:field>supplemental</bcf:field>
-      <bcf:field>titlea</bcf:field>
-      <bcf:field>contributora</bcf:field>
-      <bcf:field>versiona</bcf:field>
-      <bcf:field>numbera</bcf:field>
-      <bcf:field>publishera</bcf:field>
-      <bcf:field>datea</bcf:field>
-      <bcf:field>locationa</bcf:field>
-      <bcf:field>supplementala</bcf:field>
-      <bcf:field>titleb</bcf:field>
-      <bcf:field>contributorb</bcf:field>
-      <bcf:field>versionb</bcf:field>
-      <bcf:field>numberb</bcf:field>
-      <bcf:field>publisherb</bcf:field>
-      <bcf:field>dateb</bcf:field>
-      <bcf:field>locationb</bcf:field>
-      <bcf:field>supplementalb </bcf:field>
     </bcf:entryfields>
     <bcf:multiscriptfields>
       <bcf:field>abstract</bcf:field>
