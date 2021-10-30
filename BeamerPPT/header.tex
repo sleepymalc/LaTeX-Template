@@ -1,5 +1,4 @@
 \usepackage{amsmath}
-\usepackage{setspace}
 \usepackage{float}
 \usepackage{multido}
 \usepackage{multirow}
@@ -13,6 +12,8 @@
 \usepackage{subcaption}
 \usepackage{hyperref}
 \usepackage{textpos}
+% Math stuff
+\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb}
 
 \makeatletter
 \let\@@magyar@captionfix\relax
@@ -20,20 +21,16 @@
 
 \definecolor{Turquoise3}{RGB}{0, 134, 139}
 \renewcommand{\emph}[1]{{\color{Turquoise3}\textsl{#1}}}
-\newcommand{\C}{\mathbb{C}} \newcommand{\F}{\mathbb{F}} \newcommand{\R}{\mathbb{R}} \newcommand{\Q}{\mathbb{Q}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\myseries}[2]{$#1_1,#1_2,\dots,#1_#2$}
-\newcommand{\nullspace}{~\\[15pt]}
-\newcommand{\rot}{\text{\Large{\calligra{rot}}\,}}
-\newcommand{\Remark}{\textbf{Remark: }}
-\newcommand{\Question}{\textbf{Question: }}
-\newcommand{\Extension}{\textbf{Extension: }}
 \newcommand{\scp}[2]{\langle\,#1\,,\,#2\,\rangle} \newcommand{\scpp}{\langle\,\cdot\,,\,\cdot\,\rangle}
-\newcommand{\myqed}{\hfill$\blacksquare$}
 \newcommand{\nullspacesmall}{~\vspace{1em}}
 \newcommand{\nullspacemid}{~\vspace{4em}}
 \newcommand{\nullspacebig}{~\vspace{6em}}
 \newcommand{\at}[3]{\left.#1\right\vert_{#2}^{#3}}
+\renewcommand{\qed}{\hfill$\blacksquare$}
+
+% Add \contd symbol to denote contradiction
+\usepackage{stmaryrd} % for \lightning
+\newcommand\contd{\scalebox{1.5}{$\lightning$}}
 
 \usetheme{Madrid}
 \setbeamertemplate{navigation symbols}{}
