@@ -137,6 +137,12 @@
 	\import{./figures/}{#1.pdf_tex}
 }
 
+% useful macro for class
+\newcommand{\probability}[1]{\mathbb{\MakeUppercase{P}}\left( #1 \right)}
+\newcommand{\variance}[1]{\mathrm{Var}\left[ #1 \right]}
+\newcommand{\expectation}[1]{\mathbb{\MakeUppercase{E}}\left[ #1 \right]}
+\newcommand{\at}[3]{\left.#1\right\vert_{#2}^{#3}}
+
 % Fix some stuff
 % %http://tex.stackexchange.com/questions/76273/multiple-pdfs-with-page-group-included-in-a-single-page-warning
 \pdfsuppresswarningpagegroup=1
