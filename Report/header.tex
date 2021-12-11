@@ -11,7 +11,6 @@
 \usepackage{caption}
 \usepackage{array}
 \usepackage{pdfpages}
-\usepackage{bm}
 \usepackage{etoolbox}
 \usepackage{physics}
 \usepackage{siunitx}
@@ -28,6 +27,7 @@
 \usepackage{lastpage}
 \usepackage[hidelinks, urlcolor=blue]{hyperref}
 
+\usepackage{bbm}
 % draw the basic plot
 %\usepackage{pgfplots}
 %\pgfplotsset{compat=1.17}
@@ -57,6 +57,11 @@
 	\def\svgwidth{\columnwidth}
 	\import{./Figures/}{#1.pdf_tex}
 }
+
+% useful macro for class
+\newcommand{\probability}[1]{\mathbb{\MakeUppercase{P}}\left( #1 \right)}
+\newcommand{\variance}[1]{\mathrm{Var}\left[ #1 \right]}
+\newcommand{\expectation}[1]{\mathbb{\MakeUppercase{E}}\left[ #1 \right]}
 
 % Add \contra symbol to denote contradiction
 \usepackage{stmaryrd} % for \lightning
@@ -96,7 +101,12 @@
 				\begin{tabular}[t]{c}%
 					\@author \\
 					\normalsize{
-						Uniquname: \Uniquname \hspace{1em} umid: \UMID
+						\ifx\Uniquname\defined
+							Uniquname: \Uniquname
+						\fi \hspace{1em}
+						\ifx\UMID\defined
+							umid: \UMID
+						\fi
 					}
 				\end{tabular}\par}%
 		\vskip 1em%
@@ -119,15 +129,17 @@
 		}
 		\\\rule{15cm}{0.01cm}
 		\\\vspace{6cm}
-		\begin{Huge}
+		\begin{huge}
 			\sc{\Title}
-		\end{Huge}
+		\end{huge}
 	\end{center}
 	\vfill
 	\flushleft
-	\begin{center}
-		\large
-		\sc{\Group}
-		\mbox{}
-	\end{center}
+	\ifx\Group\defined
+		\begin{center}
+			\large
+			\sc{\Group}
+			\mbox{}
+		\end{center}
+	\fi
 }
