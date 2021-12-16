@@ -79,7 +79,9 @@
 \lhead{\small\Course\ifdef{\Instructor}{\ (\Instructor):}{}\ \Title} % Left header; output the instructor in brackets if one was set
 \chead{} % Centre header
 \rhead{}
+
 \rhead{\small\ifdef{\DueDate}{Due\ \DueDate}{}} % Right header; output the author name if one was set, otherwise the due date if that was set
+
 
 \lfoot{} % Left footer
 \cfoot{\small Page\ \thepage\ of\ \pageref{LastPage}} % Centre footer
@@ -101,12 +103,9 @@
 				\begin{tabular}[t]{c}%
 					\@author \\
 					\normalsize{
-						\ifx\Uniquname\defined
-							Uniquname: \Uniquname
-						\fi \hspace{1em}
-						\ifx\UMID\defined
-							umid: \UMID
-						\fi
+						\ifdef{\Uniquname}{Uniquname: \Uniquname}{}
+						\hspace{1em}
+						\ifdef{\UMID}{umid: \UMID}{}
 					}
 				\end{tabular}\par}%
 		\vskip 1em%
@@ -135,11 +134,11 @@
 	\end{center}
 	\vfill
 	\flushleft
-	\ifx\Group\defined
+	\ifdef{\Group}{
 		\begin{center}
 			\large
 			\sc{\Group}
 			\mbox{}
 		\end{center}
-	\fi
+	}{}
 }
