@@ -138,9 +138,9 @@
 }
 
 % useful macro for class
-\newcommand{\probability}[1]{\mathbb{\MakeUppercase{P}}\left( #1 \right)}
-\newcommand{\variance}[1]{\mathrm{Var}\left[ #1 \right]}
-\newcommand{\expectation}[1]{\mathbb{\MakeUppercase{E}}\left[ #1 \right]}
+\newcommand{\probability}[2]{\mathbb{\MakeUppercase{P}}_#1\left(#2\right)}
+\newcommand{\variance}[2]{\mathrm{Var}_#1\left[ #2 \right]}
+\newcommand{\expectation}[2]{\mathbb{\MakeUppercase{E}}_#1\left[#2\right]}
 \newcommand{\at}[3]{\left.#1\right\vert_{#2}^{#3}}
 
 % Fix some stuff
