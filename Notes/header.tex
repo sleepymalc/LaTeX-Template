@@ -2,12 +2,13 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
-\usepackage{url}
+\usepackage[hyphens]{url}
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{booktabs}
 \usepackage{enumitem}
 \usepackage[colorlinks=true,linkcolor=blue,urlcolor=red]{hyperref}
+\usepackage{tikz-cd}
 
 \pdfminorversion=7
 
@@ -74,7 +75,7 @@
 \newtheorem*{property}{Property}
 \newtheorem*{intuition}{Intuition}
 \newtheorem*{summary}{Summary}
-\newmdtheoremenv[nobreak=true]{prop}{Proposition}
+\newmdtheoremenv[nobreak=true]{proposition}{Proposition}
 \newmdtheoremenv[nobreak=true]{lemma}{Lemma}
 \newmdtheoremenv[nobreak=true]{theorem}{Theorem}
 \newmdtheoremenv[nobreak=true]{corollary}{Corollary}
@@ -144,7 +145,7 @@
 \newcommand{\variance}[2]{\mathrm{Var}_{#1} \left[ #2 \right]}
 \newcommand{\expectation}[2]{\mathbb{\MakeUppercase{E}}_{#1} \left[#2\right]}
 \newcommand{\at}[3]{\left.#1\right\vert_{#2}^{#3}}
-
+\newcommand{\identity}{\mathrm{id}}
 % Fix some stuff
 % %http://tex.stackexchange.com/questions/76273/multiple-pdfs-with-page-group-included-in-a-single-page-warning
 \pdfsuppresswarningpagegroup=1

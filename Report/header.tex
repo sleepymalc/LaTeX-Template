@@ -18,8 +18,6 @@
 \usepackage[natbib=true,style=numeric,sorting=none]{biblatex}
 \usepackage[T1]{fontenc}
 \usepackage{inconsolata}
-\usepackage[boxed]{algorithm}
-\usepackage[noend]{algpseudocode}
 \usepackage[nodayofweek]{datetime}
 \usepackage[useregional]{datetime2}
 \usepackage{import}
@@ -39,11 +37,12 @@
 \setlength{\headheight}{13.59999pt}
 \setlength{\parindent}{1em}
 \thispagestyle{empty}
-\definecolor{Turquoise3}{RGB}{0, 134, 139}
 
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 \renewcommand{\qed}{\hfill$\blacksquare$}
+
 \renewcommand{\emph}[1]{{\color{Turquoise3}\textsl{#1}}}
+\definecolor{Turquoise3}{RGB}{0, 134, 139}
 
 \newcommand{\nullspacesmall}{~\\[2pt]}
 \newcommand{\nullspacemid}{~\\[8pt]}
@@ -67,9 +66,10 @@
 \usepackage{stmaryrd} % for \lightning
 \newcommand\contra{\scalebox{1.5}{$\lightning$}}
 
-\algrenewcommand{\algorithmiccomment}[1]{\hskip 1em \texttt{// #1}}
-\algrenewcommand\algorithmicrequire{\textbf{Input:}}
-\algrenewcommand\algorithmicensure{\textbf{Output:}}
+% Algorithm Env
+\usepackage[linesnumbered,lined,ruled,commentsnumbered]{algorithm2e}
+\SetKwComment{Comment}{// }{}
+\SetArgSty{textsl}
 
 \pdfsuppresswarningpagegroup=1
 \usepackage{fancyhdr} % Required for customizing headers and footers
