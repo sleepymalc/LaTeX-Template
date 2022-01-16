@@ -14,7 +14,6 @@
 \usepackage{etoolbox}
 \usepackage{physics}
 \usepackage{siunitx}
-\usepackage{listings}
 \usepackage[natbib=true,style=numeric,sorting=none]{biblatex}
 \usepackage[T1]{fontenc}
 \usepackage{inconsolata}
@@ -23,7 +22,9 @@
 \usepackage{import}
 \usepackage{transparent}
 \usepackage{lastpage}
-\usepackage[hidelinks, urlcolor=blue]{hyperref}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=red]{hyperref}
+\usepackage{tikz-cd}
+\input{~/Developer/Template/Academic/Math.tex}
 
 \usepackage{bbm}
 % draw the basic plot
@@ -44,23 +45,14 @@
 \renewcommand{\emph}[1]{{\color{Turquoise3}\textsl{#1}}}
 \definecolor{Turquoise3}{RGB}{0, 134, 139}
 
-\newcommand{\nullspacesmall}{~\\[2pt]}
-\newcommand{\nullspacemid}{~\\[8pt]}
-\newcommand{\nullspacebig}{~\\[12pt]}
-\newcommand{\at}[3]{\left.#1\right\vert_{#2}^{#3}}
-\newcommand{\sinc}{\mathop{\mathrm{sinc}}}
-\newcommand{\rect}{\mathop{\mathrm{rect}}}
-\newcommand{\tri}{\mathop{\mathrm{tri}}}
-\newcommand{\Real}{\mathop{\mathrm{Re}}}
 \newcommand{\incfig}[1]{%
 	\def\svgwidth{\columnwidth}
 	\import{./Figures/}{#1.pdf_tex}
 }
 
-% useful macro for class
-\newcommand{\probability}[2]{\mathbb{\MakeUppercase{P}}_#1\left(#2\right)}
-\newcommand{\variance}[2]{\mathrm{Var}_#1\left[ #2 \right]}
-\newcommand{\expectation}[2]{\mathbb{\MakeUppercase{E}}_#1\left[#2\right]}
+% TodoNotes and inline notes in fancy boxes
+\usepackage{todonotes}
+\usepackage{tcolorbox}
 
 % Add \contra symbol to denote contradiction
 \usepackage{stmaryrd} % for \lightning
@@ -142,3 +134,4 @@
 		\end{center}
 	}{}
 }
+

@@ -1,4 +1,7 @@
 % Some basic packages
+\include{~/Developer/Template/Academic/Math.tex}
+% Math stuff
+\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
@@ -6,9 +9,11 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{booktabs}
-\usepackage{enumitem}
+\usepackage[inline]{enumitem}
 \usepackage[colorlinks=true,linkcolor=blue,urlcolor=red]{hyperref}
+\usepackage{cleveref}
 \usepackage{tikz-cd}
+\input{~/Developer/Template/Academic/Math.tex}
 
 \pdfminorversion=7
 
@@ -24,8 +29,7 @@
 \usepackage{multicol}
 \usepackage{xcolor}
 
-% Math stuff
-\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb}
+
 % Fancy script capitals
 \usepackage{mathrsfs}
 \usepackage{cancel}
@@ -75,10 +79,13 @@
 \newtheorem*{property}{Property}
 \newtheorem*{intuition}{Intuition}
 \newtheorem*{summary}{Summary}
-\newmdtheoremenv[nobreak=true]{proposition}{Proposition}
-\newmdtheoremenv[nobreak=true]{lemma}{Lemma}
 \newmdtheoremenv[nobreak=true]{theorem}{Theorem}
+\newmdtheoremenv[nobreak=true]{lemma}{Lemma}
+\providecommand*\lemmaautorefname{Lemma}
 \newmdtheoremenv[nobreak=true]{corollary}{Corollary}
+\providecommand*\corollaryautorefname{Corollary}
+\newmdtheoremenv[nobreak=true]{proposition}{Proposition}
+\providecommand*\propositionautorefname{Proposition}
 
 % Fix some spacing
 % http://tex.stackexchange.com/questions/22119/how-can-i-change-the-spacing-before-theorems-with-amsthm
@@ -140,12 +147,8 @@
 	\import{./figures/}{#1.pdf_tex}
 }
 
-% useful macro for class
-\newcommand{\probability}[2]{\mathbb{\MakeUppercase{P}}_{#1} \left(#2\right)}
-\newcommand{\variance}[2]{\mathrm{Var}_{#1} \left[ #2 \right]}
-\newcommand{\expectation}[2]{\mathbb{\MakeUppercase{E}}_{#1} \left[#2\right]}
-\newcommand{\at}[3]{\left.#1\right\vert_{#2}^{#3}}
-\newcommand{\identity}{\mathrm{id}}
+
+
 % Fix some stuff
 % %http://tex.stackexchange.com/questions/76273/multiple-pdfs-with-page-group-included-in-a-single-page-warning
 \pdfsuppresswarningpagegroup=1
@@ -164,3 +167,15 @@
 			}{}%
 		}%
 }
+
+% useful macro for class
+\newcommand{\probability}[2]{\mathbb{\MakeUppercase{P}}_{#1} \left(#2\right)}
+\newcommand{\variance}[2]{\mathrm{Var}_{#1} \left[ #2 \right]}
+\newcommand{\expectation}[2]{\mathbb{\MakeUppercase{E}}_{#1} \left[#2\right]}
+\newcommand{\at}[3]{\left.#1\right\vert_{#2}^{#3}}
+\newcommand{\quotient}[2]{^{#1}\Big/_{#2}}
+\newcommand{\identity}{\mathrm{id}}
+\newcommand{\sinc}{\mathop{\mathrm{sinc}}}
+\newcommand{\rect}{\mathop{\mathrm{rect}}}
+\newcommand{\tri}{\mathop{\mathrm{tri}}}
+\newcommand{\Real}{\mathop{\mathrm{Re}}}
