@@ -1,5 +1,4 @@
 % Some basic packages
-\include{~/Developer/Template/Academic/Math.tex}
 % Math stuff
 \usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb}
 \usepackage[utf8]{inputenc}
@@ -67,6 +66,7 @@
 \mdfsetup{skipabove=1em,skipbelow=0em}
 \theoremstyle{definition}
 \newmdtheoremenv[nobreak=true]{definition}{Definition}
+\providecommand*\definitionautorefname{Definition}
 \newtheorem*{eg}{Example}
 \newtheorem*{notation}{Notation}
 \newtheorem*{prev}{As previously seen}
@@ -80,6 +80,7 @@
 \newtheorem*{intuition}{Intuition}
 \newtheorem*{summary}{Summary}
 \newmdtheoremenv[nobreak=true]{theorem}{Theorem}
+\providecommand*\theoremautorefname{Theorem}
 \newmdtheoremenv[nobreak=true]{lemma}{Lemma}
 \providecommand*\lemmaautorefname{Lemma}
 \newmdtheoremenv[nobreak=true]{corollary}{Corollary}
@@ -123,7 +124,6 @@
 
 \fancyhead[RO,LE]{\@lecture} % Right odd,  Left even
 \fancyhead[RE,LO]{}          % Right even, Left odd
-
 \fancyfoot[RO,LE]{\thepage}  % Right odd,  Left even
 \fancyfoot[RE,LO]{}          % Right even, Left odd
 \fancyfoot[C]{\leftmark}     % Center
@@ -147,8 +147,6 @@
 	\import{./figures/}{#1.pdf_tex}
 }
 
-
-
 % Fix some stuff
 % %http://tex.stackexchange.com/questions/76273/multiple-pdfs-with-page-group-included-in-a-single-page-warning
 \pdfsuppresswarningpagegroup=1
@@ -167,15 +165,3 @@
 			}{}%
 		}%
 }
-
-% useful macro for class
-\newcommand{\probability}[2]{\mathbb{\MakeUppercase{P}}_{#1} \left(#2\right)}
-\newcommand{\variance}[2]{\mathrm{Var}_{#1} \left[ #2 \right]}
-\newcommand{\expectation}[2]{\mathbb{\MakeUppercase{E}}_{#1} \left[#2\right]}
-\newcommand{\at}[3]{\left.#1\right\vert_{#2}^{#3}}
-\newcommand{\quotient}[2]{^{#1}\Big/_{#2}}
-\newcommand{\identity}{\mathrm{id}}
-\newcommand{\sinc}{\mathop{\mathrm{sinc}}}
-\newcommand{\rect}{\mathop{\mathrm{rect}}}
-\newcommand{\tri}{\mathop{\mathrm{tri}}}
-\newcommand{\Real}{\mathop{\mathrm{Re}}}

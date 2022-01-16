@@ -3,7 +3,21 @@
 \newcommand{\variance}[2]{\mathrm{Var}_{#1} \left[ #2 \right]}
 \newcommand{\expectation}[2]{\mathbb{\MakeUppercase{E}}_{#1} \left[#2\right]}
 \newcommand{\at}[3]{\left.#1\right\vert_{#2}^{#3}}
-\newcommand{\quotient}[2]{^{#1}\Big/_{#2}}
+\newcommand\quotient[2]{
+	\mathchoice
+	{% \displaystyle
+		\text{\raise1ex\hbox{$#1$}\Big/\lower1ex\hbox{$#2$}}%
+	}
+	{% \textstyle
+		#1\,/\,#2
+	}
+	{% \scriptstyle
+		#1\,/\,#2
+	}
+	{% \scriptscriptstyle  
+		#1\,/\,#2
+	}
+}
 \newcommand{\identity}{\mathrm{id}}
 \newcommand{\sinc}{\mathop{\mathrm{sinc}}}
 \newcommand{\rect}{\mathop{\mathrm{rect}}}
