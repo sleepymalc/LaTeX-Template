@@ -65,7 +65,7 @@
 \usepackage{mdframed}
 \mdfsetup{skipabove=1em,skipbelow=0em}
 \theoremstyle{definition}
-\newmdtheoremenv[nobreak=true]{definition}{Definition}
+\newmdtheoremenv[nobreak=true]{definition}{Definition}[section]
 \providecommand*\definitionautorefname{Definition}
 \newtheorem*{eg}{Example}
 \newtheorem*{notation}{Notation}
@@ -79,14 +79,25 @@
 \newtheorem*{property}{Property}
 \newtheorem*{intuition}{Intuition}
 \newtheorem*{summary}{Summary}
-\newmdtheoremenv[nobreak=true]{theorem}{Theorem}
+\newmdtheoremenv[nobreak=true]{theorem}{Theorem}[section]
 \providecommand*\theoremautorefname{Theorem}
-\newmdtheoremenv[nobreak=true]{lemma}{Lemma}
+\newmdtheoremenv[nobreak=true]{lemma}{Lemma}[section]
 \providecommand*\lemmaautorefname{Lemma}
-\newmdtheoremenv[nobreak=true]{corollary}{Corollary}
+\newmdtheoremenv[nobreak=true]{corollary}{Corollary}[section]
 \providecommand*\corollaryautorefname{Corollary}
-\newmdtheoremenv[nobreak=true]{proposition}{Proposition}
+\newmdtheoremenv[nobreak=true]{proposition}{Proposition}[section]
 \providecommand*\propositionautorefname{Proposition}
+
+\makeatletter
+\def\th@plain{%
+	\thm@notefont{}% same as heading font
+	\itshape % body font
+}
+\def\th@definition{%
+	\thm@notefont{}% same as heading font
+	\normalfont % body font
+}
+\makeatother
 
 % Fix some spacing
 % http://tex.stackexchange.com/questions/22119/how-can-i-change-the-spacing-before-theorems-with-amsthm
