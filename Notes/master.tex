@@ -1,11 +1,32 @@
 \documentclass[a4paper]{article}
-\input{~/Template/Academic/Notes/header.tex}
+\input{~/Developer/Template/Academic/Notes/header.tex}
+\thispagestyle{empty}
+\addbibresource{ref.bib}
 
 \author{Pingbang Hu}
 \title{Note Template}
 
 \begin{document}
+
 \maketitle
+
+\begin{abstract}
+	This is a note template, with all but minimal compilable files provided. Feel free to adjust for your usage.
+\end{abstract}
+
 \tableofcontents
+
 \lec{1}{1}
+
+\newpage
+%─────Appendix────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+\appendix
+\appendixpage
+
+\input{appendix.tex}
+
+\newpage
+%─────Reference──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+\printbibliography
+
 \end{document}

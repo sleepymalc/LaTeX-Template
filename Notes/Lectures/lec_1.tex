@@ -1,8 +1,69 @@
 \lecture{1}{13 Oct. 08:00}{First Lecture}
 \section{A Template for you to take note}
-For detail information, please see \url{https://github.com/sleepymalc/VSCode-LaTeX-Inkscape}.
+This is a simple demo for you to take fancy notes in \LaTeX!
 
-You can do some fancy stuff in \LaTeX!
-\[
-	E = mc^2.
-\]
+\subsection{Useful Environment}
+We now see some common environment you'll need to complete your note.
+
+\begin{lemma}[useful lemma]\label{lemma}
+	Given the axioms, we have
+	\[
+		0\neq 1.
+	\]
+\end{lemma}
+
+\begin{proposition}[useful proposition]\label{prop}
+	From \autoref{lemma}, we have
+	\[
+		0<1.
+	\]
+\end{proposition}
+
+\begin{theorem}[Mass-energy equivalence]\label{theorem}
+	Given \autoref{prop}, we then have
+	\[
+		E = mc^2.
+	\]
+\end{theorem}
+\begin{proof}
+	The blank left for me is too small,\footnote{\url{https://en.wikipedia.org/wiki/Richard_Feynman}} hence we put the proof in \autoref{appendix}.
+\end{proof}
+
+\begin{corollary}[Riemann hypothesis]\label{collary}
+	From \autoref{theorem}, we then have the following.
+
+	\par The real part of every nontrivial zero of the Riemann zeta function is \(\frac{1}{2}\), where the
+	Riemann zeta function is just
+	\[
+		\zeta (s)=\sum _{n=1}^{\infty }{\frac {1}{n^{s}}}={\frac {1}{1^{s}}}+{\frac {1}{2^{s}}}+{\frac {1}{3^{s}}}+\cdots.
+	\]
+\end{corollary}
+\begin{proof}
+	The proof should be trivial, we left it to you.\todo{DIY (Do It Yourself)}
+\end{proof}
+\begin{prev}
+	We see that \autoref{lemma} is really helpful in the proof!
+\end{prev}
+\begin{remark}
+	This leads to lots of useful theorem!
+\end{remark}
+\begin{note}
+	I hope you learn something while proving this!
+\end{note}
+\begin{eg}
+	Here are some applications of \autoref{collary}, see the link.\footnote{\url{https://math.stackexchange.com/questions/404624/what-does-proving-the-riemann-hypothesis-accomplish}}
+\end{eg}
+
+\subsubsection{Internal Link}
+You should see all the common usages of internal links. Additionally, we can use citations as \cite{newton1726philosophiae}, which just link
+to the reference page!
+
+\subsection{Figures}
+A simple demo for drawing:
+\begin{figure}[H]
+	\centering
+	\incfig{test}
+	\caption[Caption]{Random Drawing.\footnotemark}
+	\label{fig:test}
+\end{figure}
+\footnotetext{For detailed information, please see \url{https://github.com/sleepymalc/VSCode-LaTeX-Inkscape}.}
