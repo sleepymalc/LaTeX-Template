@@ -1,5 +1,6 @@
 \usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb}
 \usepackage{geometry}
+\usepackage{float}
 \usepackage{mathrsfs}
 \usepackage{booktabs}
 \usepackage{mathtools}
@@ -120,6 +121,26 @@
 \apptocmd{\appendix}{\toggletrue{inappendix}}{}{\errmessage{failed to patch}}
 \apptocmd{\subappendices}{\toggletrue{inappendix}}{}{\errmessage{failed to patch}}
 % end appendix autoref patch
+
+% Environments
+\makeatother
+% For box around Definition, Theorem, etc.
+\usepackage{mdframed}
+\mdfsetup{skipabove=1em,skipbelow=0em}
+\theoremstyle{definition}
+\newmdtheoremenv[nobreak=true]{definition}{Definition}[section]
+\providecommand*\definitionautorefname{Definition}
+\newmdtheoremenv[nobreak=true]{theorem}{Theorem}[section]
+\providecommand*\theoremautorefname{Theorem}
+\newmdtheoremenv[nobreak=true]{lemma}{Lemma}[section]
+\providecommand*\lemmaautorefname{Lemma}
+\newmdtheoremenv[nobreak=true]{corollary}{Corollary}[section]
+\providecommand*\corollaryautorefname{Corollary}
+\newmdtheoremenv[nobreak=true]{proposition}{Proposition}[section]
+\providecommand*\propositionautorefname{Proposition}
+
+\makeatletter
+
 
 \renewcommand\headrulewidth{0.5pt}
 
