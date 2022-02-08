@@ -52,6 +52,13 @@
 	\import{./Figures/}{#1.pdf_tex}
 }
 
+\newcommand\blfootnote[1]{%
+	\begingroup
+	\renewcommand\thefootnote{}\footnote{#1}%
+	\addtocounter{footnote}{-1}%
+	\endgroup
+}
+
 % TodoNotes and inline notes in fancy boxes
 \usepackage{todonotes}
 \usepackage{tcolorbox}
