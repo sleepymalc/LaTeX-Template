@@ -1,14 +1,6 @@
 \documentclass[12pt]{article}
-\input{~/Template/Academic/Report/header.tex}%here should be your directory of header_report.tex, feel free to change to yours.
-
-\usepackage{tikz}
-\usetikzlibrary{spy}
-\usetikzlibrary{arrows,positioning}
-\tikzstyle{fuse} = [shape=circle,inner sep=8pt,draw,thick]
-
-\algrenewcommand{\algorithmiccomment}[1]{\hskip 1em \texttt{// #1}}
-\algrenewcommand\algorithmicrequire{\textbf{Input:}}
-\algrenewcommand\algorithmicensure{\textbf{Output:}}
+\input{~/Developer/Template/Academic/Report/header.tex}
+\input{~/Developer/Template/Academic/ListStyle.tex}
 
 \author{Pingbang Hu}
 \newcommand{\Instuition}{University of Michigan}
@@ -29,7 +21,24 @@
 \newpage
 \setcounter{page}{1}
 %----------------------------------------------------------------------------------------------------------------------------------------------------
-\section*{Formula}
+\section*{Test}
+This is a quiver test!
+% file:///Users/pbb/Developer/quiver/src/index.html?q=WzAsMyxbMCwyLCJYIl0sWzIsMiwiWSJdLFsyLDAsIlxcd2lkZXRpbGRle1l9Il0sWzIsMSwicCJdLFswLDEsImYiLDJdLFswLDIsIlxcd2lkZXRpbGRle2Z9XzIiLDIseyJjdXJ2ZSI6MX1dLFswLDIsIlxcd2lkZXRpbGRle2Z9XzEiLDAseyJjdXJ2ZSI6LTF9XV0=
+\[\begin{tikzcd}
+		&& {\widetilde{Y}} \\
+		\\
+		X && Y
+		\arrow["p", from=1-3, to=3-3]
+		\arrow["f"', from=3-1, to=3-3]
+		\arrow["{\widetilde{f}_2}"', curve={height=6pt}, from=3-1, to=1-3]
+		\arrow["{\widetilde{f}_1}", curve={height=-6pt}, from=3-1, to=1-3]
+	\end{tikzcd}\]
+
+
+
+
+
+
 
 
 
