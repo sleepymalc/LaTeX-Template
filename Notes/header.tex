@@ -40,7 +40,7 @@
 
 % Add \conta symbol to denote contradiction
 \usepackage{stmaryrd} % for \lightning
-\newcommand\conta{\scalebox{1.5}{$\lightning$}}
+\newcommand\conta{\scalebox{1.5}{\(\lightning\)}}
 
 % \let\phi\varphi
 
@@ -165,7 +165,7 @@
 % %http://tex.stackexchange.com/questions/76273/multiple-pdfs-with-page-group-included-in-a-single-page-warning
 \pdfsuppresswarningpagegroup=1
 
-\renewcommand{\qed}{\hfill$\blacksquare$}
+\renewcommand{\qed}{\hfill\(\blacksquare\)}
 
 
 
@@ -220,4 +220,4 @@
 \apptocmd{\subappendices}{\toggletrue{inappendix}}{}{\errmessage{failed to patch}}
 % end appendix autoref patch
 
-\setcounter{tocdepth}{2}
+\setcounter{tocdepth}{1}

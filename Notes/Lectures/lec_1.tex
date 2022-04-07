@@ -1,25 +1,33 @@
+\chapter{Introduction}
 \lecture{1}{13 Oct. 08:00}{First Lecture}
 \section{A Template for you to take note}
 This is a simple demo for you to take fancy notes in \LaTeX!
 
-\subsection{Useful Environment}
+\section{Useful Environment}
 We now see some common environment you'll need to complete your note.
 
-\begin{lemma}[useful lemma]\label{lemma}
-	Given the axioms, we have
+\begin{definition}[Natural number]\label{def}
+	We denote the set of \emph{natural numbers} as \(\mathbb{\MakeUppercase{n}} \).
+\end{definition}
+
+
+\begin{lemma}[Useful lemma]\label{lma}
+	Given the axioms of \hyperref[def]{natural numbers \(\mathbb{\MakeUppercase{n}} \)}, we have
 	\[
 		0\neq 1.
 	\]
 \end{lemma}
-
+\begin{proof}[An obvious proof]
+	Obvious.
+\end{proof}
 \begin{proposition}[useful proposition]\label{prop}
-	From \autoref{lemma}, we have
+	From \autoref{lma}, we have
 	\[
 		0<1.
 	\]
 \end{proposition}
 
-\begin{theorem}[Mass-energy equivalence]\label{theorem}
+\begin{theorem}[Mass-energy equivalence]\label{thm}
 	Given \autoref{prop}, we then have
 	\[
 		E = mc^2.
@@ -29,8 +37,8 @@ We now see some common environment you'll need to complete your note.
 	The blank left for me is too small,\footnote{\url{https://en.wikipedia.org/wiki/Richard_Feynman}} hence we put the proof in \autoref{appendix}.
 \end{proof}
 
-\begin{corollary}[Riemann hypothesis]\label{collary}
-	From \autoref{theorem}, we then have the following.
+\begin{corollary}[Riemann hypothesis]\label{col}
+	From \autoref{thm}, we then have the following.
 
 	\par The real part of every nontrivial zero of the Riemann zeta function is \(\frac{1}{2}\), where the
 	Riemann zeta function is just
@@ -42,7 +50,7 @@ We now see some common environment you'll need to complete your note.
 	The proof should be trivial, we left it to you.\todo{DIY (Do It Yourself)}
 \end{proof}
 \begin{prev}
-	We see that \autoref{lemma} is really helpful in the proof!
+	We see that \autoref{lma} is really helpful in the proof!
 \end{prev}
 \begin{remark}
 	This leads to lots of useful theorem!
@@ -51,14 +59,14 @@ We now see some common environment you'll need to complete your note.
 	I hope you learn something while proving this!
 \end{note}
 \begin{eg}
-	Here are some applications of \autoref{collary}, see the link.\footnote{\url{https://math.stackexchange.com/questions/404624/what-does-proving-the-riemann-hypothesis-accomplish}}
+	Here are some applications of \autoref{col}, see the link.\footnote{\url{https://math.stackexchange.com/questions/404624/what-does-proving-the-riemann-hypothesis-accomplish}}
 \end{eg}
 
 \subsubsection{Internal Link}
 You should see all the common usages of internal links. Additionally, we can use citations as \cite{newton1726philosophiae}, which just link
 to the reference page!
 
-\subsection{Figures}
+\section{Figures}
 A simple demo for drawing:
 \begin{figure}[H]
 	\centering
