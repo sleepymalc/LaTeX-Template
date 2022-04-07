@@ -1,0 +1,223 @@
+% Some basic packages
+% Math stuff
+\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[hyphens]{url}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage[inline]{enumitem}
+\usepackage[style=alphabetic,maxcitenames=1]{biblatex}
+\usepackage[colorlinks=true,linkcolor=cyan,urlcolor=magenta,citecolor=violet]{hyperref}
+\usepackage{cleveref}
+\usepackage{physics}
+\input{~/Developer/Template/Academic/Math.tex}
+
+\pdfminorversion=7
+
+% Don't indent paragraphs, leave some space between them
+\usepackage{parskip}
+
+% for the big braces
+\usepackage{bigdelim}
+
+% Hide page number when page is empty
+\usepackage{emptypage}
+\usepackage{subcaption}
+\usepackage{multicol}
+\usepackage{xcolor}
+
+
+% Fancy script capitals
+\usepackage{mathrsfs}
+\usepackage{cancel}
+
+% Bold math
+\usepackage{bm}
+\usepackage{bbm}
+
+% Add \conta symbol to denote contradiction
+\usepackage{stmaryrd} % for \lightning
+\newcommand\conta{\scalebox{1.5}{\(\lightning\)}}
+
+% \let\phi\varphi
+
+% Command for short corrections
+% Usage: 1+1=\correct{3}{2}
+
+\definecolor{correct}{HTML}{009900}
+\newcommand\correct[2]{\ensuremath{\:}{\color{red}{#1}}\ensuremath{\to }{\color{correct}{#2}}\ensuremath{\:}}
+\newcommand\green[1]{{\color{correct}{#1}}}
+
+% horizontal rule
+\newcommand\hr{
+	\noindent\rule[0.5ex]{\linewidth}{0.5pt}
+}
+
+% hide parts
+\newcommand\hide[1]{}
+
+% si unix
+\usepackage{siunitx}
+
+% Environments
+\makeatother
+% For box around Definition, Theorem, etc.
+\usepackage{mdframed}
+\mdfsetup{skipabove=1em,skipbelow=0em}
+\theoremstyle{definition}
+\newmdtheoremenv[nobreak=true]{definition}{Definition}[section]
+\providecommand*\definitionautorefname{Definition}
+\newtheorem*{eg}{Example}
+\newtheorem*{notation}{Notation}
+\newtheorem*{prev}{As previously seen}
+\newtheorem*{remark}{Remark}
+\newtheorem*{note}{Note}
+\newtheorem*{problem}{Problem}
+\newtheorem*{exercise}{Exercise}
+\newtheorem*{answer}{Answer}
+\newtheorem*{observe}{Observe}
+\newtheorem*{property}{Property}
+\newtheorem*{intuition}{Intuition}
+\newtheorem*{summary}{Summary}
+\newmdtheoremenv[nobreak=true]{theorem}{Theorem}[section]
+\providecommand*\theoremautorefname{Theorem}
+\newmdtheoremenv[nobreak=true]{lemma}{Lemma}[section]
+\providecommand*\lemmaautorefname{Lemma}
+\newmdtheoremenv[nobreak=true]{corollary}{Corollary}[section]
+\providecommand*\corollaryautorefname{Corollary}
+\newmdtheoremenv[nobreak=true]{proposition}{Proposition}[section]
+\providecommand*\propositionautorefname{Proposition}
+
+\makeatletter
+\def\th@plain{%
+	\thm@notefont{}% same as heading font
+	\itshape % body font
+}
+\def\th@definition{%
+	\thm@notefont{}% same as heading font
+	\normalfont % body font
+}
+\makeatother
+
+% Fix some spacing
+% http://tex.stackexchange.com/questions/22119/how-can-i-change-the-spacing-before-theorems-with-amsthm
+\makeatletter
+\def\thm@space@setup{%
+	\thm@preskip=\parskip \thm@postskip=0pt
+}
+
+\usepackage{xifthen}
+\def\testdateparts#1{\dateparts#1\relax}
+\def\dateparts#1 #2 #3 #4 #5\relax{
+	\marginpar{\small\textsf{\mbox{#1 #2 #3 #5}}}
+}
+
+\def\@lecture{}%
+\newcommand{\lecture}[3]{
+	\ifthenelse{\isempty{#3}}{%
+		\def\@lecture{Lecture #1}%
+	}{%
+		\def\@lecture{Lecture #1: #3}%
+	}%
+	\subsection*{\@lecture}
+	\marginpar{\small\textsf{\mbox{#2}}}
+}
+
+% These are the fancy headers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+% LE: left even
+% RO: right odd
+% CE, CO: center even, center odd
+% My name for when I print my lecture notes to use for an open book exam.
+% \fancyhead[LE,RO]{Gilles Castel}
+
+\fancyhead[RO,LE]{\@lecture} % Right odd,  Left even
+\fancyhead[RE,LO]{}          % Right even, Left odd
+\fancyfoot[RO,LE]{\thepage}  % Right odd,  Left even
+\fancyfoot[RE,LO]{}          % Right even, Left odd
+\fancyfoot[C]{\leftmark}     % Center
+
+\makeatother
+
+% TodoNotes and inline notes in fancy boxes
+\usepackage[color=pink]{todonotes}
+\usepackage{tcolorbox}
+
+% Make boxes breakable
+\tcbuselibrary{breakable}
+
+% Figure support as explained in my blog post.
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+
+% Fix some stuff
+% %http://tex.stackexchange.com/questions/76273/multiple-pdfs-with-page-group-included-in-a-single-page-warning
+\pdfsuppresswarningpagegroup=1
+
+\renewcommand{\qed}{\hfill\(\blacksquare\)}
+
+
+
+\usepackage{pgffor}%
+
+\newcommand{\lec}[2]{%
+	\foreach \c in {#1,...,#2}{%
+			\IfFileExists{Lectures/lec_\c.tex} {%
+				\input{Lectures/lec_\c.tex}%
+			}{}%
+		}%
+}
+
+% Appendix environment
+\usepackage{appendix}
+\def\sectionautorefname{Section}
+\def\subsectionautorefname{Section}
+\def\appendixautorefname{Appendix}
+\renewcommand\appendixname{Appendix}
+\renewcommand\appendixtocname{Appendix}
+\renewcommand\appendixpagename{Appendix}
+% begin appendix autoref patch [\autoref subsections in appendix](https://tex.stackexchange.com/questions/149807/autoref-subsections-in-appendix)
+\makeatletter
+\patchcmd{\hyper@makecurrent}{%
+	\ifx\Hy@param\Hy@chapterstring
+		\let\Hy@param\Hy@chapapp
+	\fi
+}{%
+	\iftoggle{inappendix}{%true-branch
+		% list the names of all sectioning counters here
+		\@checkappendixparam{chapter}%
+		\@checkappendixparam{section}%
+		\@checkappendixparam{subsection}%
+		\@checkappendixparam{subsubsection}%
+		\@checkappendixparam{paragraph}%
+		\@checkappendixparam{subparagraph}%
+	}{}%
+}{}{\errmessage{failed to patch}}
+
+\newcommand*{\@checkappendixparam}[1]{%
+	\def\@checkappendixparamtmp{#1}%
+	\ifx\Hy@param\@checkappendixparamtmp
+		\let\Hy@param\Hy@appendixstring
+	\fi
+}
+\makeatletter
+
+\newtoggle{inappendix}
+\togglefalse{inappendix}
+
+\apptocmd{\appendix}{\toggletrue{inappendix}}{}{\errmessage{failed to patch}}
+\apptocmd{\subappendices}{\toggletrue{inappendix}}{}{\errmessage{failed to patch}}
+% end appendix autoref patch
+
+\setcounter{tocdepth}{1}

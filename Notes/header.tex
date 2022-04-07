@@ -1,115 +1,221 @@
-% Some basic packages
-% Math stuff
-\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb}
+% basics
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
 \usepackage[hyphens]{url}
+\usepackage[style=alphabetic,maxcitenames=1]{biblatex}
+\usepackage[colorlinks=true,linkcolor=cyan,urlcolor=magenta,citecolor=violet]{hyperref}
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{booktabs}
-\usepackage[inline]{enumitem}
-\usepackage[style=alphabetic,maxcitenames=1]{biblatex}
-\usepackage[colorlinks=true,linkcolor=cyan,urlcolor=magenta,citecolor=violet]{hyperref}
-\usepackage{cleveref}
+\usepackage{enumitem}
+\usepackage{emptypage}
+\usepackage{subcaption}
+\usepackage{multicol}
+\usepackage[usenames,dvipsnames]{xcolor}
 \usepackage{physics}
 \input{~/Developer/Template/Academic/Math.tex}
 
-\pdfminorversion=7
 
-% Don't indent paragraphs, leave some space between them
-\usepackage{parskip}
+\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb}
+\usepackage{geometry}
+\usepackage{mathrsfs}
+\usepackage{cancel}
+\usepackage{bm}
+\usepackage{bbm}
+\usepackage{systeme}
+\let\implies\Rightarrow
+\let\impliedby\Leftarrow
+\let\iff\Leftrightarrow
+\usepackage{stmaryrd} % for \lightning
+\newcommand\conta{\scalebox{1.1}{\(\lightning\)}}
+
+\geometry{a4paper,left=2.54cm,right=2.54cm,top=2.54cm,bottom=2.54cm}
+
 
 % for the big braces
 \usepackage{bigdelim}
 
-% Hide page number when page is empty
-\usepackage{emptypage}
-\usepackage{subcaption}
-\usepackage{multicol}
-\usepackage{xcolor}
 
-
-% Fancy script capitals
-\usepackage{mathrsfs}
-\usepackage{cancel}
-
-% Bold math
-\usepackage{bm}
-\usepackage{bbm}
-
-% Add \conta symbol to denote contradiction
-\usepackage{stmaryrd} % for \lightning
-\newcommand\conta{\scalebox{1.5}{\(\lightning\)}}
-
-% \let\phi\varphi
-
-% Command for short corrections
-% Usage: 1+1=\correct{3}{2}
-
+% correct
 \definecolor{correct}{HTML}{009900}
 \newcommand\correct[2]{\ensuremath{\:}{\color{red}{#1}}\ensuremath{\to }{\color{correct}{#2}}\ensuremath{\:}}
 \newcommand\green[1]{{\color{correct}{#1}}}
+
+
 
 % horizontal rule
 \newcommand\hr{
 	\noindent\rule[0.5ex]{\linewidth}{0.5pt}
 }
 
+
 % hide parts
 \newcommand\hide[1]{}
 
-% si unix
-\usepackage{siunitx}
 
-% Environments
+
+% si unitx
+\usepackage{siunitx}
+\sisetup{locale = FR}
+% \renewcommand\vec[1]{\mathbf{#1}}
+\newcommand\mat[1]{\mathbf{#1}}
+
+
+% tikz
+\usepackage{tikz}
+\usetikzlibrary{intersections, angles, quotes, positioning}
+\usetikzlibrary{arrows.meta}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.13}
+
+
+\tikzset{
+	force/.style={thick, {Circle[length=2pt]}-stealth, shorten <=-1pt}
+}
+
+% theorems
 \makeatother
-% For box around Definition, Theorem, etc.
-\usepackage{mdframed}
+\usepackage{thmtools}
+\usepackage[framemethod=TikZ]{mdframed}
+
 \mdfsetup{skipabove=1em,skipbelow=0em}
+
 \theoremstyle{definition}
-\newmdtheoremenv[nobreak=true]{definition}{Definition}[section]
-\providecommand*\definitionautorefname{Definition}
-\newtheorem*{eg}{Example}
+
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{ForestGreen!70!black}, bodyfont=\normalfont,
+	mdframed={
+			linewidth=2pt,
+			rightline=false, topline=false, bottomline=false,
+			linecolor=ForestGreen, backgroundcolor=ForestGreen!5,
+		},
+]{thmgreenbox}
+
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{NavyBlue!70!black}, bodyfont=\normalfont,
+	mdframed={
+			linewidth=2pt,
+			rightline=false, topline=false, bottomline=false,
+			linecolor=NavyBlue, backgroundcolor=NavyBlue!5,
+		}
+]{thmbluebox}
+
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{NavyBlue!70!black}, bodyfont=\normalfont,
+	mdframed={
+			linewidth=2pt,
+			rightline=false, topline=false, bottomline=false,
+			linecolor=NavyBlue
+		}
+]{thmblueline}
+
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{RawSienna!70!black}, bodyfont=\normalfont,
+	mdframed={
+			linewidth=2pt,
+			rightline=false, topline=false, bottomline=false,
+			linecolor=RawSienna, backgroundcolor=RawSienna!5,
+		}
+]{thmredbox}
+
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{WildStrawberry!70!black}, bodyfont=\normalfont,
+	numbered=no,
+	mdframed={
+			linewidth=2pt,
+			rightline=false, topline=false, bottomline=false,
+			linecolor=WildStrawberry, backgroundcolor=WildStrawberry!5,
+		},
+]{thmpinkbox}
+
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{RawSienna!70!black}, bodyfont=\normalfont,
+	numbered=no,
+	mdframed={
+			linewidth=2pt,
+			rightline=false, topline=false, bottomline=false,
+			linecolor=RawSienna, backgroundcolor=RawSienna!1,
+		},
+	qed=\qedsymbol
+]{thmproofbox}
+
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{NavyBlue!70!black}, bodyfont=\normalfont,
+	numbered=no,
+	mdframed={
+			linewidth=2pt,
+			rightline=false, topline=false, bottomline=false,
+			linecolor=NavyBlue, backgroundcolor=NavyBlue!1,
+		},
+	qed=\(\diamond\)
+]{thmexplanationbox}
+
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{WildStrawberry!70!black}, bodyfont=\normalfont,
+	numbered=no,
+	mdframed={
+			linewidth=2pt,
+			rightline=false, topline=false, bottomline=false,
+			linecolor=WildStrawberry, backgroundcolor=WildStrawberry!1,
+		},
+	qed=$\diamond$
+]{thmanswerbox}
+
+\declaretheorem[style=thmgreenbox, name=Definition, numberwithin=section]{definition}
+\declaretheorem[style=thmredbox, name=Theorem, numberwithin=section]{theorem}
+\declaretheorem[style=thmredbox, name=Lemma, numberwithin=section]{lemma}
+\declaretheorem[style=thmredbox, name=Proposition, numberwithin=section]{proposition}
+\declaretheorem[style=thmredbox, name=Corollary, numberwithin=section]{corollary}
+\declaretheorem[style=thmredbox, name=Claim, numbered=no]{claim}
+
+% Redefine proof environment to get a full control. 
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par
+	\pushQED{\qed}%
+	\normalfont \topsep-10\p@\@plus6\p@\relax
+	\trivlist
+	\item[\hskip\labelsep
+	            \color{RawSienna!70!black}\sffamily\bfseries
+	            #1\@addpunct{.}]\ignorespaces
+	\begin{mdframed}[linewidth=2pt,rightline=false, topline=false, bottomline=false,linecolor=RawSienna, backgroundcolor=RawSienna!1]
+		}{%
+		\popQED\endtrivlist\@endpefalse
+	\end{mdframed}
+}
+\makeatother
+
+\declaretheorem[style=thmbluebox, numbered=no, name=Example]{eg}
+\declaretheorem[style=thmexplanationbox, name=Proof]{tmpexplanation}
+\newenvironment{explanation}[1][]{\vspace{-10pt}\begin{tmpexplanation}}{\end{tmpexplanation}}
+
+\declaretheorem[style=thmblueline, numbered=no, name=Remark]{remark}
+\declaretheorem[style=thmblueline, numbered=no, name=Note]{note}
+\declaretheorem[style=thmpinkbox, numbered=no, name=Exercise]{exercise}
+\declaretheorem[style=thmpinkbox, numbered=no, name=Problem]{problem}
+\declaretheorem[style=thmanswerbox, numbered=no, name=Answer]{tmpanswer}
+\newenvironment{answer}[1][]{\vspace{-10pt}\begin{tmpanswer}}{\end{tmpanswer}}
+
 \newtheorem*{notation}{Notation}
 \newtheorem*{prev}{As previously seen}
-\newtheorem*{remark}{Remark}
-\newtheorem*{note}{Note}
-\newtheorem*{problem}{Problem}
-\newtheorem*{exercise}{Exercise}
-\newtheorem*{answer}{Answer}
-\newtheorem*{observe}{Observe}
-\newtheorem*{property}{Property}
-\newtheorem*{intuition}{Intuition}
-\newtheorem*{summary}{Summary}
-\newmdtheoremenv[nobreak=true]{theorem}{Theorem}[section]
-\providecommand*\theoremautorefname{Theorem}
-\newmdtheoremenv[nobreak=true]{lemma}{Lemma}[section]
-\providecommand*\lemmaautorefname{Lemma}
-\newmdtheoremenv[nobreak=true]{corollary}{Corollary}[section]
-\providecommand*\corollaryautorefname{Corollary}
-\newmdtheoremenv[nobreak=true]{proposition}{Proposition}[section]
-\providecommand*\propositionautorefname{Proposition}
+
+
+\usepackage{etoolbox}
+\renewcommand{\qed}{\null\hfill\(\blacksquare\)}
 
 \makeatletter
-\def\th@plain{%
-	\thm@notefont{}% same as heading font
-	\itshape % body font
-}
-\def\th@definition{%
-	\thm@notefont{}% same as heading font
-	\normalfont % body font
-}
-\makeatother
 
-% Fix some spacing
-% http://tex.stackexchange.com/questions/22119/how-can-i-change-the-spacing-before-theorems-with-amsthm
-\makeatletter
-\def\thm@space@setup{%
-	\thm@preskip=\parskip \thm@postskip=0pt
-}
-
+% figure support
+\usepackage{import}
 \usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./Figures/}{#1.pdf_tex}
+}
+
 \def\testdateparts#1{\dateparts#1\relax}
 \def\dateparts#1 #2 #3 #4 #5\relax{
 	\marginpar{\small\textsf{\mbox{#1 #2 #3 #5}}}
@@ -125,16 +231,23 @@
 	\subsection*{\@lecture}
 	\marginpar{\small\textsf{\mbox{#2}}}
 }
+\usepackage{pgffor}%
+\newcommand{\lec}[2]{%
+	\foreach \c in {#1,...,#2}{%
+			\IfFileExists{Lectures/lec_\c.tex} {%
+				\input{Lectures/lec_\c.tex}%
+			}{}%
+		}%
+}
 
-% These are the fancy headers
+% fancy headers
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 
 % LE: left even
 % RO: right odd
 % CE, CO: center even, center odd
-% My name for when I print my lecture notes to use for an open book exam.
-% \fancyhead[LE,RO]{Gilles Castel}
+\fancyhead[LE,RO]{Pingbang Hu}
 
 \fancyhead[RO,LE]{\@lecture} % Right odd,  Left even
 \fancyhead[RE,LO]{}          % Right even, Left odd
@@ -144,40 +257,40 @@
 
 \makeatother
 
-% TodoNotes and inline notes in fancy boxes
+
+
+
+% notes
 \usepackage[color=pink]{todonotes}
+\usepackage{marginnote}
+\let\marginpar\marginnote
 \usepackage{tcolorbox}
 
-% Make boxes breakable
 \tcbuselibrary{breakable}
+\newenvironment{verbetering}{\begin{tcolorbox}[
+			arc=0mm,
+			colback=white,
+			colframe=green!60!black,
+			title=Opmerking,
+			fonttitle=\sffamily,
+			breakable
+		]}{\end{tcolorbox}}
 
-% Figure support as explained in my blog post.
-\usepackage{import}
-\usepackage{xifthen}
-\usepackage{pdfpages}
-\usepackage{transparent}
-\newcommand{\incfig}[1]{%
-	\def\svgwidth{\columnwidth}
-	\import{./figures/}{#1.pdf_tex}
-}
+\newenvironment{noot}[1]{\begin{tcolorbox}[
+			arc=0mm,
+			colback=white,
+			colframe=white!60!black,
+			title=#1,
+			fonttitle=\sffamily,
+			breakable
+		]}{\end{tcolorbox}}
+
+
+
 
 % Fix some stuff
 % %http://tex.stackexchange.com/questions/76273/multiple-pdfs-with-page-group-included-in-a-single-page-warning
 \pdfsuppresswarningpagegroup=1
-
-\renewcommand{\qed}{\hfill\(\blacksquare\)}
-
-
-
-\usepackage{pgffor}%
-
-\newcommand{\lec}[2]{%
-	\foreach \c in {#1,...,#2}{%
-			\IfFileExists{Lectures/lec_\c.tex} {%
-				\input{Lectures/lec_\c.tex}%
-			}{}%
-		}%
-}
 
 % Appendix environment
 \usepackage{appendix}
