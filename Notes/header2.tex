@@ -163,8 +163,22 @@
 \declaretheorem[style=thmredbox, name=Lemma, numberwithin=section]{lemma}
 \declaretheorem[style=thmredbox, name=Proposition, numberwithin=section]{proposition}
 \declaretheorem[style=thmredbox, name=Corollary, numberwithin=section]{corollary}
-\declaretheorem[style=thmproofbox, name=Proof]{replacementproof}
-\renewenvironment{proof}[1][\proofname]{\vspace{-10pt}\begin{replacementproof}}{\end{replacementproof}}
+
+% Redefine proof environment to get a full control. 
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par
+	\pushQED{\qed}%
+	\normalfont \topsep-10\p@\@plus6\p@\relax
+	\trivlist
+	\item[\hskip\labelsep
+	            \color{RawSienna!70!black}\sffamily\bfseries
+	            #1\@addpunct{.}]\ignorespaces
+	\begin{mdframed}[linewidth=2pt,rightline=false, topline=false, bottomline=false,linecolor=RawSienna, backgroundcolor=RawSienna!1]
+		}{%
+		\popQED\endtrivlist\@endpefalse
+	\end{mdframed}
+}
+\makeatother
 
 \declaretheorem[style=thmbluebox, numbered=no, name=Example]{eg}
 \declaretheorem[style=thmexplanationbox, name=Proof]{tmpexplanation}
