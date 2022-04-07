@@ -50,12 +50,14 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.33333333)%
+  \begin{picture}(1,0.14583333)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{test.pdf}}%
-    \put(0.59347757,0.31859417){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(\mathbb{R}^2\)\end{tabular}}}}%
+    \put(0.41898896,0.00030187){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(c\)\end{tabular}}}}%
+    \put(0.51960424,0.02277743){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(b\)\end{tabular}}}}%
+    \put(0.52392693,0.09193961){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(a\)\end{tabular}}}}%
+    \put(0.45898924,0.08628686){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\(S\)\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{test.pdf}}%
-    \put(0.59217688,0.03573157){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Star embedding in \(\mathbb{R}^2\)\end{tabular}}}}%
   \end{picture}%
 \endgroup%

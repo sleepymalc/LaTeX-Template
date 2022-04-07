@@ -1,8 +1,5 @@
 \chapter{Introduction}
 \lecture{1}{13 Oct. 08:00}{First Lecture}
-\section{A Template for you to take note}
-This is a simple demo for you to take fancy notes in \LaTeX!
-
 \section{Useful Environment}
 We now see some common environment you'll need to complete your note.
 
@@ -26,6 +23,25 @@ We now see some common environment you'll need to complete your note.
 		0<1.
 	\]
 \end{proposition}
+\begin{exercise}
+	Prove that \(1 < 2\).
+\end{exercise}
+\begin{answer}
+	We note the following.
+	\begin{note}
+		We have \autoref{prop}! We can use it iteratively!
+	\end{note}
+	With the help of \autoref{lma}, this holds trivially.
+\end{answer}
+\begin{eg}
+	We now can have \(a < b\) for \(a < b\)!
+\end{eg}
+\begin{explanation}
+	Iteratively apply the exercise we did above.
+\end{explanation}
+\begin{remark}
+	We see that \autoref{prop} is really powerful. We now give an immediate application of it.
+\end{remark}
 
 \begin{theorem}[Mass-energy equivalence]\label{thm}
 	Given \autoref{prop}, we then have
@@ -47,20 +63,11 @@ We now see some common environment you'll need to complete your note.
 	\]
 \end{corollary}
 \begin{proof}
-	The proof should be trivial, we left it to you.\todo{DIY (Do It Yourself)}
+	The proof should be trivial, we left it to you.\todo{DIY}
 \end{proof}
 \begin{prev}
 	We see that \autoref{lma} is really helpful in the proof!
 \end{prev}
-\begin{remark}
-	This leads to lots of useful theorem!
-\end{remark}
-\begin{note}
-	I hope you learn something while proving this!
-\end{note}
-\begin{eg}
-	Here are some applications of \autoref{col}, see the link.\footnote{\url{https://math.stackexchange.com/questions/404624/what-does-proving-the-riemann-hypothesis-accomplish}}
-\end{eg}
 
 \subsubsection{Internal Link}
 You should see all the common usages of internal links. Additionally, we can use citations as \cite{newton1726philosophiae}, which just link
@@ -71,7 +78,39 @@ A simple demo for drawing:
 \begin{figure}[H]
 	\centering
 	\incfig{test}
-	\caption[Caption]{Random Drawing.\footnotemark}
+	\caption[Caption]{A \(3\)-torus.\footnotemark}
 	\label{fig:test}
 \end{figure}
 \footnotetext{For detailed information, please see \url{https://github.com/sleepymalc/VSCode-LaTeX-Inkscape}.}
+
+\section{Commutative Diagram}
+We can use the package \texttt{tikz-cd} to draw some commutative diagram.
+\begin{eg}
+	The cellular homology agrees with singular homology.
+\end{eg}
+\begin{explanation}
+	The following commutative diagram shows everything.
+	\par
+	\adjustbox{scale=0.85,center}{%
+		\begin{tikzcd}[column sep=tiny]
+			&&&& {\color{red}0} \\
+			& {\color{red}0} && {\color{red}H_n(X^{n+1})\cong H_n(X)} \\
+			&& {\color{red}H_n(X^n)} \\
+			\ldots & {\color{red}H_{n+1}(X^{n+1}, X^n)} && {\color{red}H_n(X^n, X^{n-1})} && {H_{n-1}(X^{n-1}, X^{n-2})} & \ldots \\
+			&&&& {\color{red}H_{n-1}(X^{n-1})} \\
+			&&& 0
+			\arrow[color={rgb,255:red,214;green,92;blue,92}, from=2-2, to=3-3]
+			\arrow["{\partial_{n+1}}", color={rgb,255:red,214;green,92;blue,92}, from=4-2, to=3-3]
+			\arrow[color={rgb,255:red,214;green,92;blue,92}, from=2-4, to=1-5]
+			\arrow[color={rgb,255:red,214;green,92;blue,92}, from=3-3, to=2-4]
+			\arrow[from=4-6, to=4-7]
+			\arrow["{d_n}"', from=4-4, to=4-6]
+			\arrow["{\partial_n}"', color={rgb,255:red,214;green,92;blue,92}, from=4-4, to=5-5]
+			\arrow["{j_{n-1}}"', from=5-5, to=4-6]
+			\arrow[from=6-4, to=5-5]
+			\arrow["{d_{n+1}}", from=4-2, to=4-4]
+			\arrow["{j_n}", color={rgb,255:red,214;green,92;blue,92}, from=3-3, to=4-4]
+			\arrow[from=4-1, to=4-2]
+		\end{tikzcd}
+	}
+\end{explanation}
