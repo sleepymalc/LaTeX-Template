@@ -93,6 +93,15 @@
 ]{thmgreenbox}
 
 \declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{ForestGreen!70!black}, bodyfont=\normalfont,
+	mdframed={
+			linewidth=2pt,
+			rightline=false, topline=false, bottomline=false,
+			linecolor=ForestGreen, backgroundcolor=ForestGreen!8,
+		},
+]{thmgreen2box}
+
+\declaretheoremstyle[
 	headfont=\bfseries\sffamily\color{NavyBlue!70!black}, bodyfont=\normalfont,
 	mdframed={
 			linewidth=2pt,
@@ -130,15 +139,24 @@
 ]{thmpinkbox}
 
 \declaretheoremstyle[
-	headfont=\bfseries\sffamily\color{RawSienna!70!black}, bodyfont=\normalfont,
-	numbered=no,
+	headfont=\bfseries\sffamily\color{MidnightBlue!70!black}, bodyfont=\normalfont,
 	mdframed={
 			linewidth=2pt,
 			rightline=false, topline=false, bottomline=false,
-			linecolor=RawSienna, backgroundcolor=RawSienna!1,
-		},
-	qed=\qedsymbol
-]{thmproofbox}
+			linecolor=MidnightBlue, backgroundcolor=MidnightBlue!5,
+		}
+]{thmblue2box}
+
+% \declaretheoremstyle[
+% 	headfont=\bfseries\sffamily\color{RawSienna!70!black}, bodyfont=\normalfont,
+% 	numbered=no,
+% 	mdframed={
+% 			linewidth=2pt,
+% 			rightline=false, topline=false, bottomline=false,
+% 			linecolor=RawSienna, backgroundcolor=RawSienna!1,
+% 		},
+% 	qed=\qedsymbol
+% ]{thmproofbox}
 
 \declaretheoremstyle[
 	headfont=\bfseries\sffamily\color{NavyBlue!70!black}, bodyfont=\normalfont,
@@ -147,8 +165,7 @@
 			linewidth=2pt,
 			rightline=false, topline=false, bottomline=false,
 			linecolor=NavyBlue, backgroundcolor=NavyBlue!1,
-		},
-	qed=\(\diamond\)
+		}
 ]{thmexplanationbox}
 
 \declaretheoremstyle[
@@ -158,16 +175,16 @@
 			linewidth=2pt,
 			rightline=false, topline=false, bottomline=false,
 			linecolor=WildStrawberry, backgroundcolor=WildStrawberry!1,
-		},
-	qed=$\diamond$
+		}
 ]{thmanswerbox}
 
 \declaretheorem[style=thmgreenbox, name=Definition, numberwithin=section]{definition}
+\declaretheorem[style=thmgreen2box, name=Definition, numbered=no]{definition*}
 \declaretheorem[style=thmredbox, name=Theorem, numberwithin=section]{theorem}
 \declaretheorem[style=thmredbox, name=Lemma, numberwithin=section]{lemma}
 \declaretheorem[style=thmredbox, name=Proposition, numberwithin=section]{proposition}
 \declaretheorem[style=thmredbox, name=Corollary, numberwithin=section]{corollary}
-\declaretheorem[style=thmredbox, name=Claim, numbered=no]{claim}
+\declaretheorem[style=thmblue2box, name=Claim, numbered=no]{claim}
 
 % Redefine proof environment to get a full control. 
 \makeatletter
@@ -186,15 +203,15 @@
 \makeatother
 
 \declaretheorem[style=thmbluebox, numbered=no, name=Example]{eg}
-\declaretheorem[style=thmexplanationbox, name=Proof]{tmpexplanation}
-\newenvironment{explanation}[1][]{\vspace{-10pt}\begin{tmpexplanation}}{\end{tmpexplanation}}
+\declaretheorem[style=thmexplanationbox, numbered=no, name=Proof]{tmpexplanation}
+\newenvironment{explanation}[1][]{\vspace{-10pt}\pushQED{\(\circledast\)}\begin{tmpexplanation}}{\null\hfill\popQED\end{tmpexplanation}}
 
 \declaretheorem[style=thmblueline, numbered=no, name=Remark]{remark}
 \declaretheorem[style=thmblueline, numbered=no, name=Note]{note}
 \declaretheorem[style=thmpinkbox, numbered=no, name=Exercise]{exercise}
 \declaretheorem[style=thmpinkbox, numbered=no, name=Problem]{problem}
 \declaretheorem[style=thmanswerbox, numbered=no, name=Answer]{tmpanswer}
-\newenvironment{answer}[1][]{\vspace{-10pt}\begin{tmpanswer}}{\end{tmpanswer}}
+\newenvironment{answer}[1][]{\vspace{-10pt}\pushQED{\(\circledast\)}\begin{tmpanswer}}{\null\hfill\popQED\end{tmpanswer}}
 
 \newtheorem*{notation}{Notation}
 \newtheorem*{prev}{As previously seen}
