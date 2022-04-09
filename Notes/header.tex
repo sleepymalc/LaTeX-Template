@@ -8,7 +8,7 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{booktabs}
-\usepackage{enumitem}
+\usepackage[inline]{enumitem}
 \usepackage{emptypage}
 \usepackage{subcaption}
 \usepackage{multicol}
@@ -21,14 +21,8 @@
 \usepackage{geometry}
 \usepackage{mathrsfs}
 \usepackage{cancel}
-\usepackage{bm}
-\usepackage{bbm}
 \usepackage{systeme}
-\let\implies\Rightarrow
-\let\impliedby\Leftarrow
-\let\iff\Leftrightarrow
-\usepackage{stmaryrd} % for \lightning
-\newcommand\conta{\scalebox{1.1}{\(\lightning\)}}
+
 
 \geometry{a4paper,left=2.54cm,right=2.54cm,top=2.54cm,bottom=2.54cm}
 
@@ -221,17 +215,6 @@
 \renewcommand{\qed}{\null\hfill\(\blacksquare\)}
 
 \makeatletter
-
-% figure support
-\usepackage{import}
-\usepackage{xifthen}
-\pdfminorversion=7
-\usepackage{pdfpages}
-\usepackage{transparent}
-\newcommand{\incfig}[1]{%
-	\def\svgwidth{\columnwidth}
-	\import{./Figures/}{#1.pdf_tex}
-}
 
 \def\testdateparts#1{\dateparts#1\relax}
 \def\dateparts#1 #2 #3 #4 #5\relax{

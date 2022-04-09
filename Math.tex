@@ -53,3 +53,26 @@
 
 \DeclareMathOperator{\im}{Im}
 \DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Int}{Int}
+
+\let\implies\Rightarrow
+\let\impliedby\Leftarrow
+\let\iff\Leftrightarrow
+
+\usepackage{stmaryrd} % for \lightning
+\newcommand\conta{\scalebox{1.1}{\(\lightning\)}}
+
+\usepackage{bm}
+\usepackage{bbm}
+
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./Figures/}{#1.pdf_tex}
+}

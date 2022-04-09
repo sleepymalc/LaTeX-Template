@@ -9,10 +9,8 @@
 \usepackage{indentfirst}
 \usepackage{xcolor}
 \usepackage{color}
-\usepackage{bm}
 \usepackage{caption}
 \usepackage{array}
-\usepackage{pdfpages}
 \usepackage{etoolbox}
 \usepackage{physics}
 \usepackage{siunitx}
@@ -21,16 +19,10 @@
 \usepackage{inconsolata}
 \usepackage[nodayofweek]{datetime}
 \usepackage[british]{datetime2}
-\usepackage{import}
-\usepackage{transparent}
 \usepackage{lastpage}
 \usepackage[colorlinks=true,linkcolor=blue,urlcolor=red]{hyperref}
 \input{~/Developer/Template/Academic/Math.tex}
 
-\usepackage{bbm}
-% draw the basic plot
-%\usepackage{pgfplots}
-%\pgfplotsset{compat=1.17}
 
 % when you need multi-row in tabular
 \usepackage{multirow}
@@ -41,15 +33,10 @@
 \thispagestyle{empty}
 
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
-\renewcommand{\qed}{\hfill$\blacksquare$}
+\renewcommand{\qed}{\hfill\(\blacksquare\)}
 
 \renewcommand{\emph}[1]{{\color{Turquoise3}\textsl{#1}}}
 \definecolor{Turquoise3}{RGB}{0, 134, 139}
-
-\newcommand{\incfig}[1]{%
-	\def\svgwidth{\columnwidth}
-	\import{./Figures/}{#1.pdf_tex}
-}
 
 \newcommand\blfootnote[1]{%
 	\begingroup
@@ -58,13 +45,14 @@
 	\endgroup
 }
 
+% horizontal rule
+\newcommand\hr{
+	\noindent\rule[0.5ex]{\linewidth}{0.5pt}
+}
+
 % TodoNotes and inline notes in fancy boxes
 \usepackage{todonotes}
 \usepackage{tcolorbox}
-
-% Add \conta symbol to denote contradiction
-\usepackage{stmaryrd} % for \lightning
-\newcommand\conta{\scalebox{1.5}{$\lightning$}}
 
 % Algorithm Env
 \usepackage[linesnumbered,lined,vlined,ruled,commentsnumbered]{algorithm2e}
@@ -146,7 +134,6 @@
 \providecommand*\propositionautorefname{Proposition}
 
 \makeatletter
-
 
 \renewcommand\headrulewidth{0.5pt}
 
