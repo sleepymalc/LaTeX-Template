@@ -1,0 +1,15 @@
+[0] Config.pm:307> INFO - This is Biber 2.17
+[0] Config.pm:310> INFO - Logfile is 'master.blg'
+[56] biber-darwin:340> INFO - === Tue Apr 12, 2022, 02:56:33
+[69] Biber.pm:418> INFO - Reading 'master.bcf'
+[141] Biber.pm:972> INFO - Found 1 citekeys in bib section 0
+[153] Biber.pm:4383> INFO - Processing section 0
+[162] Biber.pm:4574> INFO - Looking for bibtex file 'ref.bib' for section 0
+[163] bibtex.pm:1713> INFO - LaTeX decoding ...
+[165] bibtex.pm:1518> INFO - Found BibTeX data source 'ref.bib'
+[193] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[193] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[193] Biber.pm:4203> INFO - Sorting list 'anyt/global//global/global' of type 'entry' with template 'anyt' and locale 'en-US'
+[193] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
+[198] bbl.pm:654> INFO - Writing 'master.bbl' with encoding 'UTF-8'
+[198] bbl.pm:757> INFO - Output to master.bbl

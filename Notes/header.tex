@@ -8,7 +8,7 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{booktabs}
-\usepackage[inline]{enumitem}
+\usepackage[inline, shortlabels]{enumitem}
 \usepackage{emptypage}
 \usepackage{subcaption}
 \usepackage{multicol}
@@ -83,6 +83,7 @@
 			linewidth=2pt,
 			rightline=false, topline=false, bottomline=false,
 			linecolor=ForestGreen, backgroundcolor=ForestGreen!5,
+			nobreak=false
 		},
 ]{thmgreenbox}
 
@@ -92,6 +93,7 @@
 			linewidth=2pt,
 			rightline=false, topline=false, bottomline=false,
 			linecolor=ForestGreen, backgroundcolor=ForestGreen!8,
+			nobreak=false
 		},
 ]{thmgreen2box}
 
@@ -101,6 +103,7 @@
 			linewidth=2pt,
 			rightline=false, topline=false, bottomline=false,
 			linecolor=NavyBlue, backgroundcolor=NavyBlue!5,
+			nobreak=false
 		}
 ]{thmbluebox}
 
@@ -109,7 +112,8 @@
 	mdframed={
 			linewidth=2pt,
 			rightline=false, topline=false, bottomline=false,
-			linecolor=TealBlue
+			linecolor=TealBlue,
+			nobreak=false
 		}
 ]{thmblueline}
 
@@ -119,8 +123,19 @@
 			linewidth=2pt,
 			rightline=false, topline=false, bottomline=false,
 			linecolor=RawSienna, backgroundcolor=RawSienna!5,
+			nobreak=false
 		}
 ]{thmredbox}
+
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{RawSienna!70!black}, bodyfont=\normalfont,
+	mdframed={
+			linewidth=2pt,
+			rightline=false, topline=false, bottomline=false,
+			linecolor=RawSienna, backgroundcolor=RawSienna!2,
+			nobreak=false
+		}
+]{thmred2box}
 
 \declaretheoremstyle[
 	headfont=\bfseries\sffamily\color{WildStrawberry!70!black}, bodyfont=\normalfont,
@@ -129,6 +144,7 @@
 			linewidth=2pt,
 			rightline=false, topline=false, bottomline=false,
 			linecolor=WildStrawberry, backgroundcolor=WildStrawberry!5,
+			nobreak=false
 		},
 ]{thmpinkbox}
 
@@ -138,6 +154,7 @@
 			linewidth=2pt,
 			rightline=false, topline=false, bottomline=false,
 			linecolor=MidnightBlue, backgroundcolor=MidnightBlue!5,
+			nobreak=false
 		}
 ]{thmblue2box}
 
@@ -159,6 +176,7 @@
 			linewidth=2pt,
 			rightline=false, topline=false, bottomline=false,
 			linecolor=NavyBlue, backgroundcolor=NavyBlue!1,
+			nobreak=false
 		}
 ]{thmexplanationbox}
 
@@ -169,12 +187,14 @@
 			linewidth=2pt,
 			rightline=false, topline=false, bottomline=false,
 			linecolor=WildStrawberry, backgroundcolor=WildStrawberry!1,
+			nobreak=false
 		}
 ]{thmanswerbox}
 
 \declaretheorem[style=thmgreenbox, name=Definition, numberwithin=section]{definition}
 \declaretheorem[style=thmgreen2box, name=Definition, numbered=no]{definition*}
 \declaretheorem[style=thmredbox, name=Theorem, numberwithin=section]{theorem}
+\declaretheorem[style=thmred2box, name=Theorem, numbered=no]{theorem*}
 \declaretheorem[style=thmredbox, name=Lemma, numberwithin=section]{lemma}
 \declaretheorem[style=thmredbox, name=Proposition, numberwithin=section]{proposition}
 \declaretheorem[style=thmredbox, name=Corollary, numberwithin=section]{corollary}
@@ -184,7 +204,7 @@
 \makeatletter
 \renewenvironment{proof}[1][\proofname]{\par
 	\pushQED{\qed}%
-	\normalfont \topsep-10\p@\@plus6\p@\relax
+	\normalfont \topsep-2\p@\@plus6\p@\relax
 	\trivlist
 	\item[\hskip\labelsep
 	            \color{RawSienna!70!black}\sffamily\bfseries
@@ -264,29 +284,6 @@
 \usepackage[color=pink]{todonotes}
 \usepackage{marginnote}
 \let\marginpar\marginnote
-\usepackage{tcolorbox}
-
-\tcbuselibrary{breakable}
-\newenvironment{verbetering}{\begin{tcolorbox}[
-			arc=0mm,
-			colback=white,
-			colframe=green!60!black,
-			title=Opmerking,
-			fonttitle=\sffamily,
-			breakable
-		]}{\end{tcolorbox}}
-
-\newenvironment{noot}[1]{\begin{tcolorbox}[
-			arc=0mm,
-			colback=white,
-			colframe=white!60!black,
-			title=#1,
-			fonttitle=\sffamily,
-			breakable
-		]}{\end{tcolorbox}}
-
-
-
 
 % Fix some stuff
 % %http://tex.stackexchange.com/questions/76273/multiple-pdfs-with-page-group-included-in-a-single-page-warning

@@ -165,20 +165,92 @@ by modify the header in an obvious way.\footnote{This time I mean it!}
 
 \section{Known Bugs}
 Nothing is bugs-free. There are some known bugs which I don't have incentive to solve, or it is hard to solve whatsoever. Let me list some of them.
-\begin{enumerate}
-	\item \texttt{footnote} environment. It's easy to let you fall into a situation that you want to keep using \texttt{footnote} to add a bunch of
-	      unrelated stuffs. However, with our environment there is a known strange behavior, which is following.
-	      \begin{eg}
-		      Footnote!\footnote{This is a footnote!}
-		      \begin{remark}
-			      Oops! footnote somehow shows up earlier than expect!\footnote{This is another footnote!}
-		      \end{remark}
+\subsection{Footnote Environment}
+It's easy to let you fall into a situation that you want to keep using \texttt{footnote} to add a bunch of
+unrelated stuffs. However, with our environment there is a known strange behavior, which is following.
+\begin{eg}
+	Footnote!\footnote{This is a footnote!}
+	\begin{remark}
+		Oops! footnote somehow shows up earlier than expect!\footnote{This is another footnote!}
+	\end{remark}
 
-		      Bugs caught!\footnote{The final footnote which is ok!}
-	      \end{eg}
-	      As we saw, the footnote in the \texttt{Example} environment should show at the bottom of its own box, but it's caught by \texttt{Remark} which
-	      causes the unwanted behavior. Unfortunately, I haven't found a nice way to solve this. A potential way to solve this is by using \texttt{footnotemark}
-	      with \texttt{footnotetext} placing at the bottom of the environment, but this is tedious and needs lots of manual tweaking.
+	Bugs caught!\footnote{The final footnote which is ok!}
+\end{eg}
+As we saw, the footnote in the \texttt{Example} environment should show at the bottom of its own box, but it's caught by \texttt{Remark} which
+causes the unwanted behavior. Unfortunately, I haven't found a nice way to solve this. A potential way to solve this is by using \texttt{footnotemark}
+with \texttt{footnotetext} placing at the bottom of the environment, but this is tedious and needs lots of manual tweaking.
 
-	      Furthermore, not sure whether you notice it or not, but the color box of \texttt{Remark} is not quite right! Another trick bug...
-\end{enumerate}
+Furthermore, not sure whether you notice it or not, but the color box of \texttt{Remark} is not quite right! Another trick bug...
+
+\subsection{Mdframe Environment}
+Though \texttt{mdframe} package is nice and is the key theme throughout this template, but it has some kind of weird behavior. Let's see the demo.
+\begin{proof}[Proof of \autoref{thm}]
+	We need to prove the followings.
+	\begin{claim}
+		\(E = mc^{2} \).
+	\end{claim}
+	\begin{explanation}
+
+		Nonsense.
+
+		Nonsense,
+
+		Nonsense,
+
+		Nonsense,
+
+		Nonsense,
+
+		Nonsense,
+
+		Nonsense,
+
+		Nonsense,
+
+		Nonsense,
+
+		Nonsense,
+
+		Nonsense.
+
+		Nonsense,
+
+		Nonsense,
+
+		Nonsense,
+
+		Nonsense,
+
+		Nonsense,
+
+		Nonsense,
+
+		Nonsense,
+
+		Nonsense,
+
+		Nonsense.
+
+		Nonsense,
+
+		Nonsense,
+
+		Nonsense,
+
+		Nonsense,
+
+		Nonsense,
+
+		Nonsense,
+
+		Nonsense,
+
+		Nonsense,
+
+		Nonsense,
+	\end{explanation}
+
+\end{proof}
+
+I expect it should break much earlier, and this seems to be an algorithmic issue of \texttt{mdframe}. One potential solution is to use \texttt{tcolorbox} instead,
+but I haven't completely figure it out, hence I can't really say anything right now.
