@@ -159,6 +159,26 @@
 		}
 ]{thmblue2box}
 
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{Gray!70!black}, bodyfont=\normalfont,
+	mdframed={
+			linewidth=2pt,
+			rightline=false, topline=false, bottomline=false,
+			linecolor=Gray, backgroundcolor=Gray!5,
+			nobreak=false
+		}
+]{notgraybox}
+
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{Gray!70!black}, bodyfont=\normalfont,
+	mdframed={
+			linewidth=2pt,
+			rightline=false, topline=false, bottomline=false,
+			linecolor=Gray,
+			nobreak=false
+		}
+]{notgrayline}
+
 % \declaretheoremstyle[
 % 	headfont=\bfseries\sffamily\color{RawSienna!70!black}, bodyfont=\normalfont,
 % 	numbered=no,
@@ -224,12 +244,11 @@
 \declaretheorem[style=thmblueline, numbered=no, name=Remark]{remark}
 \declaretheorem[style=thmblueline, numbered=no, name=Note]{note}
 \declaretheorem[style=thmpinkbox, numbered=no, name=Exercise]{exercise}
+\declaretheorem[style=notgrayline, numbered=no, name=As previously seen]{prev}
+\declaretheorem[style=notgraybox, numbered=no, name=Notation]{notation}
 \declaretheorem[style=thmpinkbox, numbered=no, name=Problem]{problem}
 \declaretheorem[style=thmanswerbox, numbered=no, name=Answer]{tmpanswer}
 \newenvironment{answer}[1][]{\vspace{-10pt}\pushQED{\(\circledast\)}\begin{tmpanswer}}{\null\hfill\popQED\end{tmpanswer}}
-
-\newtheorem*{notation}{Notation}
-\newtheorem*{prev}{As previously seen}
 
 
 \usepackage{etoolbox}
