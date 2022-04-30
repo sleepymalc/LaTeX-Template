@@ -139,6 +139,16 @@
 ]{thmred2box}
 
 \declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{SeaGreen!70!black}, bodyfont=\normalfont,
+	mdframed={
+			linewidth=2pt,
+			rightline=false, topline=false, bottomline=false,
+			linecolor=SeaGreen, backgroundcolor=SeaGreen!2,
+			nobreak=false
+		}
+]{thmgreen3box}
+
+\declaretheoremstyle[
 	headfont=\bfseries\sffamily\color{WildStrawberry!70!black}, bodyfont=\normalfont,
 	numbered=no,
 	mdframed={
@@ -245,6 +255,7 @@
 \declaretheorem[style=thmblueline, numbered=no, name=Note]{note}
 \declaretheorem[style=thmpinkbox, numbered=no, name=Exercise]{exercise}
 \declaretheorem[style=notgrayline, numbered=no, name=As previously seen]{prev}
+\declaretheorem[style=thmgreen3box, numbered=no, name=Intuition]{intuition}
 \declaretheorem[style=notgraybox, numbered=no, name=Notation]{notation}
 \declaretheorem[style=thmpinkbox, numbered=no, name=Problem]{problem}
 \declaretheorem[style=thmanswerbox, numbered=no, name=Answer]{tmpanswer}
@@ -268,7 +279,7 @@
 	}{%
 		\def\@lecture{Lecture #1: #3}%
 	}%
-	\subsection*{\@lecture}
+	\section*{\@lecture}
 	\marginpar{\small\textsf{\mbox{#2}}}
 }
 \usepackage{pgffor}%
@@ -311,8 +322,8 @@
 
 % Appendix environment
 \usepackage{appendix}
+\def\chapterautorefname{Section}
 \def\sectionautorefname{Section}
-\def\subsectionautorefname{Section}
 \def\appendixautorefname{Appendix}
 \renewcommand\appendixname{Appendix}
 \renewcommand\appendixtocname{Appendix}
