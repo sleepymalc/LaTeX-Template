@@ -69,6 +69,11 @@
 	force/.style={thick, {Circle[length=2pt]}-stealth, shorten <=-1pt}
 }
 
+% Algorithm Env
+\usepackage[linesnumbered,lined,vlined,ruled,commentsnumbered]{algorithm2e}
+\SetKwComment{Comment}{// }{}
+\SetArgSty{textsl}
+
 % theorems
 \makeatother
 \usepackage{thmtools}
@@ -133,7 +138,7 @@
 	mdframed={
 			linewidth=2pt,
 			rightline=false, topline=false, bottomline=false,
-			linecolor=RawSienna, backgroundcolor=RawSienna!2,
+			linecolor=RawSienna, backgroundcolor=RawSienna!8,
 			nobreak=false
 		}
 ]{thmred2box}
@@ -307,9 +312,6 @@
 \fancyfoot[C]{\leftmark}     % Center
 
 \makeatother
-
-
-
 
 % notes
 \usepackage[color=pink]{todonotes}
