@@ -5,25 +5,25 @@ This repo consists of the most-used LaTeX templates I used.
 ## Note
 
 <p align="center">
-	<img src="https://github.com/sleepymalc/LaTeX-Template/blob/main/demo/figures/note.png"/>
+	<img src="https://github.com/sleepymalc/LaTeX-Template/blob/main/demo/note.png"/>
 </p>
 
 ## Report/Assignment
 
 <p align="center">
-	<img src="https://github.com/sleepymalc/LaTeX-Template/blob/main/demo/figures/report.png"/>
+	<img src="https://github.com/sleepymalc/LaTeX-Template/blob/main/demo/report.png"/>
 </p>
 
 ## Beamer
 
 <p align="center">
-	<img src="https://github.com/sleepymalc/LaTeX-Template/blob/main/demo/figures/beamer.png"/>
+	<img src="https://github.com/sleepymalc/LaTeX-Template/blob/main/demo/beamer.png"/>
 </p>
 
 ## Resume
 
 <p align="center">
-	<img src="https://github.com/sleepymalc/LaTeX-Template/blob/main/demo/figures/resume.png"/>
+	<img src="https://github.com/sleepymalc/LaTeX-Template/blob/main/demo/resume.png"/>
 </p>
 
 ## UM-SJTU Joint Instuite
