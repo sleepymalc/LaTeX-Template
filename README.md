@@ -1,6 +1,8 @@
 # LaTeX Template
 
-This repo consists of the most-used LaTeX templates I used.
+This repo consists of the most-used LaTeX templates I used. The existed ones are often over complicated, while I try to make them simple and unified.
+
+If you're interested in my LaTeX typeset setup, check out [this repo](https://github.com/sleepymalc/VSCode-LaTeX-Inkscape).
 
 ## Note
 
@@ -25,6 +27,7 @@ This repo consists of the most-used LaTeX templates I used.
 <p align="center">
 	<img src="https://github.com/sleepymalc/LaTeX-Template/blob/main/demo/resume.png"/>
 </p>
+
 
 ## UM-SJTU Joint Instuite
 
