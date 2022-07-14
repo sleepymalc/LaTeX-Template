@@ -1,1 +1,0 @@
-{"rule":"ARTICLE_ADJECTIVE_OF","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Qalgorithm must (because a finite of basis)\\E$"}

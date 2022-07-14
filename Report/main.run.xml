@@ -44,40 +44,40 @@
   <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>BeamerPPT.bcf</file>
+      <file>main.bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>BeamerPPT.bbl</file>
+      <file>main.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
       <file>blx-compat.def</file>
       <file>biblatex.def</file>
+      <file>blx-natbib.def</file>
       <file>standard.bbx</file>
-      <file>mla.bbx</file>
-      <file>mla.cbx</file>
+      <file>numeric.bbx</file>
+      <file>numeric.cbx</file>
       <file>biblatex.cfg</file>
       <file>english.lbx</file>
-      <file>english-mla.lbx</file>
     </requires>
   </internal>
   <external package="biblatex" priority="5" active="0">
     <generic>biber</generic>
     <cmdline>
       <binary>biber</binary>
-      <infile>BeamerPPT</infile>
+      <infile>main</infile>
     </cmdline>
     <input>
-      <file>BeamerPPT.bcf</file>
+      <file>main.bcf</file>
     </input>
     <output>
-      <file>BeamerPPT.bbl</file>
+      <file>main.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>BeamerPPT.bbl</file>
+      <file>main.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>BeamerPPT.bcf</file>
+      <file>main.bcf</file>
     </requires>
   </external>
 </requests>
