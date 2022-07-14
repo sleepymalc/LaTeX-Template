@@ -1,5 +1,31 @@
 # LaTeX Template
 
+This repo consists of the most-used LaTeX templates I used.
+
+## Note
+
+<p align="center">
+	<img src="https://github.com/sleepymalc/LaTeX-Template/blob/main/demo/figures/note.png"/>
+</p>
+
+## Report/Assignment
+
+<p align="center">
+	<img src="https://github.com/sleepymalc/LaTeX-Template/blob/main/demo/figures/report.png"/>
+</p>
+
+## Beamer
+
+<p align="center">
+	<img src="https://github.com/sleepymalc/LaTeX-Template/blob/main/demo/figures/beamer.png"/>
+</p>
+
+## Resume
+
+<p align="center">
+	<img src="https://github.com/sleepymalc/LaTeX-Template/blob/main/demo/figures/resume.png"/>
+</p>
+
 ## UM-SJTU Joint Instuite
 
 ### About Honor Code
