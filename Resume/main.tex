@@ -1,0 +1,148 @@
+% !TeX program = lualatex
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt,a4paper,sans]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+\moderncvstyle{classic} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+\usepackage{multicol}
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage[scale=0.9]{geometry} % Reduce document margins
+%\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
+%\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+\firstname{Pingbang} % Your first name
+\familyname{Hu} % Your last name
+\mobile{(+1) 734 882 7750}
+\email{pbb@umich.edu}
+\social[github]{sleepymalc}
+
+\homepage{pbb.wtf}
+\quote{Greatness is not an outcome, it's a choice.}
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	COVER LETTER
+%----------------------------------------------------------------------------------------
+
+% To remove the cover letter, comment out this entire block
+
+%\recipient{HR Department}{Corporation\\123 Pleasant Lane\\12345 City, State} % Letter recipient
+%\date{\today} % Letter date
+%\opening{Dear Sir or Madam,} % Opening greeting
+%\closing{Sincerely yours,} % Closing phrase
+%\enclosure[Attached]{curriculum vit\ae{}} % List of enclosed documents
+%
+%\makelettertitle % Print letter title
+%
+%\lipsum[1-2] % Dummy text
+%\lipsum[4] % Dummy text
+%
+%\makeletterclosing % Print letter signature
+%
+%\newpage
+
+%----------------------------------------------------------------------------------------
+%	CURRICULUM VITAE
+%----------------------------------------------------------------------------------------
+
+\makecvtitle % Print the CV title
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Education}
+
+\cventry{2021--2023}{University of Michigan}{College of Engineering \& College of Literature, Science, and the Arts}{\newline Computer Science \& Honor Math (Honor Program)}{}{Majored GPA -- 4/4}  % Arguments not required can be left empty
+\cventry{2019--2023}{Shanghai Jiao Tong University}{UM-SJTU Joint Institute}{\newline Electrical and Computer Engineering}{}{GPA -- 3.7/4}  % Arguments not required can be left empty
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Research Experience}
+\cventry{Mar 2022--Ongoing}{Undergraduate Researcher}{\textsc{Umich EECS Apartment}}{}{}{
+	\begin{itemize}
+		\item Fundamental understanding of deep neural network.
+		\item Kernel learning and statistical learning theory approach.
+	\end{itemize}}
+\cventry{Mar 2022--Ongoing}{Undergraduate Researcher}{\textsc{Umich EECS Apartment}}{}{}{
+	\begin{itemize}
+		\item Network failure detection algorithm using detection set.
+		\item Parametric approach with classical graph theory approach.
+	\end{itemize}}
+\cventry{Oct 2021--Ongoing}{Research Assistance}{\textsc{Umich EECS Apartment}}{}{}{
+	\begin{itemize}
+		\item Semi-supervised node-level task with non-i.i.d. data assumptions.
+		\item Analysis on generalization ability on GNN.
+	\end{itemize}}
+
+\section{Teaching Experience}
+\cventry{Mar. 2021 -- Aug. 2021}{Teaching Assistance}{\textsc{UM-SJTU JI}}{Vv285 Honor Mathematics II}{}{
+	\begin{itemize}
+		\item Hold \(1^{st}\) UM-SJTU JI Integration Bee competition.
+		\item Holding Recitation class/Grading Assignment, Exam/Offering Office Hour
+	\end{itemize}}
+
+\cventry{Sep. 2020 -- Dec. 2020}{Teaching Assistance}{\textsc{UM-SJTU JI}}{Vv186 Honor Mathematics I}{}{
+	\begin{itemize}
+		\item Holding Recitation class/Grading Assignment, Exam/Offering Office Hour
+	\end{itemize}}
+
+\section{Software Development Experience}
+\cventry{May 2021--Ongoing}{Backend Software Engineer}{\textsc{ChiefNoob}}{Student Startup}{}{
+	\begin{itemize}
+		\item Aiming for highly customizable mobile app building.
+		\item Using the start-of-the-art tools like \texttt{Golang}, \texttt{MongoDB}, etc.
+	\end{itemize}}
+%------------------------------------------------
+
+%\cventry{2011--2012}{Summer Intern}{\textsc{Lehman Brothers}}{Los Angeles}{}{Rated "truly distinctive" for Analytical Skills and Teamwork.}
+
+%------------------------------------------------
+
+%\cventry{ Mar 2017}{Gaana (Songs) Downloader \href{https://github.com/sinAshish/Gaana-Downloader}{[Code]}}{\textit{Self-motivated}}{}{}{
+%\begin{itemize}
+%\item A script to download all the songs from \href{https://www.gaana.com}{gaana.com} by just entering the album name.
+%\end{itemize}}
+%
+%----------------------------------------------------------------------------------------
+%	AWARDS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Honors}
+\cventry{Oct. 2021}{Hong Kong, Macao and Taiwan Overseas Chinese Student Scholarship}{\textit{SJTU}}{}{}{
+	\begin{itemize}
+		\item First Price(Ranked 2) among all HK, Mc and Tw students in \textbf{SJTU}.
+	\end{itemize}}
+
+\cventry{Nov. 2020}{Undergraduate Excellent Scholarship}{\textit{SJTU}}{}{}{
+	\begin{itemize}
+		\item Third Price among all students in \textbf{UM-SJTU JI}.
+	\end{itemize}}
+
+\cventry{Jun. 2020}{Bao Gang Excellent Scholarship}{\textit{SJTU}}{}{}{
+	\begin{itemize}
+		\item Ranked 3 among all Tw students in \textbf{SJTU}.
+	\end{itemize}}
+
+\cventry{Dec. 2019}{Hong Kong, Macao and Taiwan Overseas Chinese Student Scholarship}{\textit{UM-SJTU JI}}{}{}{
+	\begin{itemize}
+		\item Ranked 1 among all HK, Mc and Tw students in \textbf{UM-SJTU JI}.
+	\end{itemize}}
+
+%----------------------------------------------------------------------------------------
+%	COMMUNICATION SKILLS SECTION
+%----------------------------------------------------------------------------------------
+\section{Focus Domain}
+\cvitem{Math \& CS}{Real Analysis, Optimization Theory, Probability Theory, Graph Theory, Stistical Learning Theory}
+
+\end{document}
