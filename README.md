@@ -1,7 +1,7 @@
 # LaTeX Template
 
 <p align="center"><b><i>
-	LaTeX Templates I used.
+	LaTeX Templates I used 📝
 </i></b></p>
 
 ## Abstract
