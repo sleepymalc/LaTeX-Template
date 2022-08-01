@@ -1,8 +1,19 @@
 # LaTeX Template
 
-This repo consists of the most-used LaTeX templates I used. The existed ones are often over complicated, while I try to make them simple and unified.
+<p align="center"><b><i>
+	The most-used LaTeX Templates I used.
+</i></b></p>
 
-If you're interested in my LaTeX typeset setup, check out [this repo](https://github.com/sleepymalc/VSCode-LaTeX-Inkscape).
+## Abstract
+
+The existing $\LaTeX$ templates are often over-complicated, while I try to make them simple and unified. There are four templates you might need:
+
+- [Note](#note)
+- [Report/Assignment](#reportassignment)
+- [Beamer](#beamer)
+- [Resume](#resume)
+
+> If you're interested in my LaTeX typeset setup, check out [this repo](https://github.com/sleepymalc/VSCode-LaTeX-Inkscape).
 
 ## Note
 
@@ -28,12 +39,11 @@ If you're interested in my LaTeX typeset setup, check out [this repo](https://gi
 	<img src="https://github.com/sleepymalc/LaTeX-Template/blob/main/demo/resume.png"/>
 </p>
 
+> Credits: [Ashish Sinha](https://www.overleaf.com/articles/ashish-sinhas-curriculum-vitae/rhcjpcxjjbyj).
 
-## UM-SJTU Joint Instuite
+## UM-SJTU Joint Institute
 
 ### About Honor Code
-
-If there is same questions or labs in the future, it is the responsibility of JI students not to copy or modify these codes, or TeX files because it is against the Honor Code. The owner of this repository dosen't take any commitment for other's faults.
 
 According to the SJTU student handbook (2019 version),
 
@@ -49,6 +59,6 @@ According to the UM [Academic Rules, Rights and Responsibilities](https://bullet
 
 ## Contribution
 
-The work are partially contributed to some other students, TAs and professors, which would be listed if known.
+The works are partially contributed by some other students, TAs, and professors, which would be listed if known.
 
-If you find any problems in the reposity, welcome to make an issue or pull request.
+If you find any problems in the repository, welcome to make an issue or pull request.
