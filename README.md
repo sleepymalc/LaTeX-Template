@@ -60,5 +60,4 @@ According to the UM [Academic Rules, Rights and Responsibilities](https://bullet
 ## Contribution
 
 The works are partially contributed by some other students, TAs, and professors, which would be listed if known.
-
-If you find any problems in the repository, welcome to make an issue or pull request.
+> If you find any problems in the repository, welcome to make an issue or pull request.
