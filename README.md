@@ -1,5 +1,9 @@
 # LaTeX Template
 
+<p align="center">
+	<img src="https://github.com/sleepymalc/LaTeX-Template/blob/main/preview.png"/>
+</p>
+
 <p align="center"><b><i>
 	LaTeX Templates I used 📝
 </i></b></p>
