@@ -1,7 +1,7 @@
 # LaTeX Template
 
 <p align="center">
-	<img src="https://github.com/sleepymalc/LaTeX-Template/blob/main/preview.png"/>
+	<img src="./preview.png"/>
 </p>
 
 <p align="center"><b><i>
@@ -22,25 +22,25 @@ The existing $\LaTeX$ templates are often over-complicated, while I try to make 
 ## Note
 
 <p align="center">
-	<img src="https://github.com/sleepymalc/LaTeX-Template/blob/main/demo/note.png"/>
+	<img src="./demo/note.png"/>
 </p>
 
 ## Report/Assignment
 
 <p align="center">
-	<img src="https://github.com/sleepymalc/LaTeX-Template/blob/main/demo/report.png"/>
+	<img src="./demo/report.png"/>
 </p>
 
 ## Beamer
 
 <p align="center">
-	<img src="https://github.com/sleepymalc/LaTeX-Template/blob/main/demo/beamer.png"/>
+	<img src="./demo/beamer.png"/>
 </p>
 
 ## Resume
 
 <p align="center">
-	<img src="https://github.com/sleepymalc/LaTeX-Template/blob/main/demo/resume.png"/>
+	<img src="./demo/resume.png"/>
 </p>
 
 > Credits: [Ashish Sinha](https://www.overleaf.com/articles/ashish-sinhas-curriculum-vitae/rhcjpcxjjbyj).
