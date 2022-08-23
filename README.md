@@ -19,32 +19,6 @@ The existing $\LaTeX$ templates are often over-complicated, while I try to make 
 
 > If you're interested in my LaTeX typeset setup, check out [this repo](https://github.com/sleepymalc/VSCode-LaTeX-Inkscape).
 
-## Note
-
-<p align="center">
-	<img src="./demo/note.png"/>
-</p>
-
-## Report/Assignment
-
-<p align="center">
-	<img src="./demo/report.png"/>
-</p>
-
-## Beamer
-
-<p align="center">
-	<img src="./demo/beamer.png"/>
-</p>
-
-## Resume
-
-<p align="center">
-	<img src="./demo/resume.png"/>
-</p>
-
-> Credits: [Ashish Sinha](https://www.overleaf.com/articles/ashish-sinhas-curriculum-vitae/rhcjpcxjjbyj).
-
 ## About Honor Code
 
 ### UM-SJTU Joint Institute
