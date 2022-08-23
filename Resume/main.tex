@@ -1,148 +1,219 @@
-% !TeX program = lualatex
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
+\documentclass[letterpaper,10.8pt]{article}
 
-\documentclass[11pt,a4paper,sans]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
-\moderncvstyle{classic} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
-\moderncvcolor{blue} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
-\usepackage{multicol}
-\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex,colorlinks=true,linkcolor=blue,urlcolor=black]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{fontawesome}
 
-\usepackage[scale=0.9]{geometry} % Reduce document margins
-%\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
-%\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
 
-%----------------------------------------------------------------------------------------
-%	NAME AND CONTACT INFORMATION SECTION
-%----------------------------------------------------------------------------------------
-\firstname{Pingbang} % Your first name
-\familyname{Hu} % Your last name
-\mobile{(+1) 734 882 7750}
-\email{pbb@umich.edu}
-\social[github]{sleepymalc}
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1in}
 
-\homepage{pbb.wtf}
-\quote{Greatness is not an outcome, it's a choice.}
-%----------------------------------------------------------------------------------------
+\urlstyle{rm}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-3pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeItemWithoutTitle}[1]{
+  \item\small{
+    {\vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \begin{document}
 
-%----------------------------------------------------------------------------------------
-%	COVER LETTER
-%----------------------------------------------------------------------------------------
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+	\textbf{{\LARGE Pingbang Hu}} & Email: \href{pbb@umich.edu}{pbb@umich.edu}\\
+	\href{https://www.linkedin.com/in/pingbang-hu-78a190215}{\faLinkedinSquare} \href{https://twitter.com/PingbangHu}{\faTwitterSquare} \href{https://github.com/sleepymalc}{\faGithub} & Mobile: (+1) 734 882 7750 \\
+\end{tabular*}
 
-% To remove the cover letter, comment out this entire block
-
-%\recipient{HR Department}{Corporation\\123 Pleasant Lane\\12345 City, State} % Letter recipient
-%\date{\today} % Letter date
-%\opening{Dear Sir or Madam,} % Opening greeting
-%\closing{Sincerely yours,} % Closing phrase
-%\enclosure[Attached]{curriculum vit\ae{}} % List of enclosed documents
-%
-%\makelettertitle % Print letter title
-%
-%\lipsum[1-2] % Dummy text
-%\lipsum[4] % Dummy text
-%
-%\makeletterclosing % Print letter signature
-%
-%\newpage
-
-%----------------------------------------------------------------------------------------
-%	CURRICULUM VITAE
-%----------------------------------------------------------------------------------------
-
-\makecvtitle % Print the CV title
-
-%----------------------------------------------------------------------------------------
-%	EDUCATION SECTION
-%----------------------------------------------------------------------------------------
-
+%-----------EDUCATION-----------------
 \section{Education}
+\resumeSubHeadingListStart
 
-\cventry{2021--2023}{University of Michigan}{College of Engineering \& College of Literature, Science, and the Arts}{\newline Computer Science \& Honor Math (Honor Program)}{}{Majored GPA -- 4/4}  % Arguments not required can be left empty
-\cventry{2019--2023}{Shanghai Jiao Tong University}{UM-SJTU Joint Institute}{\newline Electrical and Computer Engineering}{}{GPA -- 3.7/4}  % Arguments not required can be left empty
+\resumeSubheading
+{University of Michigan -- College of Literature, Science, and the Arts}{Ann Arbor, Michigan}
+{Bachelor of Computer Science; Majored GPA -- 4.0/4.0}{Aug. 2021 - May. 2023}
 
-%----------------------------------------------------------------------------------------
-%	WORK EXPERIENCE SECTION
-%----------------------------------------------------------------------------------------
+\resumeSubheading
+{University of Michigan -- College of Literature, Science, and the Arts}{Ann Arbor, Michigan}
+{Bachelor of Honor Math (Honor Program); GPA -- 3.751/4.0}{Aug. 2021 - May. 2023}
 
+\resumeSubheading
+{Shanghai Jiao Tong University -- UM-SJTU Joint Institute}{Ann Arbor, Michigan}
+{Bachelor of Electrical and Computer Engineering; GPA -- 3.6/4.0}{Aug. 2019 - May. 2023}
+
+\resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------------
 \section{Research Experience}
-\cventry{Mar 2022--Ongoing}{Undergraduate Researcher}{\textsc{Umich EECS Apartment}}{}{}{
-	\begin{itemize}
-		\item Fundamental Understanding of Deep Neural Network with Theoretical Analysis.
-		\item Analysis on Kernel Learning and the Relation between Deep Neural Network.
-	\end{itemize}}
-\cventry{Mar 2022--Ongoing}{Undergraduate Researcher}{\textsc{Umich EECS Apartment}}{}{}{
-	\begin{itemize}
-		\item Network Failure Detection Algorithm using Detection Set with Parametric approach.
-		\item Generalization on Different Min-Cuts and Graph Types.
-	\end{itemize}}
-\cventry{Oct 2021--Ongoing}{Research Assistance}{\textsc{Umich EECS Apartment}}{}{}{
-	\begin{itemize}
-		\item Generalization Ability of Semi-supervised node-level tasks with non-i.i.d. data assumptions.
-		\item Theoretical Analysis of Convoluted Topology Point-of-View with General Setup.
-	\end{itemize}}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Deep Learning Foundation}{CoE, UMich, Ann Arbor, Michigan}
+{Undergraduate Researcher}{Mar. 2022 - Present}
+\resumeItemListStart
+\resumeItem{General}
+{Fundamental Understanding of Deep Neural Network with Theoretical Analysis supported by \href{https://sure.engin.umich.edu/}{SURE Program}.}
+\resumeItem{Kernel Learning v.s. Deep Learning}
+{Analysis on Kernel Learning and the Relation between Deep Neural Network}
+\resumeItemListEnd
+
+\resumeSubheading
+{Graph Neural Network Foundation}{SI, UMich, Ann Arbor, Michigan}
+{Undergraduate Researcher}{Feb. 2022 - Present}
+\resumeItemListStart
+\resumeItem{General}
+{Theoretical analysis on generalization ability of non-i.i.d. semi-supervised node-level tasks.}
+\resumeItem{Expansion}
+{Following the line of work by \href{https://ai.stanford.edu/~tengyuma/}{Tengyu Ma} with generalizations on graph-based neural network.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Fast Graph Algorithm}{CoE, UMich, Ann Arbor, Michigan}
+{Undergraduate Researcher}{Mar. 2022 - Present}
+\resumeItemListStart
+\resumeItem{General}
+{Analysis on the size of the network failure detection set on different graph and various constraints.}
+\resumeItem{Data Structure}
+{Deep understanding on compact vertex cuts representation.}
+\resumeItem{Probabilistic Methods}
+{Analysis on randomized algorithm along with classical learning theory notions.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
 \section{Teaching Experience}
-\cventry{Mar. 2021 -- Aug. 2021}{Teaching Assistance}{\textsc{UM-SJTU JI}}{Vv285 Honor Mathematics III}{}{
-	\begin{itemize}
-		\item Hold \(1^{st}\) UM-SJTU JI Integration Bee competition.
-		\item Holding Recitation class/Grading Assignment, Exam/Offering Office Hour
-	\end{itemize}}
+\resumeSubHeadingListStart
 
-\cventry{Sep. 2020 -- Dec. 2020}{Teaching Assistance}{\textsc{UM-SJTU JI}}{Vv186 Honor Mathematics II}{}{
-	\begin{itemize}
-		\item Holding Recitation class/Grading Assignment, Exam/Offering Office Hour
-	\end{itemize}}
+\resumeSubheading
+{\href{https://mahdi.ch/eecs572/}{EECS572 Randomness and Computation}}{CoE, UMich, Ann Arbor, Michigan}
+{Instructional Aide}{Aug. 2022 - Dec. 2022}
+\resumeItemListStart
+\resumeItem{General}
+{Collaborated with the teaching staff as an instructional aide of a 100+ student course on the main CS track.}
+\resumeItem{Discussion Course}
+{Taught discussion sections to reinforce conceptual understanding and review course material.}
+\resumeItem{Office Hours}
+{Offered weekly office hours to ensure the student experience was as smooth as possible.}
+\resumeItemListEnd
 
+\resumeSubheading
+{\href{https://umji.sjtu.edu.cn/~horst/teaching/vv285.html}{VV285 Honor Mathematics III}}{UM-SJTU JI, SJTU, Shanghai, China}
+{Instructional Aide}{Mar. 2021 -- Aug. 2021}
+\resumeItemListStart
+\resumeItem{General}
+{Collaborated with the teaching staff as an instructional aide of a 150+ student course on the main ECE track.}
+\resumeItem{Discussion Course}
+{Taught discussion sections to reinforce conceptual understanding and review course material.}
+\resumeItem{Office Hours}
+{Offered weekly office hours to ensure the student experience was as smooth as possible.}
+\resumeItem{Competition}
+{Hold the \(1^{st}\) UM-SJTU \href{https://github.com/sleepymalc/JIntegrationBee}{JIntegration Bee} competition}
+\resumeItemListEnd
+
+\resumeSubheading
+{\href{https://umji.sjtu.edu.cn/~horst/teaching/vv186.html}{VV186 Honor Mathematics II}}{UM-SJTU JI, SJTU, Shanghai, China}
+{Instructional Aide}{Sep. 2020 -- Dec. 2020}
+\resumeItemListStart
+\resumeItem{General}
+{Collaborated with the teaching staff as an instructional aide of a 200+ student course on the main ECE track.}
+\resumeItem{Discussion Course}
+{Taught discussion sections to reinforce conceptual understanding and review course material.}
+\resumeItem{Office Hours}
+{Offered weekly office hours to ensure the student experience was as smooth as possible.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 \section{Software Development Experience}
-\cventry{May 2021--Ongoing}{Backend Software Engineer}{\textsc{ChiefNoob}}{Student Startup}{}{
-	\begin{itemize}
-		\item Aiming for highly customizable mobile app building.
-		\item Using the start-of-the-art tools like \texttt{Golang}, \texttt{MongoDB}, etc.
-	\end{itemize}}
-%------------------------------------------------
+\resumeSubHeadingListStart
 
-%\cventry{2011--2012}{Summer Intern}{\textsc{Lehman Brothers}}{Los Angeles}{}{Rated "truly distinctive" for Analytical Skills and Teamwork.}
+\resumeSubheading
+{FoodAll}{Virtual, Taiwan}
+{Backend Developer}{Aug. 2020 -- Mar. 2021}
+\resumeItemListStart
+\resumeItem{General}
+{A food order platform in Taiwan, built with Golang and Gin, MongoDB, with RESTful API design.}
+\resumeItemListEnd
 
-%------------------------------------------------
+\resumeSubHeadingListEnd
 
-%\cventry{ Mar 2017}{Gaana (Songs) Downloader \href{https://github.com/sinAshish/Gaana-Downloader}{[Code]}}{\textit{Self-motivated}}{}{}{
-%\begin{itemize}
-%\item A script to download all the songs from \href{https://www.gaana.com}{gaana.com} by just entering the album name.
-%\end{itemize}}
-%
-%----------------------------------------------------------------------------------------
-%	AWARDS SECTION
-%----------------------------------------------------------------------------------------
+%-----------Awards-----------------
+\section{Honors and Awards}
+\resumeSubHeadingListStart
 
-\section{Honors}
-\cventry{Oct. 2021}{Hong Kong, Macao and Taiwan Overseas Chinese Student Scholarship}{\textit{SJTU}}{}{}{
-	\begin{itemize}
-		\item First Price(Ranked 2) among all HK, Mc and Tw students in \textbf{SJTU}.
-	\end{itemize}}
+\resumeSubheading
+{Hong Kong, Macao and Taiwan Overseas Chinese Student Scholarship}{SJTU, Shanghai, China}
+{First Price (Ranked 2) among all HK, MC and TW students in \emph{SJTU}}{Oct. 2021}
 
-\cventry{Nov. 2020}{Undergraduate Excellent Scholarship}{\textit{SJTU}}{}{}{
-	\begin{itemize}
-		\item Third Price among all students in \textbf{UM-SJTU JI}.
-	\end{itemize}}
+\resumeSubheading
+{Undergraduate Excellent Scholarship}{SJTU, Shanghai, China}
+{Third Price among all students in \emph{UM-SJTU JI}}{Nov. 2020}
 
-\cventry{Jun. 2020}{Bao Gang Excellent Scholarship}{\textit{SJTU}}{}{}{
-	\begin{itemize}
-		\item Ranked 3 among all Tw students in \textbf{SJTU}.
-	\end{itemize}}
+\resumeSubheading
+{Bao Gang Excellent Scholarship}{SJTU, Shanghai, China}
+{Ranked 3 among all Taiwan students in \emph{SJTU}}{Jun. 2020}
 
-\cventry{Dec. 2019}{Hong Kong, Macao and Taiwan Overseas Chinese Student Scholarship}{\textit{UM-SJTU JI}}{}{}{
-	\begin{itemize}
-		\item Ranked 1 among all HK, Mc and Tw students in \textbf{UM-SJTU JI}.
-	\end{itemize}}
+\resumeSubheading
+{Hong Kong, Macao and Taiwan Overseas Chinese Student Scholarship}{SJTU, Shanghai, China}
+{Ranked 1 among all HK, MC and TW students in \emph{UM-SJTU JI}}{Dec. 2019}
 
-%----------------------------------------------------------------------------------------
-%	COMMUNICATION SKILLS SECTION
-%----------------------------------------------------------------------------------------
-\section{Focus Domain}
-\cvitem{Math \& CS}{Real Analysis, Optimization Theory, Probability Theory, Graph Theory, Stistical Learning Theory}
+\resumeSubHeadingListEnd
 
 \end{document}
