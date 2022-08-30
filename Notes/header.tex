@@ -23,31 +23,18 @@
 \usepackage{systeme}
 \usepackage{caption}
 \captionsetup{belowskip=0pt}
-
 \geometry{a4paper,left=2.54cm,right=2.54cm,top=2.54cm,bottom=2.54cm}
-
 
 % for the big braces
 \usepackage{bigdelim}
-
 
 % correct
 \definecolor{correct}{HTML}{009900}
 \newcommand\correct[2]{\ensuremath{\:}{\color{red}{#1}}\ensuremath{\to }{\color{correct}{#2}}\ensuremath{\:}}
 \newcommand\green[1]{{\color{correct}{#1}}}
 
-
-
-% horizontal rule
-\newcommand\hr{
-	\noindent\rule[0.5ex]{\linewidth}{0.5pt}
-}
-
-
 % hide parts
 \newcommand\hide[1]{}
-
-
 
 % si unitx
 \usepackage{siunitx}
@@ -73,6 +60,8 @@
 \SetKwComment{Comment}{// }{}
 \SetArgSty{textsl}
 
+\def\algocflineautorefname{Algorithm}
+
 % theorems
 \makeatother
 \usepackage{thmtools}
@@ -89,7 +78,7 @@
 			rightline=false, topline=false, bottomline=false,
 			linecolor=ForestGreen, backgroundcolor=ForestGreen!5,
 			nobreak=false
-		},
+		}
 ]{thmgreenbox}
 
 \declaretheoremstyle[
@@ -99,7 +88,7 @@
 			rightline=false, topline=false, bottomline=false,
 			linecolor=ForestGreen, backgroundcolor=ForestGreen!8,
 			nobreak=false
-		},
+		}
 ]{thmgreen2box}
 
 \declaretheoremstyle[
@@ -154,13 +143,12 @@
 
 \declaretheoremstyle[
 	headfont=\bfseries\sffamily\color{WildStrawberry!70!black}, bodyfont=\normalfont,
-	numbered=no,
 	mdframed={
 			linewidth=2pt,
 			rightline=false, topline=false, bottomline=false,
 			linecolor=WildStrawberry, backgroundcolor=WildStrawberry!5,
 			nobreak=false
-		},
+		}
 ]{thmpinkbox}
 
 \declaretheoremstyle[
@@ -233,6 +221,8 @@
 \declaretheorem[style=thmredbox, name=Lemma, numberwithin=section]{lemma}
 \declaretheorem[style=thmredbox, name=Proposition, numberwithin=section]{proposition}
 \declaretheorem[style=thmredbox, name=Corollary, numberwithin=section]{corollary}
+\declaretheorem[style=thmpinkbox, name=Problem, numberwithin=section]{problem}
+\declaretheorem[style=thmpinkbox, name=Problem, numbered=no]{problem*}
 \declaretheorem[style=thmblue2box, name=Claim, numbered=no]{claim}
 
 % Redefine proof environment to get a full control. 
@@ -261,7 +251,6 @@
 \declaretheorem[style=notgrayline, numbered=no, name=As previously seen]{prev}
 \declaretheorem[style=thmgreen3box, numbered=no, name=Intuition]{intuition}
 \declaretheorem[style=notgraybox, numbered=no, name=Notation]{notation}
-\declaretheorem[style=thmpinkbox, numbered=no, name=Problem]{problem}
 \declaretheorem[style=thmanswerbox, numbered=no, name=Answer]{tmpanswer}
 \newenvironment{answer}[1][]{\vspace{-10pt}\pushQED{\(\circledast\)}\begin{tmpanswer}}{\null\hfill\popQED\end{tmpanswer}}
 
