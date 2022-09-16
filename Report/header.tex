@@ -121,20 +121,22 @@
 \makeatother
 % For box around Definition, Theorem, etc.
 \usepackage{mdframed}
-\mdfsetup{skipabove=1em,skipbelow=0em}
+\mdfsetup{skipabove=1em,skipbelow=1em}
 \theoremstyle{definition}
-\newmdtheoremenv[nobreak=true]{definition}{Definition}[section]
+\newmdtheoremenv{definition}{Definition}[section]
 \providecommand*\definitionautorefname{Definition}
-\newmdtheoremenv[nobreak=true]{theorem}{Theorem}[section]
+\newmdtheoremenv{theorem}{Theorem}[section]
 \providecommand*\theoremautorefname{Theorem}
-\newmdtheoremenv[nobreak=true]{lemma}{Lemma}[section]
+\newmdtheoremenv{lemma}{Lemma}[section]
 \providecommand*\lemmaautorefname{Lemma}
-\newmdtheoremenv[nobreak=true]{corollary}{Corollary}[section]
+\newmdtheoremenv{corollary}{Corollary}[section]
 \providecommand*\corollaryautorefname{Corollary}
-\newmdtheoremenv[nobreak=true]{proposition}{Proposition}[section]
+\newmdtheoremenv{proposition}{Proposition}[section]
 \providecommand*\propositionautorefname{Proposition}
-\newmdtheoremenv[nobreak=true]{remark}{Remark}
-\providecommand*\propositionautorefname{Remark}
+\newmdtheoremenv{remark}{Remark}
+\providecommand*\remarkautorefname{Remark}
+\newmdtheoremenv{problem}{Problem}
+\providecommand*\problemautorefname{Problem}
 
 \makeatletter
 
