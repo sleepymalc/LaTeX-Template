@@ -53,11 +53,9 @@ We now see some common environment you'll need to complete your note.
 	The blank left for me is too small,\footnote{\url{https://en.wikipedia.org/wiki/Richard_Feynman}} hence we put the proof in \autoref{appendix}.
 \end{proof}
 
+From \autoref{thm}, we then have the following.
 \begin{corollary}[Riemann hypothesis]\label{col}
-	From \autoref{thm}, we then have the following.
-
-	\par The real part of every nontrivial zero of the Riemann zeta function is \(\frac{1}{2}\), where the
-	Riemann zeta function is just
+	The real part of every nontrivial zero of the Riemann zeta function is \(\frac{1}{2}\), where the Riemann zeta function is just
 	\[
 		\zeta (s)=\sum _{n=1}^{\infty }{\frac {1}{n^{s}}}={\frac {1}{1^{s}}}+{\frac {1}{2^{s}}}+{\frac {1}{3^{s}}}+\cdots.
 	\]
@@ -70,8 +68,7 @@ We now see some common environment you'll need to complete your note.
 \end{prev}
 
 \subsubsection{Internal Link}
-You should see all the common usages of internal links. Additionally, we can use citations as \cite{newton1726philosophiae}, which just link
-to the reference page!
+You should see all the common usages of internal links. Additionally, we can use citations as \cite{newton1726philosophiae}, which just link to the reference page!
 
 \section{Figures}
 A simple demo for drawing:
@@ -116,9 +113,7 @@ We can use the package \texttt{tikz-cd} to draw some commutative diagram.
 \end{explanation}
 
 \section{Fancy Stuffs}
-With this header, you can achieve some cool things. For example, we can have multiple definitions under a parent environment, while maintains
-the numbering of definition. This is achieved by \texttt{definition*} environment with \texttt{definition} inside. For example, we can have
-the following.
+With this header, you can achieve some cool things. For example, we can have multiple definitions under a parent environment, while maintains the numbering of definition. This is achieved by \texttt{definition*} environment with \texttt{definition} inside. For example, we can have the following.
 \begin{definition*}
 	We have the following number system.
 	\begin{definition}[Rational number]\label{def:rational}
@@ -133,12 +128,10 @@ the following.
 \end{definition*}
 
 \begin{note}
-	And indeed, we can still reference them correctly. For instance, we can use \hyperref[def:rational]{rational numbers} to define \hyperref[def:real]{real numbers}
-	and then further use it to define \hyperref[def:complex]{complex numbers}.
+	And indeed, we can still reference them correctly. For instance, we can use \hyperref[def:rational]{rational numbers} to define \hyperref[def:real]{real numbers} and then further use it to define \hyperref[def:complex]{complex numbers}.
 \end{note}
 
-Furthermore, we can completely control the name of our environments. We already saw we can name definition, lemma, proposition, corollary and theorem environment.
-In fact, we can also name remark, note, example and proof as follows.
+Furthermore, we can completely control the name of our environments. We already saw we can name definition, lemma, proposition, corollary and theorem environment. In fact, we can also name remark, note, example and proof as follows.
 \begin{eg}[Interesting Example]\label{eg}
 	We note that \(1 \neq 2\)!
 	\begin{note}[Important note]
@@ -152,105 +145,11 @@ In fact, we can also name remark, note, example and proof as follows.
 			\[
 				\lim\limits_{r \to 0} \frac{1}{m(B(x, r))}\int_{B(x, r)}\left\vert f(y) - f(x) \right\vert   \,\mathrm{d}y = 0
 			\]
-			for \hyperref[def:mu-almost-everywhere]{a.e.} \(x\).
+			for a.e. \(x\).
 		\end{theorem}
 		\begin{proof}[An obvious proof of \autoref{thm:Lebesgue-differentiation-theorem}]
 			Obvious.
 		\end{proof}
 	\end{remark}
 \end{eg}
-As we can see, specifically for the \texttt{proof} environment, we allow \texttt{autoref} and \texttt{hyperref}. One can actually
-allow all example, note and remark environment's name to use reference, but I think that is overkilled. But this can be achieved
-by modify the header in an obvious way.\footnote{This time I mean it!}
-
-\section{Known Bugs}
-Nothing is bugs-free. There are some known bugs which I don't have incentive to solve, or it is hard to solve whatsoever. Let me list some of them.
-\subsection{Footnote Environment}
-It's easy to let you fall into a situation that you want to keep using \texttt{footnote} to add a bunch of
-unrelated stuffs. However, with our environment there is a known strange behavior, which is following.
-\begin{eg}
-	Footnote!\footnote{This is a footnote!}
-	\begin{remark}
-		Oops! footnote somehow shows up earlier than expect!\footnote{This is another footnote!}
-	\end{remark}
-
-	Bugs caught!\footnote{The final footnote which is ok!}
-\end{eg}
-As we saw, the footnote in the \texttt{Example} environment should show at the bottom of its own box, but it's caught by \texttt{Remark} which
-causes the unwanted behavior. Unfortunately, I haven't found a nice way to solve this. A potential way to solve this is by using \texttt{footnotemark}
-with \texttt{footnotetext} placing at the bottom of the environment, but this is tedious and needs lots of manual tweaking.
-
-Furthermore, not sure whether you notice it or not, but the color box of \texttt{Remark} is not quite right! Another trick bug...
-
-\subsection{Mdframe Environment}
-Though \texttt{mdframe} package is nice and is the key theme throughout this template, but it has some kind of weird behavior. Let's see the demo.
-\begin{proof}[Proof of \autoref{thm}]
-	We need to prove the followings.
-	\begin{claim}
-		\(E = mc^{2} \).
-	\end{claim}
-	\begin{explanation}
-
-		Nonsense.
-
-		Nonsense,
-
-		Nonsense,
-
-		Nonsense,
-
-		Nonsense,
-
-		Nonsense,
-
-		Nonsense,
-
-		Nonsense,
-
-		Nonsense,
-
-		Nonsense,
-
-		Nonsense.
-
-		Nonsense,
-
-		Nonsense,
-
-		Nonsense,
-
-		Nonsense,
-
-		Nonsense,
-
-		Nonsense,
-
-		Nonsense,
-
-		Nonsense,
-
-		Nonsense.
-
-		Nonsense,
-
-		Nonsense,
-
-		Nonsense,
-
-		Nonsense,
-
-		Nonsense,
-
-		Nonsense,
-
-		Nonsense,
-
-		Nonsense,
-
-		Nonsense,
-	\end{explanation}
-
-\end{proof}
-
-I expect it should break much earlier, and this seems to be an algorithmic issue of \texttt{mdframe}. One potential solution is to use \texttt{tcolorbox} instead,
-but I haven't completely figure it out, hence I can't really say anything right now.
+As we can see, specifically for the \texttt{proof} environment, we allow \texttt{autoref} and \texttt{hyperref}. One can actually allow all example, note and remark environment's name to use reference, but I think that is overkilled. But this can be achieved by modify the header in an obvious way.\footnote{This time I mean it!}

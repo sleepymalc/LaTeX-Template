@@ -1,3 +1,4 @@
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=red]{hyperref}
 \usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb}
 \usepackage{geometry}
 \usepackage{float}
@@ -12,15 +13,12 @@
 \usepackage{caption}
 \usepackage{array}
 \usepackage{etoolbox}
-\usepackage{physics}
 \usepackage{siunitx}
 \usepackage[natbib=true,style=numeric,sorting=none]{biblatex}
 \usepackage[T1]{fontenc}
-\usepackage{inconsolata}
 \usepackage[nodayofweek]{datetime}
 \usepackage[british]{datetime2}
 \usepackage{lastpage}
-\usepackage[colorlinks=true,linkcolor=blue,urlcolor=red]{hyperref}
 \usepackage{thmtools}
 \input{~/Developer/LaTeX-Template/Math.tex}
 
@@ -36,19 +34,11 @@
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 \renewcommand{\qed}{\hfill\(\blacksquare\)}
 
-\renewcommand{\emph}[1]{{\color{Turquoise3}\textsl{#1}}}
-\definecolor{Turquoise3}{RGB}{0, 134, 139}
-
 \newcommand\blfootnote[1]{%
 	\begingroup
 	\renewcommand\thefootnote{}\footnote{#1}%
 	\addtocounter{footnote}{-1}%
 	\endgroup
-}
-
-% horizontal rule
-\newcommand\hr{
-	\noindent\rule[0.5ex]{\linewidth}{0.5pt}
 }
 
 % TodoNotes and inline notes in fancy boxes
@@ -59,6 +49,8 @@
 \usepackage[linesnumbered,lined,vlined,ruled,commentsnumbered]{algorithm2e}
 \SetKwComment{Comment}{// }{}
 \SetArgSty{textsl}
+\def\algocflineautorefname{Algorithm}
+\def\equationautorefname{Equation}
 
 \pdfsuppresswarningpagegroup=1
 \usepackage{fancyhdr} % Required for customizing headers and footers
@@ -195,4 +187,3 @@
 		\end{center}
 	}{}
 }
-
