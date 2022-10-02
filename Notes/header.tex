@@ -56,10 +56,11 @@
 }
 
 % Algorithm Env
-\usepackage[linesnumbered,lined,vlined,ruled,commentsnumbered,resetcount,algosection]{algorithm2e}
+\usepackage[linesnumbered,lined,vlined,ruled,commentsnumbered,resetcount,algochapter]{algorithm2e}
 \SetKwComment{Comment}{// }{}
 \SetArgSty{textsl}
 \def\algocflineautorefname{Algorithm}
+\counterwithin{algocfline}{chapter}
 
 % theorems
 \makeatother
