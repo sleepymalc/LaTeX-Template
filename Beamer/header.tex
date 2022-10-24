@@ -1,4 +1,8 @@
-\usepackage{amsmath}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{csquotes}
+\usepackage{color}
 \usepackage{float}
 \usepackage{multido}
 \usepackage{multirow}
@@ -6,34 +10,30 @@
 \usepackage{enumerate}
 \usepackage{booktabs}
 \usepackage{indentfirst}
-\usepackage[style=mla]{biblatex}
+\usepackage[style=alphabetic,maxcitenames=1]{biblatex}
 \usepackage{setspace}
 \usepackage{calligra}
 \usepackage{subcaption}
-\usepackage{hyperref}
 \usepackage{textpos}
-% Math stuff
-\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb}
+
+\usepackage{complexity}
+\usepackage{bm}
+\usepackage{bbm}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./Figures/}{#1.pdf_tex}
+}
 
 \makeatletter
 \let\@@magyar@captionfix\relax
 \makeatother
 
-\definecolor{Turquoise3}{RGB}{0, 134, 139}
-\renewcommand{\emph}[1]{{\color{Turquoise3}\textsl{#1}}}
-\newcommand{\scp}[2]{\langle\,#1\,,\,#2\,\rangle} \newcommand{\scpp}{\langle\,\cdot\,,\,\cdot\,\rangle}
-\newcommand{\nullspacesmall}{~\vspace{1em}}
-\newcommand{\nullspacemid}{~\vspace{4em}}
-\newcommand{\nullspacebig}{~\vspace{6em}}
-\newcommand{\at}[3]{\left.#1\right\vert_{#2}^{#3}}
-\renewcommand{\qed}{\hfill$\blacksquare$}
-
-% Add \contd symbol to denote contradiction
-\usepackage{stmaryrd} % for \lightning
-\newcommand\contd{\scalebox{1.5}{$\lightning$}}
-
-\usetheme{Madrid}
-\setbeamertemplate{navigation symbols}{}
 
 \addtobeamertemplate{frametitle}{}{
 	\begin{textblock*}{100mm}(0.85\textwidth,-1cm)
@@ -41,19 +41,13 @@
 	\end{textblock*}}
 
 \definecolor{themecolor}{RGB}{25,25,112}
-
-\usecolortheme[named=themecolor]{structure}
-
-\setbeamertemplate{items}[default]
-
-\hypersetup{
-	colorlinks=true,
-	linkcolor=themecolor,
-	filecolor=themecolor,
-	urlcolor=themecolor,
-	citecolor=themecolor,
+\mode<presentation>
+{
+	\usetheme{Madrid}      % or try Darmstadt, Madrid, Warsaw, ...
+	\usecolortheme[named=themecolor]{structure} % or try albatross, beaver, crane, ...
+	\usefonttheme{default}  % or try serif, structurebold, ...
+	\setbeamertemplate{navigation symbols}{}
+	\setbeamertemplate{caption}[default]
+	\setbeamertemplate{items}[default]
+	\setbeamertemplate{section in toc}[ball unnumbered]
 }
-
-\title{\Title}
-\subtitle{\textbf{\SubTitle}\\\large }
-\institute[\InstitutionS]{\InstitutionL}
