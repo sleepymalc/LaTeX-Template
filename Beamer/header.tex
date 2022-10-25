@@ -20,14 +20,18 @@
 \usepackage{bm}
 \usepackage{bbm}
 
+% TodoNotes and inline notes in fancy boxes
+\usepackage{todonotes}
+\usepackage{tcolorbox}
+
 % figure support
 \usepackage{import}
 \usepackage{xifthen}
 \usepackage{pdfpages}
 \usepackage{transparent}
 \newcommand{\incfig}[1]{%
-	\def\svgwidth{\columnwidth}
-	\import{./Figures/}{#1.pdf_tex}
+    \def\svgwidth{\columnwidth}
+    \import{./Figures/}{#1.pdf_tex}
 }
 
 \makeatletter
@@ -36,18 +40,27 @@
 
 
 \addtobeamertemplate{frametitle}{}{
-	\begin{textblock*}{100mm}(0.85\textwidth,-1cm)
-		\includegraphics[height=1cm]{Figures/logo/logo.png}
-	\end{textblock*}}
+    \begin{textblock*}{100mm}(0.85\textwidth,-1cm)
+        \includegraphics[height=1cm]{Figures/logo/logo.png}
+    \end{textblock*}}
 
 \definecolor{themecolor}{RGB}{25,25,112}
 \mode<presentation>
 {
-	\usetheme{Madrid}      % or try Darmstadt, Madrid, Warsaw, ...
-	\usecolortheme[named=themecolor]{structure} % or try albatross, beaver, crane, ...
-	\usefonttheme{default}  % or try serif, structurebold, ...
-	\setbeamertemplate{navigation symbols}{}
-	\setbeamertemplate{caption}[default]
-	\setbeamertemplate{items}[default]
-	\setbeamertemplate{section in toc}[ball unnumbered]
+    \usetheme{Madrid}      % or try Darmstadt, Madrid, Warsaw, ...
+    \usecolortheme[named=themecolor]{structure} % or try albatross, beaver, crane, ...
+    \usefonttheme{default}  % or try serif, structurebold, ...
+    \setbeamertemplate{navigation symbols}{}
+    \setbeamertemplate{caption}[default]
+    \setbeamertemplate{items}[default]
+    \setbeamertemplate{section in toc}[ball unnumbered]
 }
+\let\oldfootnote\footnote
+\renewcommand\footnote[1][]{\oldfootnote[frame,#1]}
+\parskip=10pt
+\newenvironment<>{proofs}[1][\proofname]{%
+    \par
+    \def\insertproofname{#1.}%
+    \usebeamertemplate{proof begin}#2}
+{\usebeamertemplate{proof end}}
+\makeatother
