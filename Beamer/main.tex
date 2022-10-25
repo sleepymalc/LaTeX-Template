@@ -1,40 +1,44 @@
-\documentclass[11pt, t]{beamer}
+\documentclass[xcolor={dvipsnames}, hyperref={colorlinks=true,linkcolor=RoyalBlue,urlcolor=magenta,citecolor=violet, hyperfootnotes=true}]{beamer}
 \input{header.tex}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
+\addbibresource{ref.bib}
+\renewcommand*{\bibfont}{\scriptsize}
 
-\newcommand{\Title}{Academic Template}
-\newcommand{\SubTitle}{Beamer Template}
-\newcommand{\InstitutionS}{UM-SJTU JI}
-\newcommand{\InstitutionL}{Shanghai Jiao Tong University-University of Michigan Joint Institute}
-\author{Author}
+\title{Beamer Template}
+\subtitle{\textbf{Beamer Template}\\\large }
+\institute[UofM]{University of Michigan}
+\author{Pingbang Hu}
 
 \begin{document}
 
 \begin{frame}
     \titlepage
     \begin{center}
-        \includegraphics[height=2cm]{Figures/logo/logo2.png}
+        \includegraphics[height=1.3cm]{Figures/logo/logo2.png}
     \end{center}
 \end{frame}
 
-\section{section-name}
-\begin{frame}
-    \frametitle{Outline}
-    \begin{spacing}{1.2}
-        \tableofcontents[currentsubsection,hideothersubsections,sectionstyle=hide]
-    \end{spacing}
+\begin{frame}{Table of Content}
+    \tableofcontents
 \end{frame}
 
-\subsection{Overview}
-\begin{frame}
-    \frametitle{Overview}
-    This is an overview
-    \vspace{1cm}
+\AtBeginSection[]{\begin{frame}<beamer>\frametitle{Table of Content}\tableofcontents[currentsection,hideothersubsections]\end{frame}}
+
+\section{Section}
+\begin{frame}{Section}
+
 \end{frame}
 
-\subsection{subsection-name}
-\begin{frame}[allowframebreaks]
-    \frametitle{frame-title}
+\subsection{subsection}
+\begin{frame}[allowframebreaks]{frame-title}
 
+
+\end{frame}
+
+\section{References}
+
+\begin{frame}{References}
+    \printbibliography
 \end{frame}
 
 
