@@ -70,11 +70,9 @@ Computer Science and Engineering, \\
 University of Michigan
 }
 %
-% List your degree(s), licences, etc. here if you like.
 %\def\What{, Your degrees, etc.} 
 %
 % Set the name of your Department or School here
-% I honestly don't know why the negative spacing is necessary to get the alignment of the first line correct.  This must be a ``\tikz'' thing.
 %%%%%%%%%%%%%%%%%%  School or Department %%%%%%%%%%%%%%%
 \def\Where{\hspace{-1.2mm}\textbf{\color{UMblue}
 Computer Science and Engineering, \\University of Michigan
@@ -82,17 +80,10 @@ Computer Science and Engineering, \\University of Michigan
 %%%%%%%%%%%%  Additional Contact Information %%%%%%%%%%%
 %
 % Set your preferred primary contact address here.
-\def\Address{1770, Broadyway Street,}
-%
+\def\Address{1770, Broadway Street,}
 \def\CityZip{Ann Arbor, Michigan, 48109}
-%
-% Set your HIT e-mail here
 \def\Email{\textbf{\color{UMblue}E-mail}: \href{mailto:pbb@umich.edu}{pbb@umich.edu}}
-%
-% Set your preferred contact number here
 \def\TEL{\textbf{\color{UMblue}Phone}: (+1) 734-882-7750}
-%
-% Set your department or personal website here
 % \def\URL{\textbf{\color{UMblue}URL}: https://cse.engin.umich.edu/}
 
 %%%%%%%%%%%%%%%%  Footer information  %%%%%%%%%%%%%%%%%%
@@ -112,9 +103,10 @@ Computer Science and Engineering, \\University of Michigan
 % One can add a signature image in a PDF file using the following code; this requires a file called "signature_block.pdf" to be installed in the same folder as the .tex file.  The vertical spacing (\vspace) and the scaling will have to be adjusted to get things to look correct for your particular signature image. Alternatively, comment out the following line in favor of the one labeled "[[Alternate]]" if you want to sign a paper copy of the letter.
 %
 
-\signature{ 
-\vspace{-12mm}\includegraphics[width=.8\linewidth]{Figures/signature.png}\\\vspace{-2mm}
-\name}
+\signature{
+  \vspace{-12mm} {\centering \includegraphics[width=.5\linewidth]{Figures/signature.png}}\\
+  \vspace{-2mm} \name
+}
 
 % This block sets up the address on the right-hand side of the header. 
 %
@@ -155,9 +147,16 @@ Computer Science and Engineering, \\University of Michigan
   %%%%%%%%%% Body of letter   %%%%%%%%%%%%%%
   \watermark{}{}{}
 
+  I am writing to highly recommend Professor Euiwoong Lee for reappointment as Assistant Professor in the EECS department at the University of Michigan. As an undergraduate student majoring in Computer Science, I had the pleasure of taking two courses with Professor Lee: EECS 376 (Foundations of Computer Science) and EECS 598-001 (Approximation Algorithm and the Hardness of Approximation).
 
+  In EECS 376, Professor Lee's enthusiasm and patience were evident as he carefully answered every question I asked, sometimes even continuing the discussion after class. His teaching style sparked my interest in theoretical computer science, and I credit him for helping me pursue a Ph.D. in the field.
 
-  %%%%%%% ``closing'' sets the sign-off line.
+  In EECS 598-001, I was impressed by the quality, depth, and encouraging environment Professor Lee provided for such a challenging theory course. He covered and proved various impactful theorems developed in the past decades in approximation algorithms, and his unique insight into problems and ability to convey abstract and convoluted concepts made the course a smooth and delightful learning experience.
+
+  In addition to his excellent research and teaching, Professor Lee is also a supportive and caring mentor. When we had a long talk about my Ph.D. application, he expressed concern for my workload and work-life balance and offered his unstopped support and encouragement. It is clear to me that Professor Lee truly cares about his students and their well-being. Moreover, at the end of the talk, he was kind enough to be one of my recommenders and willing to support my application as much as possible.
+
+  I believe that Professor Lee is an exceptional Assistant Professor in all respects. His research achievements speak for themselves, and his outstanding teaching and support make him one of the professors I respect the most. Therefore, I strongly recommend his reappointment.
+
   \closing{Sincerely,}
 \end{letter}
 
