@@ -12,10 +12,11 @@
 
 The existing $\LaTeX$ templates are often over-complicated, while I try to make them simple and unified. There are four templates you might need:
 
-1. [Note](#note)
-2. [Report/Assignment](#reportassignment)
-3. [Beamer](#beamer)
-4. [Resume](#resume)
+- [Note](./Note)
+- [Report/Assignment](./Report)
+- [Beamer](./Beamer)
+- [Resume](./Resume)
+- [Letter](./Letter)
 
 > If you're interested in my LaTeX typeset setup, check out [this repo](https://github.com/sleepymalc/VSCode-LaTeX-Inkscape).
 
