@@ -62,6 +62,11 @@
 \def\algocflineautorefname{Algorithm}
 \counterwithin{algocfline}{chapter}
 
+% Clear out the item autoref name
+\makeatletter
+\def\itemautorefname{\@gobble}
+\makeatother
+
 % theorems
 \makeatother
 \usepackage{thmtools}
