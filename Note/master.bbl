@@ -1,0 +1,56 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{anyt/global//global/global}
+    \entry{newton1726philosophiae}{book}{}
+      \name{author}{1}{}{%
+        {{hash=c2827ae14feae073cd692358c06f386d}{%
+           family={Newton},
+           familyi={N\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Innys}%
+      }
+      \strng{namehash}{c2827ae14feae073cd692358c06f386d}
+      \strng{fullhash}{c2827ae14feae073cd692358c06f386d}
+      \strng{bibnamehash}{c2827ae14feae073cd692358c06f386d}
+      \strng{authorbibnamehash}{c2827ae14feae073cd692358c06f386d}
+      \strng{authornamehash}{c2827ae14feae073cd692358c06f386d}
+      \strng{authorfullhash}{c2827ae14feae073cd692358c06f386d}
+      \field{labelalpha}{New26}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Philosophiae naturalis principia mathematica}
+      \field{year}{1726}
+      \verb{urlraw}
+      \verb https://books.google.com/books?id=WeZ09rjv-1kC
+      \endverb
+      \verb{url}
+      \verb https://books.google.com/books?id=WeZ09rjv-1kC
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
