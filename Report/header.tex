@@ -4,7 +4,7 @@
 \usepackage{float}
 \usepackage{mathrsfs}
 \usepackage{booktabs}
-\usepackage{enumerate}
+\usepackage[inline, shortlabels]{enumitem}
 \usepackage{graphicx}
 \usepackage{indentfirst}
 \usepackage[dvipsnames]{xcolor}
@@ -51,6 +51,11 @@
 \SetArgSty{textsl}
 \def\algocflineautorefname{Algorithm}
 \def\equationautorefname{Equation}
+
+% Clear out the item autoref name
+\makeatletter
+\def\itemautorefname{\@gobble}
+\makeatother
 
 \pdfsuppresswarningpagegroup=1
 \usepackage{fancyhdr} % Required for customizing headers and footers
