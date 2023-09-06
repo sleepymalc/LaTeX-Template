@@ -112,6 +112,18 @@
     \import{./Figures/}{#1.pdf_tex}
 }
 
+\newtheorem{intuition}{Intuition}
+\AtBeginEnvironment{intuition}{%
+    \setbeamercolor{block title}{use=example text,fg=white,bg=VioletRed}
+    \setbeamercolor{block body}{parent=normal text,use=block title example,bg=VioletRed!20!white}
+}
+
+\newtheorem{remark}{Remark}
+\AtBeginEnvironment{remark}{%
+    \setbeamercolor{block title}{use=example text,fg=white,bg=Orchid}
+    \setbeamercolor{block body}{parent=normal text,use=block title example,bg=Orchid!20!white}
+}
+
 \makeatletter
 \let\@@magyar@captionfix\relax
 \makeatother
