@@ -68,10 +68,15 @@
   \vspace{-1pt}\item{\small
     {#1, 
     ``#2''. 
-    \expandafter\ifx\expandafter\relax
-    \detokenize{#3}\relax\else\textnormal{In \emph{#3} }\fi
-    \expandafter\ifx\expandafter\relax
-    \detokenize{#4}\relax\else\textnormal{(#4)}\fi
+    \expandafter\ifx\expandafter\relax\detokenize{#4}\relax
+      \textnormal{\emph{#3}}
+    \else
+      \textnormal{In \emph{#3} }
+    \fi
+    \expandafter\ifx\expandafter\relax\detokenize{#4}\relax
+    \else
+      \textnormal{(#4)}
+    \fi
      \vspace{-2pt}}
   }
 }
@@ -162,8 +167,8 @@
 \end{flushright}
 
 \publicationStart{label={[P\arabic*]}}
-\publication{\textbf{Pingbang Hu}, Thatchaphol Saranurak}{Finding Minimal Balanced Separators with Detection Sets}{preparation}{}
-\publication{\textbf{Pingbang Hu}}{Travel the Same Path: A Novel TSP Solving Strategy}{arXiv preprint}{}
+\publication{\textbf{Pingbang Hu}, Thatchaphol Saranurak}{Finding Minimal Balanced Separators with Detection Sets}{Manuscript}{}
+\publication{\textbf{Pingbang Hu}}{Travel the Same Path: A Novel TSP Solving Strategy}{Preprint}{}
 \publicationEnd
 
 
