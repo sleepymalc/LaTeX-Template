@@ -1,0 +1,255 @@
+\documentclass[letterpaper,10.8pt]{article}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex,colorlinks=true,linkcolor=blue,urlcolor=black]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{fontawesome}
+\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb}
+
+\definecolor{themecolor}{RGB}{228,105,71}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1in}
+
+\urlstyle{rm}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \color{themecolor}\vspace{-3pt}\scshape\raggedright\large
+}{}{0em}{}[\color{themecolor}\titlerule \vspace{-3pt}]
+
+\titleformat{\subsection}{
+  \color{themecolor}\vspace{-3pt}\scshape\raggedright\large
+}{}{0em}{}[\vspace{-3pt}]
+
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-1pt}}
+  }
+}
+
+\newcommand{\resumeItemWithoutTitle}[1]{
+  \item\small{
+    {#1 \vspace{-1pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\publication}[4]{
+  \vspace{-1pt}\item{\small
+    {#1, 
+    ``#2''. 
+    \expandafter\ifx\expandafter\relax
+    \detokenize{#3}\relax\else\textnormal{In \emph{#3} }\fi
+    \expandafter\ifx\expandafter\relax
+    \detokenize{#4}\relax\else\textnormal{(#4)}\fi
+     \vspace{-2pt}}
+  }
+}
+
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\newcommand{\publicationStart}[1]{\begin{enumerate}[#1]}
+  \newcommand{\publicationEnd}{\end{enumerate}}
+
+
+\newcommand*{\emailsymbol}{{\small\faEnvelopeO}~}
+\newcommand*{\mobilephonesymbol}{{\Large\faMobilePhone}~}
+\newcommand*{\homepagesymbol}{{\small\faHome}~}
+\newcommand*{\webpagesymbol}{{\small\faGlobe}~}
+
+\renewcommand{\url}[1]{\href{#1}{\webpagesymbol}}
+%────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING-----------------
+
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \color{themecolor} \textbf{\LARGE{Pingbang Hu}} & \emailsymbol \href{mailto:pbb@illinois.edu}{pbb@illinois.edu}\\
+  \href{https://www.pbb.wtf/}{\homepagesymbol}\href{https://scholar.google.com/citations?user=TXqLUIAAAAAJ&hl=en}{\faGraduationCap} \href{https://www.linkedin.com/in/pingbang-hu-78a190215}{\faLinkedinSquare} \href{https://twitter.com/PingbangHu}{\faTwitterSquare} \href{https://github.com/sleepymalc}{\faGithub} & \mobilephonesymbol (+1) 734 882 7750 \\
+\end{tabular*}
+
+
+%-----------EDUCATION-----------------
+\section{Degrees}
+\resumeSubHeadingListStart
+
+\resumeSubheading{University of Illinois Urbana-Champaign}{Illinois}
+{Ph.D.\ Student in Information Science, School of Information Science}{Aug.\ 2023 - Present}
+\resumeItemListStart
+\resumeItem{Advisor}
+{Jiaqi Ma \url{https://www.jiaqima.com/}}
+\resumeItem{Research Area}
+{Theoretical Artificial Intelligence \& Theoretical Computer Science}
+\resumeItemListEnd
+
+\resumeSubheading{University of Michigan}{Michigan}
+{B.Sc.\ in Computer Science, College of Engineering}{Aug.\ 2021 - May.\ 2023}
+\resumeItemListStart
+\resumeItemWithoutTitle{Graduate with \emph{\textbf{Summa Cum Laude}}}
+\resumeItem{Minor}
+{Mathematics, College of Literature, Science, and the Arts}
+\resumeItemListEnd
+
+\resumeSubheading{Shanghai Jiao Tong University}{Shanghai, China}
+{B.Eng.\ in Electrical and Computer Engineering, UM-SJTU Joint Institute}{Aug.\ 2019 - Aug.\ 2023}
+\resumeItemListStart
+\resumeItem{Minor}
+{Computer Science, UM-SJTU Joint Institute}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------------
+\section{Research Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading{Finding Minimal Balanced Separators with Detection Sets}{Michigan}
+{College of Engineering, University of Michigan}{Mar.\ 2022 - Present}
+\resumeItemListStart
+\resumeItem{Advisor}
+{Thatchaphol Saranurak \url{https://sites.google.com/site/thsaranurak/}}
+\resumeItemWithoutTitle{The first almost linear time algorithm on finding minimal balanced separator.}
+\resumeItemListEnd
+
+\resumeSubheading{Deep Learning Foundation}{Michigan}
+{SURE Program \url{https://sure.engin.umich.edu/}, College of Engineering, University of Michigan}{May.\ 2022 - Jan.\ 2023}
+\resumeItemListStart
+\resumeItem{Advisor}
+{Wei Hu \url{https://weihu.me/}}
+\resumeItemWithoutTitle{Theoretical analysis on intrinsic dimension under isoperimetry assumptions.}
+\resumeItemListEnd
+
+\resumeSubheading{Theory of Graph Neural Networks}{Michigan}
+{College of Engineering, University of Michigan}{Mar.\ 2022 - Jan.\ 2023}
+\resumeItemListStart
+\resumeItem{Advisor}
+{Wei Hu \url{https://weihu.me/}}
+\resumeItemWithoutTitle{Theoretical analysis on intrinsic dimension under isoperimetry assumptions.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------PUBLICATIONS-----------------
+% \section{Peer-Reviewed Conference Publications}
+
+\section{Pre-prints and Technical Reports}
+\begin{flushright}
+  (\(^*\) denotes equal contribution)\vspace{-10pt}
+\end{flushright}
+
+\publicationStart{label={[P\arabic*]}}
+\publication{\textbf{Pingbang Hu}, Thatchaphol Saranurak}{Finding Minimal Balanced Separators with Detection Sets}{preparation}{}
+\publication{\textbf{Pingbang Hu}}{Travel the Same Path: A Novel TSP Solving Strategy}{arXiv preprint}{}
+\publicationEnd
+
+
+%────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+\section{Teaching Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{EECS475 Introduction to Cryptography \url{https://mahdi.ch/eecs475/}}{Michigan}
+{Instructional Aide, College of Engineering, University of Michigan}{Jan.\ 2023 - May.\ 2023}
+\resumeItemListStart
+\resumeItemWithoutTitle{An upper-level 100+ student course on the main CS track.}
+\resumeItemWithoutTitle{Hold discussion and office hour weekly, design assignment and exam problems, grade and guide projects.}
+\resumeItem{Topics}{\emph{Historic ciphers}, \emph{perfect secrecy}, \emph{symmetric encryption}, \emph{message authentication}, \emph{cryptographic hash functions}, and \emph{public key encryption}.}
+\resumeItemListEnd
+
+\resumeSubheading
+{EECS572 Randomness and Computation \url{https://mahdi.ch/eecs572/}}{Michigan}
+{Instructional Aide, College of Engineering, University of Michigan}{Aug.\ 2022 - Dec.\ 2022}
+\resumeItemListStart
+\resumeItemWithoutTitle{A graduate-level 70+ student course on the M.S.\ theory CS track.}
+\resumeItemWithoutTitle{Hold discussion and office hour weekly, design assignment and exam problems, grade and guide projects.}
+\resumeItem{Topics}{\emph{Randomized algorithms}, \emph{randomized complexity}, \emph{Markov chains}, \emph{random walks}, \emph{expander graphs}, \emph{pseudo-random generators}, and \emph{hardness v.s.\ randomness}}
+\resumeItemListEnd
+
+\resumeSubheading
+{VV285 Honor Mathematics III \url{https://umji.sjtu.edu.cn/~horst/teaching/vv285.html}}{Shanghai, China}
+{Teaching Assistant, UM-SJTU Joint Institute, Shanghai Jiao Tong University}{Mar.\ 2021 - Aug.\ 2021}
+\resumeItemListStart
+\resumeItemWithoutTitle{An undergraduate-level 150+ student course on the main B.Eng.\ ECE track.}
+\resumeItemWithoutTitle{Hold discussion and office hour weekly, design and grade assignments and exams.}
+\resumeItem{Topics}{\emph{Linear systems of equations}, \emph{vector spaces}, \emph{Gram-Schmidt orthonormalization}, \emph{topology of normed spaces}, \emph{vector fields}, \emph{higher derivatives}, \emph{integration on curves and surfaces}; \emph{Stokes theorem}, \emph{the inverse and implicit function theorems}}
+\resumeItem{Competition}
+{Hold the \(1^{st}\) UM-SJTU JIntegration Bee competition \url{https://github.com/sleepymalc/JIntegrationBee}.}
+\resumeItemListEnd
+
+\resumeSubheading
+{VV186 Honor Mathematics II \url{https://umji.sjtu.edu.cn/~horst/teaching/vv186.html}}{Shanghai, China}
+{Teaching Assistant, UM-SJTU Joint Institute, Shanghai Jiao Tong University}{Sep.\ 2020 - Dec.\ 2020}
+\resumeItemListStart
+\resumeItemWithoutTitle{An undergraduate-level 200+ student course on the main B.Eng.\ ECE track.}
+\resumeItemWithoutTitle{Hold discussion and office hour weekly, design and grade assignments and exams.}
+\resumeItem{Topics}{\emph{Logic}, \emph{set theory}, \emph{sequences}, \emph{convergence}, \emph{completeness of metric spaces}, \emph{convergence and continuity}, \emph{derivative}, \emph{normed vector spaces}, \emph{sequences of functions}, \emph{series and power series}, \emph{Darboux and Riemann integrals}}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------Awards-----------------
+\section{Selected Honors and Awards}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Hong Kong, Macao and Taiwan Overseas Chinese Student Scholarship}{Shanghai, China}
+{First Prize (Ranked \#2) among all HK, MC and TW students in \emph{Shanghai Jiao Tong University}}{Oct.\ 2021}
+
+\resumeSubheading
+{Undergraduate Excellent Scholarship}{Shanghai, China}
+{Third Prize among all students in \emph{UM-SJTU Joint Institute}}{Nov.\ 2020}
+
+\resumeSubheading
+{Bao Gang Excellent Scholarship}{Shanghai, China}
+{Second Prize (Ranked \#3) among all Taiwan students in \emph{Shanghai Jiao Tong University}}{Jun.\ 2020}
+
+\resumeSubheading
+{Hong Kong, Macao and Taiwan Overseas Chinese Student Scholarship}{Shanghai, China}
+{First Prize (Ranked \#1) among all HK, MC and TW students in \emph{UM-SJTU Joint Institute}}{Dec.\ 2019}
+
+\resumeSubHeadingListEnd
+
+\end{document}
