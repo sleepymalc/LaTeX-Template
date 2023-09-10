@@ -1,16 +1,17 @@
 \documentclass[letterpaper,10.8pt]{article}
-
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
 \usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
+\usepackage[usenames,dvipsnames]{xcolor}
 \usepackage{verbatim}
 \usepackage{enumitem}
 \usepackage[pdftex,colorlinks=true,linkcolor=blue,urlcolor=black]{hyperref}
 \usepackage{fancyhdr}
 \usepackage{fontawesome}
 \usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb}
+
+\definecolor{themecolor}{RGB}{228,105,71}
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -33,8 +34,13 @@
 
 % Sections formatting
 \titleformat{\section}{
-  \vspace{-3pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+  \color{themecolor}\vspace{-3pt}\scshape\raggedright\large
+}{}{0em}{}[\color{themecolor}\titlerule \vspace{-5pt}]
+
+\titleformat{\subsection}{
+  \color{themecolor}\vspace{-3pt}\scshape\raggedright\large
+}{}{0em}{}[\vspace{-5pt}]
+
 
 %-------------------------
 % Custom commands
@@ -46,7 +52,7 @@
 
 \newcommand{\resumeItemWithoutTitle}[1]{
   \item\small{
-    {\vspace{-2pt}}
+    {#1 \vspace{-2pt}}
   }
 }
 
@@ -58,6 +64,18 @@
     \end{tabular*}\vspace{-5pt}
 }
 
+\newcommand{\publication}[4]{
+  \vspace{-1pt}\item{\small
+    {#1, 
+    ``#2''. 
+    \expandafter\ifx\expandafter\relax
+    \detokenize{#3}\relax\else\textnormal{In \emph{#3} }\fi
+    \expandafter\ifx\expandafter\relax
+    \detokenize{#4}\relax\else\textnormal{(#4)}\fi
+     \vspace{-2pt}}
+  }
+}
+
 
 \newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
 
@@ -65,8 +83,13 @@
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\newcommand{\publicationStart}[1]{\begin{enumerate}[#1]}
+  \newcommand{\publicationEnd}{\end{enumerate}}
+
 
 \newcommand*{\emailsymbol}{{\small\faEnvelopeO}~}
 \newcommand*{\mobilephonesymbol}{{\Large\faMobilePhone}~}
@@ -79,13 +102,15 @@
 \begin{document}
 
 %----------HEADING-----------------
+
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{{\LARGE Pingbang Hu}} & \emailsymbol \href{mailto:pbb@illinois.edu}{pbb@illinois.edu}\\
+  \color{themecolor} \textbf{\LARGE{Pingbang Hu}} & \emailsymbol \href{mailto:pbb@illinois.edu}{pbb@illinois.edu}\\
   \href{https://www.pbb.wtf/}{\homepagesymbol}\href{https://scholar.google.com/citations?user=TXqLUIAAAAAJ&hl=en}{\faGraduationCap} \href{https://www.linkedin.com/in/pingbang-hu-78a190215}{\faLinkedinSquare} \href{https://twitter.com/PingbangHu}{\faTwitterSquare} \href{https://github.com/sleepymalc}{\faGithub} & \mobilephonesymbol (+1) 734 882 7750 \\
 \end{tabular*}
 
+
 %-----------EDUCATION-----------------
-\section{Education}
+\section{Degrees}
 \resumeSubHeadingListStart
 
 \resumeSubheading{University of Illinois Urbana-Champaign}{Illinois}
@@ -117,22 +142,35 @@
 \section{Selected Research Experience}
 \resumeSubHeadingListStart
 
-\resumeSubheading
-{Network Failure Detection}{Michigan}
-{Researcher, College of Engineering, University of Michigan}{Mar.\ 2022 - Present}
+\resumeSubheading{Finding Minimal Balanced Separators with Detection Sets}{Michigan}
+{College of Engineering, University of Michigan}{Mar.\ 2022 - Present}
 \resumeItemListStart
-\resumeItem{Abstract}
-{An improved algorithm on finding small balanced separator in almost linear time.}
+\resumeItem{Advisor}
+{Thatchaphol Saranurak \href{https://sites.google.com/site/thsaranurak/}{\webpagesymbol}}
+\resumeItemWithoutTitle{The first almost linear time algorithm on finding minimal balanced separator.}
 \resumeItemListEnd
 
 \resumeSubheading{Deep Learning Foundation}{Michigan}
-{Undergraduate Researcher, College of Engineering, University of Michigan}{Mar.\ 2022 - Jan.\ 2023}
+{SURE Program \href{https://sure.engin.umich.edu/}{\webpagesymbol}, College of Engineering, University of Michigan}{Mar.\ 2022 - Jan.\ 2023}
 \resumeItemListStart
-\resumeItem{Abstract}
-{Theoretical analysis on intrinsic dimension under isoperimetry assumptions, supported by SURE Program \href{https://sure.engin.umich.edu/}{\webpagesymbol}.}
+\resumeItem{Advisor}
+{Wei Hu \href{https://weihu.me/}{\webpagesymbol}}
+\resumeItemWithoutTitle{Theoretical analysis on intrinsic dimension under isoperimetry assumptions.}
 \resumeItemListEnd
 
 \resumeSubHeadingListEnd
+
+%-----------PUBLICATIONS-----------------
+% \section{Peer-Reviewed Conference Publications}
+
+\section{Pre-prints and Technical Reports}
+ (\(^*\) denotes equal contribution)
+
+\publicationStart{label={[P\arabic*]}}
+\publication{\textbf{Pingbang Hu}, Thatchaphol Saranurak}{Finding Minimal Balanced Separators with Detection Sets}{preparation}{}
+\publication{\textbf{Pingbang Hu}}{Travel the Same Path: A Novel TSP Solving Strategy}{arXiv preprint}{}
+\publicationEnd
+
 
 %────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
@@ -143,24 +181,24 @@
 {EECS475 Introduction to Cryptography \href{https://mahdi.ch/eecs475/}{\webpagesymbol}}{Michigan}
 {Instructional Aide, College of Engineering, University of Michigan}{Jan.\ 2023 - May.\ 2023}
 \resumeItemListStart
-\resumeItem{Duty}
-{Hold discussion \& office hour weekly for an upper-level 100+ student course on the main CS track.}
+\resumeItemWithoutTitle{An upper-level 100+ student course on the main CS track.}
+\resumeItemWithoutTitle{Hold discussion and office hour weekly, design assignment and exam problems, grade and guide projects.}
 \resumeItemListEnd
 
 \resumeSubheading
 {EECS572 Randomness and Computation \href{https://mahdi.ch/eecs572/}{\webpagesymbol}}{Michigan}
 {Instructional Aide, College of Engineering, University of Michigan}{Aug.\ 2022 - Dec.\ 2022}
 \resumeItemListStart
-\resumeItem{Duty}
-{Hold discussion \& office hour weekly for a graduate-level 70+ student course on the M.S.\ theory CS track.}
+\resumeItemWithoutTitle{A graduate-level 70+ student course on the M.S.\ theory CS track.}
+\resumeItemWithoutTitle{Hold discussion and office hour weekly, design assignment and exam problems, grade and guide projects.}
 \resumeItemListEnd
 
 \resumeSubheading
 {VV285 Honor Mathematics III \href{https://umji.sjtu.edu.cn/~horst/teaching/vv285.html}{\webpagesymbol}}{Shanghai, China}
 {Teaching Assistant, UM-SJTU Joint Institute, Shanghai Jiao Tong University}{Mar.\ 2021 - Aug.\ 2021}
 \resumeItemListStart
-\resumeItem{Duty}
-{Hold discussion \& office hour weekly with grading responsibility for a 150+ student rigorous analysis course on the main B.Eng.\ ECE track.}
+\resumeItemWithoutTitle{An undergraduate-level 150+ student course on the main B.Eng.\ ECE track.}
+\resumeItemWithoutTitle{Hold discussion and office hour weekly, design and grade assignments and exams.}
 \resumeItem{Competition}
 {Hold the \(1^{st}\) UM-SJTU JIntegration Bee competition \href{https://github.com/sleepymalc/JIntegrationBee}{\webpagesymbol}.}
 \resumeItemListEnd
@@ -169,8 +207,8 @@
 {VV186 Honor Mathematics II \href{https://umji.sjtu.edu.cn/~horst/teaching/vv186.html}{\webpagesymbol}}{Shanghai, China}
 {Teaching Assistant, UM-SJTU Joint Institute, Shanghai Jiao Tong University}{Sep.\ 2020 - Dec.\ 2020}
 \resumeItemListStart
-\resumeItem{Duty}
-{Hold discussion \& office hour weekly with grading responsibility for a 200+ student rigorous analysis course on the main B.Eng.\ ECE track.}
+\resumeItemWithoutTitle{An undergraduate-level 200+ student course on the main B.Eng.\ ECE track.}
+\resumeItemWithoutTitle{Hold discussion and office hour weekly, design and grade assignments and exams.}
 \resumeItemListEnd
 
 \resumeSubHeadingListEnd
