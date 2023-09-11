@@ -14,11 +14,13 @@ The existing $\LaTeX$ templates are often over-complicated, while I try to make 
 
 - [Note](./Note)
 - [Report/Assignment](./Report)
-- [Beamer](./Beamer) (🌽)
-- [Resume](./Resume)
-- [CV](./CV)
-- [Letter](./Letter) (〽️)
+- [Beamer](./Beamer) [^🌽]
+- [CV/Resume](./CV)
+- [Letter](./Letter) [^〽️]
 
-where 〽️ means it's with UMich style, and 🌽 means it's with UIUC style. Feel free to change them by replacing figures and color theme.
+[^🌽]: UIUC style
+[^〽️]: UMich style.
+
+Feel free to change them by replacing figures and color theme.
 
 > If you're interested in my LaTeX typeset setup, check out [this repo](https://github.com/sleepymalc/VSCode-LaTeX-Inkscape).
