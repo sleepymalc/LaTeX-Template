@@ -52,19 +52,25 @@
 \newcommand{\heading}[4]{
 	\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
 		\textbf{#1} & \textbf{#2} \\
-		\textit{\small#3} & \textit{\small #4} \\
+		\emph{\small#3} & \emph{\small #4} \\
 	\end{tabular*}\vspace{-5pt}
 }
 
-\newcommand{\detail}[2]{{\small{\expandafter\ifx\expandafter\relax\detokenize{#1}\relax
+
+\newcommand{\detail}[3]{{\small{\expandafter\ifx\expandafter\relax\detokenize{#1}\relax
 					\textnormal{#2}
 				\else
 					\textnormal{\textbf{#1}: #2}
+				\fi
+				\expandafter\ifx\expandafter\relax\detokenize{#3}\relax
+				\else
+					\hfill\textnormal{\emph{#3}}{\parfillskip=6pt\par}%
 				\fi
 				\vspace{-1pt}
 			}
 		}
 }
+
 
 % publication
 \newlist{publication@}{enumerate}{1}
