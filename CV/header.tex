@@ -40,24 +40,14 @@
 	\color{themecolor}\vspace{-3pt}\scshape\raggedright\large
 }{}{0em}{}[\vspace{-3pt}]
 
+\renewcommand{\url}[1]{\href{#1}{\webpagesymbol}}
+\newcommand{\colorhref}[2]{\href{#1}{{\color{themecolor!70!white}{#2}}}}
 
-\newcommand{\detailsTitled}[2]{
-	\small{
-		\textbf{#1}{: #2 \vspace{-1pt}}
-	}
-}
+%──────────────────Customized List──────────────────────────────────────────────────────────────────────────────────────────────────────-------------
 
-\newcommand{\details}[2]{
-	{\small
-			{\expandafter\ifx\expandafter\relax\detokenize{#1}\relax
-					\textnormal{#2}
-				\else
-					\textnormal{\textbf{#1}: #2}
-				\fi
-				\vspace{-1pt}}
-		}
-}
-
+% heading
+\setlist[itemize, 1]{leftmargin=*, label=\(\bullet\)}
+\setlist[itemize, 2]{after=\vspace{-2pt}, label=\(\circ\)}
 
 \newcommand{\heading}[4]{
 	\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
@@ -66,10 +56,22 @@
 	\end{tabular*}\vspace{-5pt}
 }
 
-\newcommand{\pub}[4]{
-	{\small
-			{#1,
-				``#2''.
+\newcommand{\detail}[2]{{\small{\expandafter\ifx\expandafter\relax\detokenize{#1}\relax
+					\textnormal{#2}
+				\else
+					\textnormal{\textbf{#1}: #2}
+				\fi
+				\vspace{-1pt}
+			}
+		}
+}
+
+% publication
+\newlist{publication@}{enumerate}{1}
+\setlist[publication@]{}
+\newenvironment{publication}[1][]{\begin{publication@}[label={[#1\arabic*]}]}{\end{publication@}}
+
+\newcommand{\pub}[4]{{\small{#1, ``#2''.
 				\expandafter\ifx\expandafter\relax\detokenize{#4}\relax
 					\textnormal{\emph{#3}}
 				\else
@@ -79,37 +81,17 @@
 				\else
 					\textnormal{(#4)}
 				\fi
-				\vspace{-2pt}}
+				\vspace{-2pt}
+			}
 		}
 }
 
-\newlist{brief}{itemize}{1}
-\setlist[brief]{leftmargin=*, label=\(\bullet\)}
-
-\newlist{detail}{itemize}{1}
-\setlist[detail]{after=\vspace{-5pt}, label=\(\circ\)}
-
-\makeatletter
-% enumitem-related constructions
-\newlist{publication@}{enumerate}{1}
-\setlist[publication@]{}
-% Create list emulator
-\newenvironment{publication}[1][]
-{\begin{publication@}[label={[#1\arabic*]}]}
-		{\end{publication@}}
-\makeatother
-
-
+%──────────────────Head──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 \newcommand*{\emailsymbol}{{\small\faEnvelopeO}~}
 \newcommand*{\mobilephonesymbol}{{\Large\faMobilePhone}~}
 \newcommand*{\homepagesymbol}{{\small\faHome}~}
 \newcommand*{\webpagesymbol}{{\small\faGlobe}~}
 
-\renewcommand{\url}[1]{\href{#1}{\webpagesymbol}}
-
-\newcommand{\colorhref}[2]{\href{#1}{{\color{themecolor!70!white}{#2}}}}
-
-% Head
 \newcommand*{\head}{\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
 		{\color{themecolor} \textbf{\Huge{Pingbang Hu}}} & \emailsymbol \href{mailto:pbb@illinois.edu}{pbb@illinois.edu}\\
 		\colorhref{https://www.pbb.wtf/}{\homepagesymbol}%
