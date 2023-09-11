@@ -1,0 +1,105 @@
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex,colorlinks=true,linkcolor=blue,urlcolor=black]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{fontawesome}
+\usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb}
+
+\definecolor{themecolor}{RGB}{228,105,71}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1in}
+
+\urlstyle{rm}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+	\color{themecolor}\vspace{-3pt}\scshape\raggedright\large
+}{}{0em}{}[\color{themecolor}\titlerule \vspace{-3pt}]
+
+\titleformat{\subsection}{
+	\color{themecolor}\vspace{-3pt}\scshape\raggedright\large
+}{}{0em}{}[\vspace{-3pt}]
+
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+	\item\small{
+		\textbf{#1}{: #2 \vspace{-1pt}}
+	}
+}
+
+\newcommand{\resumeItemWithoutTitle}[1]{
+	\item\small{
+		{#1 \vspace{-1pt}}
+	}
+}
+
+\newcommand{\resumeSubheading}[4]{
+	\item
+	\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+		\textbf{#1} & #2 \\
+		\textit{\small#3} & \textit{\small #4} \\
+	\end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\publication}[4]{
+	\vspace{-1pt}\item{\small
+	            {#1,
+		            ``#2''.
+		            \expandafter\ifx\expandafter\relax\detokenize{#4}\relax
+			            \textnormal{\emph{#3}}
+		            \else
+			            \textnormal{In \emph{#3} }
+		            \fi
+		            \expandafter\ifx\expandafter\relax\detokenize{#4}\relax
+		            \else
+			            \textnormal{(#4)}
+		            \fi
+		            \vspace{-2pt}}
+	      }
+}
+
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+		\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+		\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\newcommand{\publicationStart}[1]{\begin{enumerate}[#1]}
+		\newcommand{\publicationEnd}{\end{enumerate}}
+
+
+\newcommand*{\emailsymbol}{{\small\faEnvelopeO}~}
+\newcommand*{\mobilephonesymbol}{{\Large\faMobilePhone}~}
+\newcommand*{\homepagesymbol}{{\small\faHome}~}
+\newcommand*{\webpagesymbol}{{\small\faGlobe}~}
+
+\renewcommand{\url}[1]{\href{#1}{\webpagesymbol}}
+
+\newcommand{\colorhref}[2]{\href{#1}{{\color{themecolor!70!white}{#2}}}}
