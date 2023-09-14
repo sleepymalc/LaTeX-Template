@@ -41,6 +41,8 @@
       \color{themecolor}\vspace{-3pt}\scshape\raggedright\large
 }{}{0em}{}[\vspace{-3pt}]
 
+\newcommand*{\Me}{{\color{themecolor!70!black} \textbf{\author}}}
+
 \renewcommand{\url}[1]{\href{#1}{\webpagesymbol}}
 \newcommand{\colorhref}[2]{\href{#1}{{\color{themecolor!70!white}{#2}}}}
 
@@ -78,15 +80,19 @@
 \setlist[publication@]{}
 \newenvironment{publication}[1][]{\begin{publication@}[label={[#1\arabic*]}]}{\end{publication@}}
 
-\newcommand{\pub}[4]{{\small{#1, ``#2''.
+\newcommand{\pub}[5]{{\small{#1, ``#2''.
                         \expandafter\ifx\expandafter\relax\detokenize{#4}\relax
                               \textnormal{\emph{#3}}
                         \else
-                              \textnormal{In \emph{#3} }
+                              \textnormal{In \emph{#3}}
                         \fi
                         \expandafter\ifx\expandafter\relax\detokenize{#4}\relax
                         \else
                               \textnormal{(#4)}
+                        \fi
+                        \expandafter\ifx\expandafter\relax\detokenize{#5}\relax
+                        \else
+                              \url{#5}
                         \fi
                         \vspace{-2pt}
                   }
@@ -99,11 +105,12 @@
 \newcommand*{\homepagesymbol}{{\small\faHome}~}
 \newcommand*{\webpagesymbol}{{\small\faGlobe}~}
 
+
 \newcommand*{\head}{\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-            {\color{themecolor} \Huge{\textbf{Pingbang Hu}}} & \emailsymbol \href{mailto:pbb@illinois.edu}{pbb@illinois.edu}\\
-            \colorhref{https://www.pbb.wtf/}{\homepagesymbol}%
-            \colorhref{https://scholar.google.com/citations?user=lPlQpqoAAAAJ}{\faGraduationCap}
-            \colorhref{https://www.linkedin.com/in/pingbang-hu-78a190215}{\faLinkedinSquare}
-            \colorhref{https://github.com/sleepymalc}{\faGithub}
-            & \mobilephonesymbol (+1) 734 882 7750 \\
+            \Huge{\Me} & \emailsymbol \href{mailto:\Email}{\Email}\\
+            \colorhref{\Home}{\homepagesymbol}%
+            \colorhref{\GoogleScholar}{\faGraduationCap}
+            \colorhref{\LinkedIn}{\faLinkedinSquare}
+            \colorhref{\GitHub}{\faGithub}
+            & \mobilephonesymbol \phone \\
       \end{tabular*}}
