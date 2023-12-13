@@ -65,7 +65,7 @@
         %  This just sets the size of the box to the right of the logo, and the size of the vertical line.  The vertical line is set by the size of the first numerical argument of the \parbox command.
         %
         % In the future, the "From" address might be better set using "tikz".
-        \parbox[c][1.8in][c]{2.225in}{{~}\\
+        \parbox[c][1.2in][c]{2.225in}{{~}\\
         }\\
     \end{tabular*}
 }
