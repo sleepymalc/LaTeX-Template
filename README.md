@@ -14,12 +14,9 @@ The existing $\LaTeX$ templates are often over-complicated, while I try to make 
 
 - [Note](./Note)
 - [Report/Assignment](./Report)
-- [Beamer](./Beamer) [^🌽]
+- [Beamer](./Beamer)
 - [CV/Resume](./CV)
-- [Letter](./Letter) [^〽️]
-
-[^🌽]: UIUC style
-[^〽️]: UMich style.
+- [Letter](./Letter)
 
 Feel free to change them by replacing figures and color themes.
 
