@@ -21,6 +21,6 @@ The existing $\LaTeX$ templates are often over-complicated, while I try to make 
 [^🌽]: UIUC style
 [^〽️]: UMich style.
 
-Feel free to change them by replacing figures and color theme.
+Feel free to change them by replacing figures and color themes.
 
 > If you're interested in my $\LaTeX$ typeset setup, check out [this repo](https://github.com/sleepymalc/VSCode-LaTeX-Inkscape).
