@@ -130,6 +130,12 @@
     \setbeamercolor{block body}{parent=normal text,use=block title example,bg=gray!20!white}
 }
 
+\newtheorem{assumption}{Assumption}
+\AtBeginEnvironment{assumption}{%
+    \setbeamercolor{block title}{use=example text,fg=white,bg=Purple}
+    \setbeamercolor{block body}{parent=normal text,use=block title example,bg=Purple!20!white}
+}
+
 \makeatletter
 \let\@@magyar@captionfix\relax
 \makeatother
