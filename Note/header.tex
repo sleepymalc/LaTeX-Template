@@ -244,7 +244,7 @@
 \declaretheorem[style=thmblue2box, name=Claim, numbered=no]{claim}
 \declaretheorem[style=conjpurplebox, name=Conjecture, numberwithin=section]{conjecture}
 
-% Redefine proof environment to get a full control. 
+% Redefine proof environment to get a full control.
 \makeatletter
 \renewenvironment{proof}[1][\proofname]{\par
     \pushQED{\qed}%
@@ -306,17 +306,11 @@
 % fancy headers
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-
-% LE: left even
-% RO: right odd
-% CE, CO: center even, center odd
-\fancyhead[LE,RO]{Pingbang Hu}
-
-\fancyhead[RO,LE]{\@lecture} % Right odd,  Left even
-\fancyhead[RE,LO]{}          % Right even, Left odd
-\fancyfoot[RO,LE]{\thepage}  % Right odd,  Left even
-\fancyfoot[RE,LO]{}          % Right even, Left odd
-\fancyfoot[C]{\leftmark}     % Center
+\fancyhead[L]{}
+\fancyhead[R]{\@lecture}
+\fancyfoot[L]{}
+\fancyfoot[R]{\thepage}
+\fancyfoot[C]{\leftmark}
 
 \makeatother
 
