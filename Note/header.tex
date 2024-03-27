@@ -284,6 +284,7 @@
     \marginpar{\small\textsf{\mbox{#1 #2 #3 #5}}}
 }
 
+\def\@scribe{}%
 \newcommand{\lecture}[3]{
     \ifthenelse{\isempty{#3}}{%
         \global\def\@lecture{Lecture #1}%
@@ -293,6 +294,7 @@
     \section*{\@lecture}
     \marginpar{\small\textsf{\mbox{#2}}}
 }
+
 \usepackage{pgffor}%
 \newcommand{\lec}[2]{%
     \foreach \c in {#1,...,#2}{%
