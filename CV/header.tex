@@ -6,12 +6,13 @@
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage{verbatim}
 \usepackage{enumitem}
-\usepackage[pdftex,colorlinks=true,linkcolor=blue,urlcolor=black]{hyperref}
+\usepackage[pdftex,colorlinks=true,linkcolor=blue,urlcolor=urlcolor]{hyperref}
 \usepackage{fancyhdr}
 \usepackage{fontawesome}
 \usepackage{amsmath, amsfonts, mathtools, amsthm, amssymb}
 
 \definecolor{themecolor}{RGB}{228,105,71}
+\definecolor{urlcolor}{RGB}{100, 0, 100}
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -44,7 +45,6 @@
 \newcommand*{\Me}{{\color{themecolor!70!black} \textbf{\author}}}
 
 \renewcommand{\url}[1]{\href{#1}{\webpagesymbol}}
-\newcommand{\colorhref}[2]{\href{#1}{{\color{themecolor!70!white}{#2}}}}
 
 %──────────────────Customized List──────────────────────────────────────────────────────────────────────────────────────────────────────-------------
 
@@ -92,7 +92,7 @@
                         \fi
                         \expandafter\ifx\expandafter\relax\detokenize{#5}\relax
                         \else
-                              \url{#5}
+                              \href{#5}{\color{themecolor!70!white}{\faFilePdfO}}
                         \fi
                         \vspace{-2pt}
                   }
@@ -107,10 +107,10 @@
 
 
 \newcommand*{\head}{\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-            \Huge{\Me} & \emailsymbol \href{mailto:\Email}{\Email}\\
-            \colorhref{\Home}{\homepagesymbol}%
-            \colorhref{\GoogleScholar}{\faGraduationCap}
-            \colorhref{\LinkedIn}{\faLinkedinSquare}
-            \colorhref{\GitHub}{\faGithub}
+            \Huge{\Me} & \emailsymbol \href{mailto:\Email}{\color{themecolor!70!white}{\Email}}\\
+            \href{\Home}{\color{themecolor!70!white}{\homepagesymbol}}%
+            \href{\GoogleScholar}{\color{themecolor!70!white}{\faGraduationCap}}
+            \href{\LinkedIn}{\color{themecolor!70!white}{\faLinkedinSquare}}
+            \href{\GitHub}{\color{themecolor!70!white}{\faGithub}}
             & \mobilephonesymbol \phone \\
       \end{tabular*}}
