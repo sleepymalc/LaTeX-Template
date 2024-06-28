@@ -16,7 +16,7 @@
 \usepackage{subcaption}
 \usepackage{textpos}
 
-\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools}
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools,mathrsfs}
 
 
 \renewcommand<>{\emph}[1]{{\color{Bittersweet}{\only#2{\itshape}#1}}}
@@ -63,7 +63,7 @@
     {% \scriptstyle
         #1\,/\,#2
     }
-    {% \scriptscriptstyle  
+    {% \scriptscriptstyle
         #1\,/\,#2
     }
 }
@@ -134,6 +134,18 @@
 \AtBeginEnvironment{assumption}{%
     \setbeamercolor{block title}{use=example text,fg=white,bg=Purple}
     \setbeamercolor{block body}{parent=normal text,use=block title example,bg=Purple!20!white}
+}
+
+\newtheorem{observe}{Observe}
+\AtBeginEnvironment{observe}{%
+    \setbeamercolor{block title}{use=example text,fg=white,bg=Purple}
+    \setbeamercolor{block body}{parent=normal text,use=block title example,bg=Purple!20!white}
+}
+
+\newtheorem{goal}{Goal}
+\AtBeginEnvironment{goal}{%
+    \setbeamercolor{block title}{use=example text,fg=white,bg=Salmon}
+    \setbeamercolor{block body}{parent=normal text,use=block title example,bg=Salmon!20!white}
 }
 
 \makeatletter
