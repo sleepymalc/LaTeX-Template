@@ -80,7 +80,7 @@
 \setlist[publication@]{}
 \newenvironment{publication}[1][]{\begin{publication@}[label={[#1\arabic*]}]}{\end{publication@}}
 
-\newcommand{\pub}[5]{{\small{#1, ``#2''.
+\newcommand{\pub}[6]{{\small{#1, ``#2''.
                         \expandafter\ifx\expandafter\relax\detokenize{#4}\relax
                               \textnormal{\emph{#3}}
                         \else
@@ -92,7 +92,11 @@
                         \fi
                         \expandafter\ifx\expandafter\relax\detokenize{#5}\relax
                         \else
-                              \href{#5}{\color{themecolor!70!white}{\faFilePdfO}}
+                              \textnormal{#5}
+                        \fi
+                        \expandafter\ifx\expandafter\relax\detokenize{#6}\relax
+                        \else
+                              \href{#6}{\color{themecolor!70!white}{\faFilePdfO}}
                         \fi
                         \vspace{-2pt}
                   }
