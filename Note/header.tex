@@ -243,6 +243,14 @@
 \declaretheorem[style=thmblue2box, name=Claim, numbered=no]{claim}
 \declaretheorem[style=conjpurplebox, name=Conjecture, numberwithin=section]{conjecture}
 
+\renewcommand\theHdefinition{\thesection.\arabic {definition}}
+\renewcommand\theHtheorem{\thesection.\arabic {theorem}}
+\renewcommand\theHlemma{\thesection.\arabic {lemma}}
+\renewcommand\theHproposition{\thesection.\arabic {proposition}}
+\renewcommand\theHcorollary{\thesection.\arabic {corollary}}
+\renewcommand\theHproblem{\thesection.\arabic {problem}}
+\renewcommand\theHconjecture{\thesection.\arabic {conjecture}}
+
 % Redefine proof environment to get a full control.
 \makeatletter
 \renewenvironment{proof}[1][\proofname]{\par
