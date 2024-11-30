@@ -1,0 +1,16 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: LaTeX-Template
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Pingbang
+    family-names: Hu
+    email: sleepymalc@gmail.com
+    affiliation: 'University of Illinois, Urbana-Champaign'
+repository-code: 'https://github.com/sleepymalc/LaTeX-Template'
+url: 'https://github.com/sleepymalc/LaTeX-Template'

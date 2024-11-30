@@ -1,20 +1,17 @@
-\documentclass[xcolor={dvipsnames}, hyperref={colorlinks=true,linkcolor=Dandelion,urlcolor=magenta,citecolor=violet, hyperfootnotes=true}]{beamer}
+\documentclass[aspectratio=169, xcolor={dvipsnames}, hyperref={colorlinks=true,linkcolor=Dandelion,urlcolor=magenta,citecolor=violet, hyperfootnotes=true}]{beamer}
 \input{header.tex}
 
-\title{Beamer Template}
-\subtitle{\textbf{Beamer Template}}
+\title[Template]{Beamer Template}
+\subtitle{\textbf{A Demo}}
 \institute[UIUC]{University of Illinois Urbana-Champaign}
 \author{Pingbang Hu}
 
-\addbibresource{ref.bib}
+\addbibresource{reference.bib}
 
 \begin{document}
 
 \begin{frame}
     \titlepage
-    \begin{center}
-        \includegraphics[height=1.3cm]{Figures/logo/logo2.png}
-    \end{center}
 \end{frame}
 
 \begin{frame}{Table of Content}
@@ -23,15 +20,43 @@
 
 \AtBeginSection[]{\begin{frame}<beamer>\frametitle{Table of Content}\tableofcontents[currentsection,hideothersubsections]\end{frame}}
 
-\section{Section}
-\begin{frame}{Section}
+\section{Useful Environment}
+\subsection{Standard Environment}
+\begin{frame}{\texttt{itemize} and \texttt{enumerate}}
+    This is a demonstration of various environments. The first is \texttt{itemize}:
 
+    \begin{itemize}
+        \item Item 1
+        \item Item 2
+        \item etc.
+    \end{itemize}
+
+    Usually I'll use \texttt{enumerate} as well:
+
+    \begin{enumerate}
+        \item Item 1
+        \item Item 2
+        \item etc.
+    \end{enumerate}
 \end{frame}
 
-\subsection{subsection}
-\begin{frame}[allowframebreaks]{frame-title}
+\subsection{Customized Environment}
 
+\begin{frame}{Definition, Examples, etc.}
+    All the common environments are available, e.g.,
+    \begin{itemize}
+        \item \emph{Theorem}-related: \texttt{lemma}, \texttt{theorem}, \texttt{corollary}.
+        \item \emph{Common} environments: \texttt{definition}, \texttt{example}, \texttt{problem}.
+        \item \emph{Others}: \texttt{prev}, \texttt{observe}, \texttt{assumption}, \texttt{remark}, \texttt{intuition}.
+    \end{itemize}
 
+    \begin{example}[A demonstration]
+        This is an \texttt{example} environment.
+    \end{example}
+
+    \begin{prev}
+        This is a \texttt{prev} environment.
+    \end{prev}
 \end{frame}
 
 \section{References}
