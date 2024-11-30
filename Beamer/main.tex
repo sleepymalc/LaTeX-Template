@@ -1,8 +1,8 @@
 \documentclass[aspectratio=169, xcolor={dvipsnames}, hyperref={colorlinks=true,linkcolor=Dandelion,urlcolor=magenta,citecolor=violet, hyperfootnotes=true}]{beamer}
 \input{header.tex}
 
-\title[Template]{Beamer Template}
-\subtitle{\textbf{A Demo}}
+\title[\cite{Hu_LaTeX-Template}]{Beamer Template}
+\subtitle{A Demo}
 \institute[UIUC]{University of Illinois Urbana-Champaign}
 \author{Pingbang Hu}
 
@@ -15,10 +15,10 @@
 \end{frame}
 
 \begin{frame}{Table of Content}
-    \tableofcontents
+    \tableofcontents[hideallsubsections]
 \end{frame}
 
-\AtBeginSection[]{\begin{frame}<beamer>\frametitle{Table of Content}\tableofcontents[currentsection,hideothersubsections]\end{frame}}
+\AtBeginSubsection[]{\begin{frame}<beamer>\frametitle{Table of Content}\tableofcontents[currentsection,currentsubsection,subsectionstyle=show/shaded/hide]\end{frame}}
 
 \section{Useful Environment}
 \subsection{Standard Environment}
@@ -49,6 +49,8 @@
         \item \emph{Common} environments: \texttt{definition}, \texttt{example}, \texttt{problem}.
         \item \emph{Others}: \texttt{prev}, \texttt{observe}, \texttt{assumption}, \texttt{remark}, \texttt{intuition}.
     \end{itemize}
+
+    I'll just show you two examples:
 
     \begin{example}[A demonstration]
         This is an \texttt{example} environment.

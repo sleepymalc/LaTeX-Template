@@ -16,5 +16,39 @@
   {}
 \endgroup
 
+
+\refsection{0}
+  \datalist[entry]{anyt/global//global/global/global}
+    \entry{Hu_LaTeX-Template}{software}{}{}
+      \name{author}{1}{}{%
+        {{hash=15c21250745aec48bc68eb9677c5e2ee}{%
+           family={Hu},
+           familyi={H\bibinitperiod},
+           given={Pingbang},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{15c21250745aec48bc68eb9677c5e2ee}
+      \strng{fullhash}{15c21250745aec48bc68eb9677c5e2ee}
+      \strng{fullhashraw}{15c21250745aec48bc68eb9677c5e2ee}
+      \strng{bibnamehash}{15c21250745aec48bc68eb9677c5e2ee}
+      \strng{authorbibnamehash}{15c21250745aec48bc68eb9677c5e2ee}
+      \strng{authornamehash}{15c21250745aec48bc68eb9677c5e2ee}
+      \strng{authorfullhash}{15c21250745aec48bc68eb9677c5e2ee}
+      \strng{authorfullhashraw}{15c21250745aec48bc68eb9677c5e2ee}
+      \field{labelalpha}{Hu}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{LaTeX-Template}}
+      \verb{urlraw}
+      \verb https://github.com/sleepymalc/LaTeX-Template
+      \endverb
+      \verb{url}
+      \verb https://github.com/sleepymalc/LaTeX-Template
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
 \endinput
 
