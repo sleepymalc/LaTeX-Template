@@ -1,0 +1,96 @@
+\usepackage[T1]{fontenc}
+\usepackage[size=custom,width=120,height=72,scale=1.5]{beamerposter}
+\usetheme{gemini}
+\usecolortheme{gemini}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{cleveref}
+\Crefname{equation}{Eq.\!}{Eqs.\!}
+\usepackage[backend=biber,style=numeric,defernumbers=true]{biblatex}
+\usepackage{svg}
+\usepackage{multicol}
+\usepackage{mathtools}
+\usepackage{subcaption}
+\usepackage{etoolbox}
+\usepackage{tcolorbox}
+\usepackage{xparse}
+\usepackage{xcolor}
+\definecolor{darkgreen}{rgb}{0.0, 1, 0.0}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./Figures/}{#1.pdf_tex}
+}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\newcommand{\at}[3]{\left.#1\right\vert_{#2}^{#3}}
+\let\implies\Rightarrow
+
+\DeclareNameFormat{family}{%
+	\usebibmacro{name:family}
+	{\namepartfamily}
+	{\namepartgiven}
+	{\namepartprefix}
+	{\namepartsuffix}%
+	\usebibmacro{name:andothers}}
+
+\DeclareFieldFormat*{cite title}{#1}
+\DeclareFieldFormat*{title}{#1}
+\renewbibmacro{in:}{}
+
+\DeclareNameAlias{default}{family}
+\DeclareNameAlias{sortname}{default}
+\DeclareNameAlias{labelname}{default}
+
+\AtEveryBibitem{%
+	\clearfield{journal}%
+	\clearfield{booktitle}%
+	\clearfield{pages}%
+}
+\renewcommand*{\bibfont}{\footnotesize}
+
+% Undefine existing environments
+\let\definition\relax
+\let\enddefinition\relax
+\let\theorem\relax
+\let\endtheorem\relax
+
+% Define `definition` environment
+\NewDocumentEnvironment{definition}{o}
+{
+	\begin{tcolorbox}[colback=GreenYellow!5!white, colframe=GreenYellow!75!black]
+		{\color{purple}\bfseries Definition}%
+		\IfValueT{#1}{\textnormal{~(#1)}}%
+		\textbf{.}~
+		}
+		{
+	\end{tcolorbox}
+}
+
+% Define `theorem` environment
+\NewDocumentEnvironment{theorem}{o}
+{
+	\begin{tcolorbox}[colback=SkyBlue!5!white, colframe=SkyBlue!75!black]
+		{\color{purple}\bfseries Theorem}%
+		\IfValueT{#1}{\textnormal{~(#1)}}%
+		\textbf{.}~
+		}
+		{
+	\end{tcolorbox}
+}
+
+\NewDocumentEnvironment{highlight}{o}{\begin{tcolorbox}[colback=GreenYellow!5!white,colframe=GreenYellow!75!black]\IfValueT{#1}{{\color{purple}\textbf{#1.}}~}}{\end{tcolorbox}}
+
+% If you have N columns, choose \sepwidth and \colwidth such that
+% (N+1)*\sepwidth + N*\colwidth = \paperwidth
+\newlength{\sepwidth}
+\newlength{\colwidth}
+\setlength{\sepwidth}{0.01\paperwidth}
+\setlength{\colwidth}{0.31\paperwidth}

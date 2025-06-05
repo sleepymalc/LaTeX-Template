@@ -1,0 +1,334 @@
+% Gemini theme
+% https://github.com/anishathalye/gemini
+
+% ====================
+% Dependencies
+% ====================
+
+\RequirePackage{exscale}
+\RequirePackage{ragged2e}
+\RequirePackage{changepage}
+% \RequirePackage{fontspec}
+\RequirePackage{calc}
+
+% ====================
+% Fonts
+% ====================
+
+% \newfontfamily\Raleway[Ligatures=TeX]{Raleway}
+% \newfontfamily\Lato[Ligatures=TeX]{Lato}
+% \usepackage{XCharter}
+% \usepackage[zerostyle=c]{newtxtt}
+% \usepackage[charter,cal]{mathdesign}
+
+% \usepackage{unicode-math}
+% \setmathfont{XCharter Math}
+
+\renewcommand{\rmdefault}{XCharter-TLF}
+\usepackage[xcharter,slantedGreek,vvarbb]{newtxmath}
+% \usepackage[no-math]{fontspec}
+\usepackage[semibold,sfdefault,scaled=0.9]{inter}
+
+% \usepackage[scaled]{helvet}
+% \renewcommand\familydefault{\sfdefault}
+% \renewcommand\sfdefault{hpv}
+% \renewcommand{\familydefault}{\sfdefault}
+
+% \usefonttheme{sanserif}
+\usefonttheme{professionalfonts}
+
+% \setsansfont{Lato}[
+%   UprightFont=*-Light,
+%   ItalicFont=*-LightItalic,
+%   BoldFont=*-Regular,
+%   BoldItalicFont=*-Italic
+% ]
+
+% \setbeamerfont{headline}{family=\Raleway}
+\setbeamerfont{headline title}{size=\huge, family=\sffamily,series=\bfseries}
+% \setbeamerfont{headline title}{size=\huge,series=\bfseries}
+\setbeamerfont{headline author}{size=\normalsize, family=\sffamily}
+\setbeamerfont{headline institute}{size=\normalsize, family=\sffamily}
+% \setbeamerfont{headline institute}{size=\normalsize}
+% \setbeamerfont{block title}{family=\Raleway,size=\large,series=\bfseries}
+% \setbeamerfont{heading}{family=\Lato,series=\bfseries}
+\setbeamerfont{caption}{size=\small, family=\sffamily}
+% \setbeamerfont{footline}{family=\Raleway,size=\normalsize}
+
+\setbeamerfont{block title}{size=\normalsize, family=\sffamily}%,series=\bfseries}
+\setbeamerfont{heading}{series=\bfseries, family=\sffamily}
+\setbeamerfont{footline}{size=\normalsize, family=\sffamily}
+
+\setbeamerfont{block body}{family=\sffamily}
+
+
+% \setbeamerfont{headline}{family=\sfdefault}
+% \setbeamerfont{block title}{family=\sfdefault}
+% \setbeamerfont{heading}{family=\sfdefault}
+% \setbeamerfont{footline}{family=\sfdefault}
+
+% ====================
+% Macros
+% ====================
+
+\newcommand{\samelineand}{\qquad}
+
+% ====================
+% Elements
+% ====================
+
+\setlength{\leftmarginii}{1.5em}
+
+% % List
+% \def\@listi{\leftmargin\leftmargini
+% \topsep 1ex % spacing before
+% \parsep 0\p@ \@plus\p@
+% \itemsep 0.5ex} % spacing between
+
+% Itemize
+
+% \usepackage{enumitem}
+% \setlist[itemize]{align=parleft,left=2em}
+
+% \setbeamertemplate{itemize item}{\raise0.5ex \hbox{\vrule width 0.5ex height 0.5ex}}
+% \setbeamertemplate{itemize subitem}{\raise0.3ex \hbox{\vrule width 0.5ex height 0.5ex}}
+% \setbeamertemplate{itemize subsubitem}{\raise0.2ex \hbox{\vrule width 0.5ex height 0.5ex}}
+\setbeamertemplate{items}[circle]
+
+
+
+% Enumerate
+
+\setbeamertemplate{enumerate item}{\insertenumlabel.}
+\setbeamertemplate{enumerate subitem}{\insertsubenumlabel.}
+\setbeamertemplate{enumerate subsubitem}{\insertsubsubenumlabel.}
+
+% Equation
+\setlength\belowdisplayshortskip{2ex}
+
+% Caption
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}[period]
+\setlength{\abovecaptionskip}{2ex}
+\setlength{\belowcaptionskip}{1ex}
+
+% Bibliography
+\setbeamertemplate{bibliography item}[text]
+
+% Navigation
+\beamertemplatenavigationsymbolsempty
+
+% ====================
+% Components
+% ====================
+
+% Heading
+\newcommand\heading[1]
+{%
+  \par\bigskip
+  {\usebeamerfont{heading}\usebeamercolor[fg]{heading}#1}\par\smallskip
+}
+
+% logo
+\newlength{\logoleftwidth}
+\setlength{\logoleftwidth}{0cm}
+\newlength{\logorightwidth}
+\setlength{\logorightwidth}{0cm}
+\newlength{\maxlogowidth}  % space on both sides set to maxlogowidth to keep title centered
+\setlength{\maxlogowidth}{0cm}
+
+\newcommand{\logoright}[1]{
+  \newcommand{\insertlogoright}{#1}
+  \settowidth{\logorightwidth}{\insertlogoright}
+  \addtolength{\logorightwidth}{10ex}
+  \setlength{\maxlogowidth}{\maxof{\logoleftwidth}{\logorightwidth}}
+}
+\newcommand{\logoleft}[1]{
+  \newcommand{\insertlogoleft}{#1}
+  \settowidth{\logoleftwidth}{\insertlogoleft}
+  \addtolength{\logoleftwidth}{10ex}
+  \setlength{\maxlogowidth}{\maxof{\logoleftwidth}{\logorightwidth}}
+}
+
+% Headline
+\setbeamertemplate{headline}
+{
+  \begin{beamercolorbox}{headline}
+     \begin{columns}
+      \begin{column}{\maxlogowidth}
+        \vskip5ex
+        \ifdefined\insertlogoleft
+        \vspace*{\fill}
+        \hspace{10ex}
+        \raggedright
+        \insertlogoleft
+        \vspace*{\fill}
+        \else\fi
+      \end{column}
+      \begin{column}{\dimexpr\paperwidth-\maxlogowidth-\maxlogowidth}
+        \usebeamerfont{headline}
+        \vskip3ex
+        \centering
+        \ifx \inserttitle \empty \else
+        {\usebeamerfont{headline title}\usebeamercolor[fg]{headline title}\inserttitle\\[0.7ex]}
+        \fi
+        \ifx \beamer@shortauthor \empty \else
+        {\usebeamerfont{headline author}\usebeamercolor[fg]{headline author}\insertauthor\\[0ex]}
+        \fi
+        \ifx \insertinstitute \empty \else
+        {\usebeamerfont{headline institute}\usebeamercolor[fg]{headline institute}\insertinstitute\\[0ex]}
+        \fi
+      \end{column}
+      \begin{column}{\maxlogowidth}
+        \vskip5ex
+        \ifdefined\insertlogoright
+        \vspace*{\fill}
+        \raggedleft
+        \insertlogoright
+        \hspace{10ex}
+        \vspace*{\fill}
+        \else\fi
+      \end{column}
+    \end{columns}
+    \vspace{5ex}
+    \ifbeamercolorempty[bg]{headline rule}{}{
+      \begin{beamercolorbox}[wd=\paperwidth,colsep=0.5ex]{headline rule}\end{beamercolorbox}
+    }
+  \end{beamercolorbox}
+}
+
+% Block
+\setbeamertemplate{block begin}
+{
+  % \begin{beamercolorbox}[colsep*=0ex,dp=2ex,center]{block title}
+  \begin{beamercolorbox}[colsep*=0ex,dp=0ex]{block title}
+    \vskip-0.25ex\hskip1ex
+    \usebeamerfont{block title}\insertblocktitle
+    \vskip-0.25ex
+    \vskip-1.25ex
+    \begin{beamercolorbox}[colsep=0.115ex]{block separator}\end{beamercolorbox}
+  \end{beamercolorbox}
+  {\parskip0pt\par}
+  \usebeamerfont{block body}
+  % \vskip-0.5ex
+  \begin{beamercolorbox}[colsep*=0ex]{block body}
+  \justifying
+  \begin{adjustwidth}{1ex}{1ex}
+  \setlength{\parskip}{1ex}
+  \vskip-1ex
+}
+\setbeamertemplate{block end}
+{
+  \end{adjustwidth}
+  \vskip1ex
+  \end{beamercolorbox}
+  \vskip0pt
+  \vspace*{2ex}
+}
+
+% \setbeamertemplate{block begin}
+% {
+%   % \begin{beamercolorbox}[colsep*=0ex,dp=2ex,center]{block title}
+%   \begin{beamercolorbox}[colsep*=0ex,dp=0ex]{block title}
+%     \vskip-0.5ex\hskip1ex
+%     \usebeamerfont{block title}\insertblocktitle
+%     \vskip-0.5ex
+%     \vskip-1.25ex
+%     \begin{beamercolorbox}[colsep=0.115ex]{block separator}\end{beamercolorbox}
+%   \end{beamercolorbox}
+%   {\parskip0pt\par}
+%   \usebeamerfont{block body}
+%   % \vskip-0.5ex
+%   \begin{beamercolorbox}[colsep*=0ex]{block body}
+%   \justifying
+%   \setlength{\parskip}{1ex}
+%   \vskip-1ex
+% }
+% \setbeamertemplate{block end}
+% {
+%   \end{beamercolorbox}
+%   \vskip0pt
+%   \vspace*{2ex}
+% }
+
+
+% Alert Block
+\setbeamertemplate{block alerted begin}
+{
+  \begin{beamercolorbox}[colsep*=0ex,dp=0ex]{block alerted title}
+    \vskip-0.25ex\hskip1ex
+    \usebeamerfont{block title}\insertblocktitle
+    % \vskip-0.25ex
+    \vskip-0.8ex
+    \begin{beamercolorbox}[colsep=0.36ex]{block alerted separator}\end{beamercolorbox}
+  \end{beamercolorbox}
+  {\parskip0pt\par}
+  \usebeamerfont{block body}
+  \vskip-0.5ex
+  \begin{beamercolorbox}[colsep*=0ex]{block alerted body}
+  \justifying
+  \begin{adjustwidth}{1ex}{1ex}
+  \setlength{\parskip}{1ex}
+  \vskip-1ex
+}
+\setbeamertemplate{block alerted end}
+{
+  \end{adjustwidth}
+  \vskip1ex
+  \end{beamercolorbox}
+  \vskip0pt
+  \vspace*{2ex}
+}
+
+% Example Block
+\setbeamertemplate{block example begin}
+{
+  % \begin{beamercolorbox}[colsep*=0ex,dp=2ex,center]{block title}
+  \begin{beamercolorbox}[colsep*=0ex,dp=0ex]{block example title}
+    \vskip-0.25ex\hskip1ex
+    \usebeamerfont{block example title}\insertblocktitle
+    \vskip-0.25ex
+    \vskip-1.25ex
+    \begin{beamercolorbox}[colsep=0.115ex]{block example separator}\end{beamercolorbox}
+  \end{beamercolorbox}
+  {\parskip0pt\par}
+  \usebeamerfont{block example body}
+  % \vskip-0.5ex
+  \begin{beamercolorbox}[colsep*=0ex]{block example body}
+  \justifying
+  \begin{adjustwidth}{1ex}{1ex}
+  \setlength{\parskip}{1ex}
+  \vskip-1ex
+}
+\setbeamertemplate{block example end}
+{
+  \end{adjustwidth}
+  \vskip1ex
+  \end{beamercolorbox}
+  \vskip0pt
+  \vspace*{2ex}
+}
+
+
+
+
+
+% Footer
+\newcommand{\footercontent}[1]{\newcommand{\insertfootercontent}{#1}}
+
+\setbeamertemplate{footline}{
+  \ifdefined\insertfootercontent
+  \begin{beamercolorbox}[vmode]{headline}
+    \ifbeamercolorempty[bg]{headline rule}{}{
+      \begin{beamercolorbox}[wd=\paperwidth,colsep=0.25ex]{headline rule}\end{beamercolorbox}
+    }
+    \vspace{1.5ex}
+    \hspace{\sepwidth}
+    \usebeamerfont{footline}
+    \centering
+    \insertfootercontent
+    \hspace{\sepwidth}
+    \vspace{1.5ex}
+  \end{beamercolorbox}
+  \else\fi
+}
