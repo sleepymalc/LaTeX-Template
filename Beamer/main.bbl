@@ -19,7 +19,7 @@
 
 \refsection{0}
   \datalist[entry]{anyt/global//global/global/global}
-    \entry{Hu_LaTeX-Template}{software}{}{}
+    \entry{HuLaTeXTemplate}{software}{}{}
       \name{author}{1}{}{%
         {{hash=15c21250745aec48bc68eb9677c5e2ee}{%
            family={Hu},

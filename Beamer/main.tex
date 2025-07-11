@@ -1,7 +1,9 @@
-\documentclass[aspectratio=169, xcolor={dvipsnames}, hyperref={colorlinks=true,linkcolor=Dandelion,urlcolor=magenta,citecolor=violet, hyperfootnotes=true}]{beamer}
+\PassOptionsToPackage{prologue,dvipsnames}{xcolor}
+\PassOptionsToPackage{colorlinks=true,linkcolor=Dandelion,urlcolor=magenta,citecolor=violet, hyperfootnotes=true}{hyperref}
+\documentclass[aspectratio=169]{beamer}
 \input{header.tex}
 
-\title[\cite{Hu_LaTeX-Template}]{Beamer Template}
+\title[\cite{HuLaTeXTemplate}]{Beamer Template}
 \subtitle{A Demo}
 \institute[UIUC]{University of Illinois Urbana-Champaign}
 \author{Pingbang Hu}
@@ -18,7 +20,7 @@
     \tableofcontents[hideallsubsections]
 \end{frame}
 
-\AtBeginSubsection[]{\begin{frame}<beamer>\frametitle{Table of Content}\tableofcontents[currentsection,currentsubsection,subsectionstyle=show/shaded/hide]\end{frame}}
+\AtBeginSubsection[]{\begin{frame}\frametitle{Table of Content}\tableofcontents[currentsection,currentsubsection,subsectionstyle=show/shaded/hide]\end{frame}}
 
 \section{Useful Environment}
 \subsection{Standard Environment}
