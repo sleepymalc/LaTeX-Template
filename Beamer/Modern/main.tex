@@ -1,0 +1,135 @@
+% Build: pdflatex -> biber -> pdflatex -> pdflatex (or just latexmk -pdf)
+% Add the `handout` class option to collapse all \pause overlays.
+\PassOptionsToPackage{prologue,dvipsnames}{xcolor}
+\PassOptionsToPackage{colorlinks=true,linkcolor=.,urlcolor=mLightBrown,citecolor=mLightBrown,hyperfootnotes=true}{hyperref}
+\documentclass[aspectratio=169,10pt]{beamer}
+\input{header.tex}
+
+\title{Beamer Template}
+\subtitle{A Demo of the Modern Style}
+\date{\today}
+\author{Pingbang Hu}
+\institute{University of Illinois Urbana-Champaign}
+
+\addbibresource{reference.bib}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Outline}
+    \tableofcontents[hideallsubsections]
+\end{frame}
+
+% =====================================================================
+\section{Useful Environment}
+% =====================================================================
+
+\begin{frame}{\texttt{itemize} and \texttt{enumerate}}
+    This is a demonstration of various environments~\cite{HuLaTeXTemplate}. The first is \texttt{itemize}:
+    \begin{itemize}
+        \item Item 1
+        \item Item 2
+        \item etc.
+    \end{itemize}
+    \pause
+
+    \medskip
+    Usually I'll use \texttt{enumerate} as well, revealed step by step with \texttt{\textbackslash pause}:
+    \begin{enumerate}
+        \item Item 1 \pause
+        \item Item 2 \pause
+        \item etc.
+    \end{enumerate}
+    \pause
+
+    \medskip
+    Use \texttt{\textbackslash emph} to \emph{highlight} a phrase, and \texttt{\textbackslash footnote} for asides.\footnote{Footnotes are numbered per frame.}
+\end{frame}
+
+\begin{frame}{Definition, Examples, etc.}
+    All the common environments are available, e.g.,
+    \begin{itemize}
+        \item \emph{Theorem}-related: \texttt{lemma}, \texttt{theorem}, \texttt{corollary}.
+        \item \emph{Common} environments: \texttt{definition}, \texttt{example}, \texttt{problem}.
+        \item \emph{Others}: \texttt{goal}, \texttt{prev}, \texttt{observe}, \texttt{assumption}, \texttt{remark}, \texttt{intuition}.
+    \end{itemize}
+    \pause
+    \begin{remark}
+        Each custom environment has its own color; the name is the block title, so they are unnumbered.
+    \end{remark}
+    \pause
+    \begin{goal}
+        A \texttt{goal} environment.
+    \end{goal}
+    \pause
+    \begin{prev}
+        A \texttt{prev} environment.
+    \end{prev}
+\end{frame}
+
+\begin{frame}{More Blocks}
+    \begin{columns}[t]
+        \begin{column}{0.48\textwidth}
+            \begin{problem}
+                A \texttt{problem} environment.
+            \end{problem}
+            \begin{assumption}
+                An \texttt{assumption} environment.
+            \end{assumption}
+            \begin{observe}
+                An \texttt{observe} environment.
+            \end{observe}
+        \end{column}
+        \begin{column}{0.48\textwidth}
+            \begin{intuition}[Optional title]
+                An \texttt{intuition} environment.
+            \end{intuition}
+            \begin{example}
+                A plain \texttt{example} environment.
+            \end{example}
+            {\styleblock{cExample}%
+                \begin{block}{Ad-hoc color}
+                    Wrap a \texttt{block} with \texttt{\textbackslash styleblock\{color\}} for a one-off color.
+                \end{block}}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% =====================================================================
+\section{Math and Figures}
+% =====================================================================
+
+\begin{frame}{Math}
+    The usual macros are available, e.g., \(\argmin_{\theta} \Var[f_\theta(x)]\), \(\dd{x}\), \(\norm{\bm{v}}\), and \(\P \neq \NP\).
+    \pause
+    \begin{theorem}[A statement]
+        For every \(\epsilon > 0\) there exists \(\delta > 0\) such that \(\abs{x - y} < \delta \implies \abs{f(x) - f(y)} < \epsilon\).
+    \end{theorem}
+    \pause
+    \begin{proof}
+        Left as an exercise. Use \texttt{proofs} for a proof that spans overlays.
+    \end{proof}
+\end{frame}
+
+\begin{frame}[fragile]{Figures}
+    Use \texttt{\textbackslash includegraphics} as usual, or \texttt{\textbackslash incfig\{name\}} for Inkscape figures exported as \texttt{Figures/name.pdf\_tex}.
+    \begin{center}
+        \begin{tikzcd}
+            A \arrow[r, "f"] \arrow[dr, "g \circ f"'] & B \arrow[d, "g"] \\
+            & C
+        \end{tikzcd}
+    \end{center}
+\end{frame}
+
+\begin{frame}[standout]
+    Thanks! Ask \textbf{\emph{anything}} you want!
+\end{frame}
+
+\appendix
+
+\begin{frame}[allowframebreaks]{References}
+    \printbibliography[heading=none]
+\end{frame}
+
+\end{document}

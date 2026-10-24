@@ -14,7 +14,7 @@ The existing $\LaTeX$ templates are often over-complicated, which is why I try t
 
 - [Note](./Note)
 - [Report/Assignment](./Report)
-- [Beamer](./Beamer)
+- [Beamer](./Beamer): [Classical](./Beamer/Classical) (Madrid) or [Modern](./Beamer/Modern) (Moloch)
 - [CV/Resume](./CV)
 - [Letter](./Letter)
 

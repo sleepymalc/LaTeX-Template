@@ -1,0 +1,179 @@
+% ---------- Theme: Moloch (maintained fork of Metropolis) ----------
+\usetheme{moloch}
+\molochset{
+    progressbar=frametitle,   % thin progress bar under each frame title
+    numbering=fraction,       % "3 / 32" in the footer
+    block=fill,               % filled blocks
+    sectionpage=progressbar,  % section title slides with a progress bar
+    subsectionpage=none,
+}
+\setbeamertemplate{theorems}[normal font]   % upright text in theorem-like blocks
+
+% ---------- Packages ----------
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{csquotes}
+\usepackage{etoolbox}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{enumerate}
+\usepackage{booktabs}
+\usepackage{makecell}
+\usepackage{adjustbox}
+\usepackage{setspace}
+\usepackage{subcaption}
+\usepackage{pgfpages}
+\usepackage{appendixnumberbeamer}   % frames after \appendix don't count toward the total
+
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools,mathrsfs}
+
+% ---------- Bibliography ----------
+\usepackage[style=alphabetic,maxcitenames=1,backend=biber]{biblatex}
+\renewcommand*{\bibfont}{\scriptsize}
+\AtBeginBibliography{\let\emph\textit}  % plain italics in the bibliography
+\setcounter{biburlnumpenalty}{9000}
+\setcounter{biburlucpenalty}{9000}
+\setcounter{biburllcpenalty}{9000}
+
+% ---------- Colors ----------
+% mDarkTeal (#23373B) and mLightBrown (#EB811B) are defined by Moloch.
+\definecolor{cGoal}{HTML}{EB811B}
+\definecolor{cProblem}{HTML}{C0392B}
+\definecolor{cIntuition}{HTML}{7B5EA7}
+\definecolor{cRemark}{HTML}{0E8388}
+\definecolor{cPrev}{HTML}{7F8C8D}
+\definecolor{cAssumption}{HTML}{2874A6}
+\definecolor{cObserve}{HTML}{AD1457}
+\definecolor{cExample}{HTML}{2E7D32}
+
+% Colored, italic emphasis; \emph<2->{...} colors immediately and italicizes on later overlays
+\renewcommand<>{\emph}[1]{{\color{mLightBrown}\only#2{\itshape}#1}}
+
+% Footnotes numbered per frame
+\let\oldfootnote\footnote
+\renewcommand\footnote[1][]{\oldfootnote[frame,#1]}
+
+% ---------- Colored block environments ----------
+% \styleblock{color} recolors the *next* block/theorem-like environment in the
+% current group, e.g. {\styleblock{cExample}\begin{block}{Title} ... \end{block}}
+\newcommand{\styleblock}[1]{%
+    \setbeamercolor{block title}{fg=white,bg=#1}%
+    \setbeamercolor{block body}{fg=black,bg=#1!10!white}%
+}
+\newtheorem*{goal}{Goal}
+\AtBeginEnvironment{goal}{\styleblock{cGoal}}
+\newtheorem*{intuition}{Intuition}
+\AtBeginEnvironment{intuition}{\styleblock{cIntuition}}
+\newtheorem*{remark}{Remark}
+\AtBeginEnvironment{remark}{\styleblock{cRemark}}
+\newtheorem*{prev}{As previously seen}
+\AtBeginEnvironment{prev}{\styleblock{cPrev}}
+\newtheorem*{assumption}{Assumption}
+\AtBeginEnvironment{assumption}{\styleblock{cAssumption}}
+\newtheorem*{observe}{Observe}
+\AtBeginEnvironment{observe}{\styleblock{cObserve}}
+\AtBeginEnvironment{problem}{\styleblock{cProblem}}   % `problem` is predefined by beamer
+
+% ---------- TodoNotes and inline notes in fancy boxes ----------
+\usepackage{todonotes}
+\usepackage{tcolorbox}
+
+% ---------- quiver style ----------
+\usepackage{tikz-cd}
+% `calc` is necessary to draw curved arrows.
+\usetikzlibrary{calc}
+% `pathmorphing` is necessary to draw squiggly arrows.
+\usetikzlibrary{decorations.pathmorphing}
+
+% A TikZ style for curved arrows of a fixed height, due to AndréC.
+\tikzset{curve/.style={settings={#1},to path={(\tikztostart)
+                    .. controls ($(\tikztostart)!\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$)
+                    and ($(\tikztostart)!1-\pv{pos}!(\tikztotarget)!\pv{height}!270:(\tikztotarget)$)
+                    .. (\tikztotarget)\tikztonodes}},
+    settings/.code={\tikzset{quiver/.cd,#1}
+            \def\pv##1{\pgfkeysvalueof{/tikz/quiver/##1}}},
+    quiver/.cd,pos/.initial=0.35,height/.initial=0}
+
+% TikZ arrowhead/tail styles.
+\tikzset{tail reversed/.code={\pgfsetarrowsstart{tikzcd to}}}
+\tikzset{2tail/.code={\pgfsetarrowsstart{Implies[reversed]}}}
+\tikzset{2tail reversed/.code={\pgfsetarrowsstart{Implies}}}
+% TikZ arrow styles.
+\tikzset{no body/.style={/tikz/dash pattern=on 0 off 1mm}}
+
+% ---------- Math macros ----------
+\newcommand{\at}[3]{\left.#1\right\vert_{#2}^{#3}}
+\newcommand\quotient[2]{
+    \mathchoice
+    {% \displaystyle
+        \text{\raise1ex\hbox{$#1$}\Big/\lower1ex\hbox{$#2$}}%
+    }
+    {% \textstyle
+        #1\,/\,#2
+    }
+    {% \scriptstyle
+        #1\,/\,#2
+    }
+    {% \scriptscriptstyle
+        #1\,/\,#2
+    }
+}
+
+\newcommand{\identity}{\mathrm{id}}
+\newcommand{\Homomorphism}{\mathrm{Hom}}
+\newcommand{\Morphism}{\mathrm{Mor}}
+\newcommand{\Object}{\mathrm{Ob}}
+\newcommand{\True}{\textsf{True}}
+\newcommand{\T}{\textsf{T}}
+\newcommand{\False}{\textsf{False}}
+\newcommand{\F}{\textsf{F}}
+\newcommand{\act}{\rotatebox[origin=c]{-180}{\(\,\circlearrowright\,\)}}
+
+\usepackage{physics}
+\usepackage{complexity}
+
+\DeclareMathOperator{\im}{Im}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\Int}{Int}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\OPT}{\textsf{OPT}}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+
+\let\implies\Rightarrow
+\let\impliedby\Leftarrow
+\let\iff\Leftrightarrow
+
+\usepackage{stmaryrd} % for \lightning
+\newcommand\conta{\scalebox{1.1}{\(\lightning\)}}
+
+\usepackage{bm}
+\usepackage{bbm}
+
+% ---------- Figure support ----------
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[2][\columnwidth]{%
+    \def\svgwidth{#1}
+    \import{Figures/}{#2.pdf_tex}
+}
+
+\makeatletter
+\let\@@magyar@captionfix\relax
+\makeatother
+
+\newenvironment<>{proofs}[1][\proofname]{%
+    \par
+    \def\insertproofname{#1.}%
+    \usebeamertemplate{proof begin}#2}
+{\usebeamertemplate{proof end}}
+
+% logo of my university
+\titlegraphic{\hfill\includegraphics[height=1.1cm]{~/Developer/LaTeX-Template/Beamer/Figures/logo/logo2.png}}
